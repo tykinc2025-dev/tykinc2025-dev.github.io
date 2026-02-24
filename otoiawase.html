@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DXアカデミー株式会社 | 受講中のお客様専用お問い合わせ</title>
+
+<style>
+:root{
+  --black:#0b0b0b;
+
+  --blue:#2aa7d7;
+  --blue2:#1b8fb8;
+  --blue3:#1f86d1;
+
+  --text:#0f1115;
+  --danger:#e03a3a;
+
+  --container:1120px;
+  --shadow2: 0 10px 26px rgba(0,0,0,.08);
+
+  --radius2:22px;
+  --focus: rgba(31,134,209,.18);
+
+  --gradA: radial-gradient(1200px 600px at 10% -10%, rgba(42,167,215,.22), rgba(42,167,215,0) 60%),
+           radial-gradient(900px 500px at 90% 10%, rgba(224,58,58,.14), rgba(224,58,58,0) 55%),
+           linear-gradient(180deg, #ffffff, #fbfbfd 35%, #f7f3ea 100%);
+
+  --frameBg: linear-gradient(180deg, rgba(31,134,209,.14), rgba(255,255,255,.78));
+  --frameBd: rgba(31,134,209,.26);
+  --frameGlow: 0 18px 44px rgba(31,134,209,.10);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
+  color:var(--text);
+  background: var(--gradA);
+  line-height:1.85;
+}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{
+  width:min(var(--container), calc(100% - 44px));
+  margin:auto;
+}
+
+/* HEADER */
+header{
+  background: linear-gradient(180deg, #0b0b0b, #101114);
+  color:#fff;
+  position:sticky;
+  top:0;
+  z-index:10;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+}
+.header-inner{
+  height:68px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{height:28px;width:auto}
+@media (min-width: 1024px){
+  .brand img{height:34px;}
+}
+.contact-btn{
+  background: linear-gradient(180deg, var(--blue), var(--blue2));
+  color:#fff;
+  padding:10px 16px;
+  font-weight:900;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow: 0 10px 18px rgba(0,0,0,.18);
+}
+.contact-btn:hover{filter:brightness(.98)}
+
+/* MAIN */
+.main{padding:56px 0 78px;}
+.panel{background:transparent;border:0;box-shadow:none;padding:0}
+
+/* Hero */
+.hero{text-align:center;padding:6px 0 10px}
+.dl-title{
+  margin:0;
+  font-size:26px;
+  font-weight:950;
+  letter-spacing:.06em;
+  line-height:1.2;
+}
+.dl-title .tight-br{
+  display:block;
+  height:.12em;
+  content:"";
+}
+.dl-sub{
+  margin:0;
+  color:rgba(15,17,21,.60);
+  font-weight:900;
+  letter-spacing:.18em;
+  font-size:11px;
+  text-transform:uppercase;
+}
+.hero-top-gap{height:18px;}
+.hero-mid-gap{height:18px;}
+
+.hr-mark{
+  width:26px;height:3px;
+  background:linear-gradient(90deg, var(--danger), rgba(224,58,58,.25));
+  border-radius:999px;
+  margin:0 auto 16px;
+}
+.intro{
+  max-width:860px;
+  margin:0 auto;
+  color:rgba(15,17,21,.82);
+  font-weight:900;
+  font-size:14px;
+  letter-spacing:.01em;
+}
+.intro-bottom-gap{height:18px;}
+@media (min-width: 1024px){
+  .intro{font-size:18px;line-height:1.9;}
+}
+
+/* Divider */
+.sep{
+  margin:26px 0 22px;
+  border:0;
+  height:1px;
+  background:linear-gradient(90deg, rgba(0,0,0,0), rgba(15,17,21,.10), rgba(0,0,0,0));
+}
+
+/* Blue frame */
+.blue-frame{
+  border-radius:22px;
+  background: var(--frameBg);
+  border:1px solid var(--frameBd);
+  box-shadow: var(--frameGlow), var(--shadow2);
+  padding:18px 18px 16px;
+}
+@media (min-width: 768px){
+  .blue-frame{padding:26px 28px 22px;}
+}
+
+/* Title chip inside frame */
+.frame-chip{
+  display:flex;
+  justify-content:center;
+  margin:0 0 14px;
+}
+.frame-chip span{
+  display:inline-block;
+  padding:10px 16px;
+  background: rgba(31,134,209,.22);
+  border:1px solid rgba(31,134,209,.28);
+  color:#101827;
+  font-weight:950;
+  font-size:22px;
+  letter-spacing:.03em;
+  border-radius:14px;
+}
+/* スマホ：2. のタイトルだけ 2pt相当小さく */
+@media (max-width: 560px){
+  .frame-chip span{font-size:16px;padding:10px 14px;letter-spacing:.02em;}
+  .frame-chip.form span{font-size:14px;}
+}
+@media (min-width: 768px){
+  .frame-chip{margin:2px 0 18px;}
+  .frame-chip span{
+    background: linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.62));
+    border:1px solid rgba(15,17,21,.10);
+    color:#0f172a;
+    border-radius:999px;
+    padding:10px 18px;
+    font-size:20px;
+    letter-spacing:.02em;
+    box-shadow: 0 10px 22px rgba(0,0,0,.08);
+    position:relative;
+  }
+  .frame-chip span::before{
+    content:"";
+    position:absolute;
+    left:16px; right:16px; bottom:-7px;
+    height:3px;
+    border-radius:999px;
+    background:linear-gradient(90deg, rgba(31,134,209,0), rgba(31,134,209,.55), rgba(31,134,209,0));
+    opacity:.9;
+  }
+}
+
+/* Phone block */
+.phone-hero-inner{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  flex-wrap:wrap;
+  text-align:center;
+}
+.phone-badge{
+  width:auto;height:auto;
+  border:0;
+  background:transparent;
+  border-radius:0;
+  display:grid;place-items:center;
+  color:#1f5f9a;
+  line-height:1;
+}
+.phone-icon{
+  width:34px;
+  height:54px;
+  border-radius:10px;
+  background: rgba(31,134,209,.14);
+  border:2px solid rgba(31,134,209,.45);
+  position:relative;
+  box-shadow: 0 8px 16px rgba(31,134,209,.14);
+}
+.phone-icon::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:6px;
+  width:14px;
+  height:3px;
+  transform:translateX(-50%);
+  border-radius:999px;
+  background: rgba(31,134,209,.55);
+}
+.phone-icon::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:6px;
+  width:10px;
+  height:10px;
+  transform:translateX(-50%);
+  border-radius:999px;
+  border:2px solid rgba(31,134,209,.45);
+  background: rgba(255,255,255,.65);
+}
+@media (max-width: 560px){
+  .phone-icon{width:30px;height:48px;border-radius:10px;}
+}
+@media (min-width: 768px){
+  .phone-icon{width:36px;height:58px;}
+}
+
+/* PC/タブレット：番号とボタンを真横に */
+.phone-hero a{
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+  font-weight:950;
+  color:#1f5f9a;
+}
+.phone-hero .num{
+  font-size:44px;
+  letter-spacing:.02em;
+  line-height:1;
+  display:inline-block;
+}
+.phone-hero .tap{
+  font-size:12px;
+  font-weight:950;
+  color:#0f1115;
+  border:1px solid rgba(15,17,21,.12);
+  background:#fff;
+  padding:8px 12px;
+  border-radius:999px;
+  line-height:1;
+  display:inline-flex;
+  align-items:center;
+  height:34px;
+}
+
+/* mobile */
+@media (max-width: 560px){
+  .phone-hero a{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+  }
+  .phone-hero .tap{display:none;}
+}
+@media (max-width: 420px){
+  .phone-hero .num{font-size:30px;letter-spacing:.01em;}
+  .phone-icon{width:28px;height:44px;}
+}
+
+.phone-meta{
+  margin-top:10px;
+  text-align:center;
+  color:rgba(15,17,21,.62);
+  font-size:12px;
+  font-weight:900;
+}
+.tap-hint{
+  display:none;
+  margin-top:6px;
+  text-align:center;
+  color:rgba(15,17,21,.62);
+  font-size:12px;
+  font-weight:900;
+}
+@media (max-width: 560px){
+  .tap-hint{display:block;}
+}
+.tel-link:focus-visible{
+  outline:3px solid var(--focus);
+  outline-offset:4px;
+  border-radius:16px;
+}
+
+/* Form note */
+.form-note{
+  margin-top:28px;
+  margin-bottom:28px;
+  text-align:center;
+  font-weight:950;
+  color:rgba(15,17,21,.82);
+  font-size:13px;
+}
+@media (min-width: 768px){
+  .form-note{font-size:17px;line-height:1.9;}
+}
+
+/* Form card */
+.form-card{
+  margin-top:12px;
+  border:1px solid rgba(15,17,21,.10);
+  border-radius:18px;
+  background:rgba(255,255,255,.88);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow2);
+  padding:18px 18px 16px;
+}
+@media (min-width: 768px){
+  .form-card{padding:26px 26px 22px;}
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:14px 16px;
+  margin-top:10px;
+}
+@media (min-width: 768px){
+  .form-grid{gap:18px 22px;margin-top:14px;}
+}
+@media (max-width: 960px){
+  .form-grid{grid-template-columns:1fr}
+}
+
+.field{min-width:0}
+.field.full{grid-column:1/-1}
+
+.label{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:950;
+  color:#111827;
+  margin:0 0 6px;
+  letter-spacing:.02em;
+}
+@media (min-width: 768px){
+  .label{margin-bottom:8px;font-size:13px;}
+}
+
+.req{
+  display:inline-flex;align-items:center;justify-content:center;
+  height:18px;padding:0 8px;font-size:10px;font-weight:950;
+  border:1px solid rgba(224,58,58,.22);
+  background:rgba(224,58,58,.08);
+  color:#b11e1e;border-radius:999px;letter-spacing:.08em;
+}
+.opt{
+  display:inline-flex;align-items:center;justify-content:center;
+  height:18px;padding:0 8px;font-size:10px;font-weight:950;
+  border:1px solid rgba(15,17,21,.10);
+  background:rgba(15,17,21,.04);
+  color:rgba(15,17,21,.60);border-radius:999px;letter-spacing:.08em;
+}
+
+.input, .textarea, .select{
+  width:100%;
+  border:1px solid rgba(15,17,21,.12);
+  border-radius:14px;
+  padding:12px 12px;
+  font-size:13px;
+  font-weight:800;
+  outline:none;
+  background:#fff;
+}
+@media (min-width: 768px){
+  .input, .textarea, .select{padding:14px 14px;font-size:14px;}
+}
+.textarea{min-height:150px;resize:vertical}
+@media (min-width: 768px){
+  .textarea{min-height:180px;}
+}
+.input::placeholder, .textarea::placeholder{color:rgba(15,17,21,.45);font-weight:800}
+.input:focus, .textarea:focus, .select:focus{
+  border-color: rgba(31,134,209,.55);
+  box-shadow: 0 0 0 5px var(--focus);
+}
+
+.inline-help{
+  margin-top:8px;
+  color:rgba(15,17,21,.58);
+  font-size:11px;
+  font-weight:900;
+  line-height:1.7;
+}
+@media (min-width: 768px){
+  .inline-help{margin-top:10px;font-size:12px;line-height:1.75;}
+}
+.inline-help + .inline-help{margin-top:4px}
+@media (min-width: 768px){
+  .inline-help + .inline-help{margin-top:6px;}
+}
+
+/* CTA */
+.form-area{text-align:center;margin-top:18px}
+@media (min-width: 768px){
+  .form-area{margin-top:22px;}
+}
+.btn-row{display:flex;justify-content:center;flex-wrap:wrap}
+.primary-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  width:min(380px, 100%);
+  height:56px;
+  background: linear-gradient(180deg, var(--blue3), #166db6);
+  color:#fff;
+  font-weight:950;
+  border-radius:14px;
+  border:1px solid rgba(0,0,0,.10);
+  box-shadow: 0 14px 28px rgba(31,134,209,.22);
+  padding:0 16px;
+  cursor:pointer;
+}
+.primary-btn:hover{filter:brightness(.98)}
+.note{
+  margin:14px 0 0;
+  color:rgba(15,17,21,.62);
+  font-size:12px;
+  font-weight:900;
+  text-align:center;
+}
+
+/* FOOTER */
+footer{
+  background: linear-gradient(180deg, #0b0b0b, #101114);
+  color:#fff;
+  padding:50px 0;
+  margin-top:34px;
+}
+.footer-inner{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:30px;
+}
+footer a{color:#ccc}
+
+/* ✅リンクを“同じ並び”で表示（スマホでも「お問い合わせ」が浮かない） */
+.footer-links a{
+  display:block;
+  padding:2px 0;
+}
+
+/* mobile */
+@media(max-width:700px){
+  .footer-inner{grid-template-columns:1fr}
+  .footer-links a{padding:3px 0;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a class="brand" href="https://www.dx-academy.com/" aria-label="DXアカデミー株式会社">
+      <img
+        src="https://static.wixstatic.com/media/1696ce_f6dd610345ca4a93b5d02883343db454~mv2.png/v1/crop/x_158%2Cy_149%2Cw_2842%2Ch_541/fill/w_980%2Ch_187%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/DX%E3%83%AD%E3%82%B4%E6%A8%AA%20%281%29.png"
+        alt="DXアカデミー株式会社"
+        loading="eager"
+      />
+    </a>
+    <div class="header-right">
+      <a href="https://www.dx-academy.com/" class="contact-btn">HPへ移動</a>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  <div class="container">
+    <section class="panel" aria-label="お問い合わせページ">
+
+      <div class="hero">
+        <h1 class="dl-title">
+          受講中のお客様専用<span class="tight-br" aria-hidden="true"></span>お問い合わせ
+        </h1>
+
+        <div class="hero-top-gap" aria-hidden="true"></div>
+
+        <div class="dl-sub">Contact</div>
+        <div class="hero-mid-gap" aria-hidden="true"></div>
+
+        <div class="hr-mark" aria-hidden="true"></div>
+
+        <div class="intro">
+          弊社へのお問い合わせ方法は、お電話とお問い合わせフォームの2通りをご用意しております。<br>
+        </div>
+        <div class="intro-bottom-gap" aria-hidden="true"></div>
+      </div>
+
+      <hr class="sep">
+
+      <div class="blue-frame phone-hero" aria-label="電話案内（青枠）">
+        <div class="frame-chip"><span>1．フリーダイヤルでのお問い合わせ</span></div>
+
+        <div class="phone-hero-inner">
+          <span class="phone-badge" aria-hidden="true"><span class="phone-icon" aria-hidden="true"></span></span>
+
+          <a class="tel-link" href="tel:0120438348" aria-label="電話をかける 0120-438-348">
+            <span class="num">0120-438-348</span>
+            <span class="tap">ワンタップで発信</span>
+          </a>
+        </div>
+
+        <div class="tap-hint">※電話番号をタップいただけると発信できます。</div>
+        <div class="phone-meta">※受付時間：9時-18時（土日祝日除く）</div>
+      </div>
+
+      <hr class="sep">
+
+      <div class="blue-frame" aria-label="フォーム全体（青枠）">
+        <div class="frame-chip form"><span>2．お問い合わせフォームでのお問い合わせ</span></div>
+
+        <p class="form-note">下記フォームにご入力ください。原則1営業日以内にご返信いたします。</p>
+
+        <div class="form-card">
+          <form id="contactForm"
+                action="https://example.com/your-google-apps-script-endpoint"
+                method="post"
+                accept-charset="utf-8">
+
+            <div class="form-grid">
+              <div class="field full">
+                <div class="label">お名前またはログインID <span class="req">必須</span></div>
+                <input class="input" type="text" name="name_or_login" required placeholder="例：山田 太郎 / login_id_123">
+              </div>
+
+              <div class="field">
+                <div class="label">回答の連絡方法 <span class="req">必須</span></div>
+                <select class="select" name="reply_method" id="reply_method" required>
+                  <option value="" selected disabled>選択してください</option>
+                  <option value="グループLINE">グループLINE</option>
+                  <option value="電話">電話</option>
+                  <option value="メール">メール</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <div class="label">連絡先（電話 または メール） <span class="opt" id="contactOptBadge">任意</span></div>
+                <input class="input" type="text" name="contact" id="contact"
+                       placeholder="例：09012345678 / sample@example.com">
+
+                <div class="inline-help" id="contactHelp">
+                  ※連絡方法が「電話／メール」の場合は入力してください
+                </div>
+                <div class="inline-help" id="contactHelp2">
+                  ※連絡先の入力がない場合は、グループLINEで返信させていただいております。ご了承ください。
+                </div>
+              </div>
+
+              <div class="field full">
+                <div class="label">お問い合わせ内容 <span class="req">必須</span></div>
+                <textarea class="textarea" name="message" required
+                  placeholder="お問い合わせ内容をご記入ください"></textarea>
+              </div>
+            </div>
+
+            <div class="form-area">
+              <div class="btn-row">
+                <button class="primary-btn" type="submit" id="submitBtn">
+                  送信する <span class="chev">›</span>
+                </button>
+              </div>
+
+              <div class="note" style="margin-top:16px;">© DXアカデミー株式会社</div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <strong>DXアカデミー株式会社</strong><br>
+      〒106-0032<br>
+      東京都港区六本木3丁目16番12号
+    </div>
+
+    <!-- ✅「お問い合わせ」を同じリンク群に入れて、スマホで浮かないようにする -->
+    <div class="footer-links">
+      <a href="https://www.dx-academy.com/">ホーム</a>
+      <a href="https://www.dx-academy.com/blank">事業紹介</a>
+      <a href="https://www.dx-academy.com/blank-1">会社紹介</a>
+      <a href="https://www.dx-academy.com/">お問い合わせ</a>
+    </div>
+
+    <!-- 3列目はスペース調整用（PC時のバランスを保つ） -->
+    <div aria-hidden="true"></div>
+  </div>
+</footer>
+
+<script>
+const replyMethod = document.getElementById('reply_method');
+const contact = document.getElementById('contact');
+const contactOptBadge = document.getElementById('contactOptBadge');
+
+const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+const isPhone = (v) => {
+  const digits = v.replace(/[^\d]/g,'');
+  return digits.length === 10 || digits.length === 11;
+};
+
+function setContactRequired(isRequired){
+  contact.required = isRequired;
+  contactOptBadge.textContent = isRequired ? '必須' : '任意';
+  contactOptBadge.className = isRequired ? 'req' : 'opt';
+}
+
+function syncContactUI(){
+  const v = replyMethod.value;
+
+  if(v === '電話'){
+    setContactRequired(true);
+    contact.placeholder = '例：09012345678';
+  }else if(v === 'メール'){
+    setContactRequired(true);
+    contact.placeholder = '例：sample@example.com';
+  }else{
+    setContactRequired(false);
+    contact.placeholder = '例：09012345678 / sample@example.com';
+  }
+}
+replyMethod.addEventListener('change', syncContactUI);
+syncContactUI();
+
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  const method = replyMethod.value;
+  const v = (contact.value || '').trim();
+
+  if(method === '電話'){
+    if(!v){
+      alert('連絡方法が「電話」のため、連絡先（電話番号）の入力が必要です。');
+      contact.focus();
+      e.preventDefault();
+      return;
+    }
+    if(!isPhone(v)){
+      alert('電話番号の形式をご確認ください（数字10〜11桁目安）。');
+      contact.focus();
+      e.preventDefault();
+      return;
+    }
+  }
+
+  if(method === 'メール'){
+    if(!v){
+      alert('連絡方法が「メール」のため、連絡先（メールアドレス）の入力が必要です。');
+      contact.focus();
+      e.preventDefault();
+      return;
+    }
+    if(!isEmail(v)){
+      alert('メールアドレスの形式をご確認ください。');
+      contact.focus();
+      e.preventDefault();
+      return;
+    }
+  }
+});
+</script>
+
+</body>
+</html>
