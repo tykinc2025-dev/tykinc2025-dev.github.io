@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DXアカデミー株式会社 | 計画申請：提出書類のご案内</title>
+
+<style>
+:root{
+  --black:#0b0b0b;
+
+  --blue:#2aa7d7;
+  --blue2:#1b8fb8;
+  --blue3:#1f86d1;
+
+  --text:#0f1115;
+  --muted:rgba(15,17,21,.62);
+  --line: rgba(15,17,21,.10);
+
+  --danger:#e03a3a;
+  --dangerBg: rgba(224,58,58,.08);
+  --dangerBd: rgba(224,58,58,.18);
+
+  --container:1120px;
+  --shadow2: 0 10px 26px rgba(0,0,0,.08);
+
+  --focus: rgba(31,134,209,.18);
+
+  --gradA:
+    radial-gradient(1200px 600px at 10% -10%, rgba(42,167,215,.20), rgba(42,167,215,0) 60%),
+    radial-gradient(900px 500px at 90% 10%, rgba(224,58,58,.10), rgba(224,58,58,0) 55%),
+    linear-gradient(180deg, #ffffff, #fbfbfd 35%, #f7f3ea 100%);
+
+  --frameBg: linear-gradient(180deg, rgba(31,134,209,.12), rgba(255,255,255,.78));
+  --frameBd: rgba(31,134,209,.22);
+  --frameGlow: 0 18px 44px rgba(31,134,209,.10);
+
+  --cardBg: rgba(255,255,255,.90);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;} /* ✅ クリックでスライド（スムーススクロール） */
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
+  color:var(--text);
+  background: var(--gradA);
+  line-height:1.85;
+}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{
+  width:min(var(--container), calc(100% - 44px));
+  margin:auto;
+}
+
+/* ===== HEADER (same) ===== */
+header{
+  background: linear-gradient(180deg, #0b0b0b, #101114);
+  color:#fff;
+  position:sticky;
+  top:0;
+  z-index:10;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+}
+.header-inner{
+  height:68px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{height:28px;width:auto}
+@media (min-width: 1024px){
+  .brand img{height:34px;}
+}
+.contact-btn{
+  background: linear-gradient(180deg, var(--blue), var(--blue2));
+  color:#fff;
+  padding:10px 16px;
+  font-weight:900;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow: 0 10px 18px rgba(0,0,0,.18);
+}
+.contact-btn:hover{filter:brightness(.98)}
+
+/* ===== MAIN ===== */
+.main{padding:56px 0 78px;}
+.panel{background:transparent;border:0;box-shadow:none;padding:0}
+
+/* ===== HERO ===== */
+.hero{
+  text-align:center;
+  padding:10px 0 12px;
+}
+.hero-title{
+  margin:0;
+  font-size:26px;
+  font-weight:950;
+  letter-spacing:.04em;
+  line-height:1.25;
+}
+@media (min-width:1024px){
+  .hero-title{font-size:30px;}
+}
+.hr-mark{
+  width:26px;height:3px;
+  background:linear-gradient(90deg, var(--danger), rgba(224,58,58,.25));
+  border-radius:999px;
+  margin:18px auto 18px;
+}
+
+/* Notice */
+.notice-card{
+  margin:0 auto;
+  width:min(980px, 100%);
+  background: rgba(255,255,255,.82);
+  border:1px solid var(--line);
+  border-radius:22px;
+  box-shadow: 0 18px 44px rgba(0,0,0,.08);
+  padding:18px 18px 16px;
+  backdrop-filter: blur(10px);
+}
+@media (min-width:768px){
+  .notice-card{padding:22px 24px 18px;}
+}
+.notice-text{
+  margin:0;
+  font-weight:950;
+  color:rgba(15,17,21,.86);
+  font-size:14px;
+}
+@media (min-width:768px){
+  .notice-text{font-size:16px;}
+}
+.notice-footnote{
+  margin:10px 0 0;
+  color:rgba(15,17,21,.58);
+  font-weight:900;
+  font-size:12px;
+}
+@media (min-width:768px){
+  .notice-footnote{font-size:13px;}
+}
+
+/* ===== ✅ 3つを「ボタン化」(デザインそのまま) ===== */
+.three-cards{
+  margin:14px auto 0;
+  width:min(980px, 100%);
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:12px;
+}
+@media (max-width:900px){
+  .three-cards{grid-template-columns:1fr; gap:10px;}
+}
+
+/* button */
+.doc-btn{
+  appearance:none;
+  -webkit-appearance:none;
+  border:0;
+  padding:0;
+  background:transparent;
+  text-align:left;
+  cursor:pointer;
+  width:100%;
+}
+
+/* the "card" */
+.mini-card{
+  background: rgba(255,255,255,.92);
+  border:1px solid rgba(15,17,21,.10);
+  border-radius:24px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.06);
+  padding:16px 16px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-height:86px;
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+}
+@media (max-width:560px){
+  .mini-card{padding:14px 14px; border-radius:20px; min-height:78px;}
+}
+.doc-btn:hover .mini-card{
+  transform: translateY(-1px);
+  box-shadow: 0 16px 34px rgba(0,0,0,.08);
+  border-color: rgba(31,134,209,.22);
+}
+.doc-btn:active .mini-card{
+  transform: translateY(0px);
+}
+.doc-btn:focus-visible .mini-card{
+  outline:4px solid var(--focus);
+  outline-offset:4px;
+}
+
+/* number bubble */
+.mini-no{
+  width:44px;height:44px;
+  border-radius:16px;
+  display:grid;
+  place-items:center;
+  font-weight:950;
+  font-size:18px;
+  color:#0f172a;
+  background: rgba(31,134,209,.10);
+  border:2px solid rgba(31,134,209,.22);
+  box-shadow: 0 10px 22px rgba(31,134,209,.10);
+  flex:0 0 auto;
+}
+@media (max-width:560px){
+  .mini-no{width:40px;height:40px;border-radius:14px;font-size:16px;}
+}
+
+.mini-title{
+  margin:0;
+  font-weight:950;
+  color:rgba(15,17,21,.90);
+  font-size:16px;
+  line-height:1.3;
+}
+@media (max-width:560px){
+  .mini-title{font-size:14px;}
+}
+.mini-title small{
+  display:block;
+  margin-top:6px;
+  font-weight:900;
+  color:rgba(15,17,21,.55);
+  font-size:12px;
+}
+@media (max-width:560px){
+  .mini-title small{font-size:11px;margin-top:4px;}
+}
+
+/* Divider */
+.sep{
+  margin:26px 0 22px;
+  border:0;
+  height:1px;
+  background:linear-gradient(90deg, rgba(0,0,0,0), rgba(15,17,21,.10), rgba(0,0,0,0));
+}
+
+/* Blue frame */
+.blue-frame{
+  border-radius:22px;
+  background: var(--frameBg);
+  border:1px solid var(--frameBd);
+  box-shadow: var(--frameGlow), var(--shadow2);
+  padding:18px 18px 16px;
+}
+@media (min-width: 768px){
+  .blue-frame{padding:26px 28px 22px;}
+}
+
+/* Title chip */
+.frame-chip{
+  display:flex;
+  justify-content:center;
+  margin:0 0 10px;
+}
+.frame-chip span{
+  display:inline-block;
+  padding:10px 16px;
+  background: rgba(31,134,209,.22);
+  border:1px solid rgba(31,134,209,.28);
+  color:#101827;
+  font-weight:950;
+  font-size:18px;
+  letter-spacing:.03em;
+  border-radius:14px;
+}
+@media (max-width: 560px){
+  .frame-chip span{font-size:14px;padding:10px 14px;letter-spacing:.02em;}
+}
+@media (min-width: 768px){
+  .frame-chip{margin:2px 0 12px;}
+  .frame-chip span{
+    background: linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.62));
+    border:1px solid rgba(15,17,21,.10);
+    color:#0f172a;
+    border-radius:999px;
+    padding:10px 18px;
+    font-size:18px;
+    letter-spacing:.02em;
+    box-shadow: 0 10px 22px rgba(0,0,0,.08);
+    position:relative;
+  }
+  .frame-chip span::before{
+    content:"";
+    position:absolute;
+    left:16px; right:16px; bottom:-7px;
+    height:3px;
+    border-radius:999px;
+    background:linear-gradient(90deg, rgba(31,134,209,0), rgba(31,134,209,.55), rgba(31,134,209,0));
+    opacity:.9;
+  }
+}
+
+/* Content cards */
+.card{
+  margin-top:12px;
+  border:1px solid rgba(15,17,21,.10);
+  border-radius:18px;
+  background:var(--cardBg);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow2);
+  padding:18px 18px 16px;
+
+  /* ✅ scroll先がヘッダーで隠れないように */
+  scroll-margin-top: 92px;
+}
+@media (min-width: 768px){
+  .card{padding:26px 26px 22px; scroll-margin-top: 96px;}
+}
+
+.section-title{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  margin:0 0 10px;
+  font-weight:950;
+  font-size:16px;
+  letter-spacing:.02em;
+}
+@media (min-width: 768px){
+  .section-title{font-size:18px;}
+}
+.badge-no{
+  flex:0 0 auto;
+  min-width:46px;
+  height:28px;
+  padding:0 10px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:999px;
+  background: rgba(31,134,209,.14);
+  border:1px solid rgba(31,134,209,.28);
+  color:#0f172a;
+  font-weight:950;
+  letter-spacing:.10em;
+}
+@media (max-width:560px){
+  .badge-no{min-width:44px;height:26px;font-size:12px;}
+}
+.lead{
+  margin:0 0 12px;
+  color:rgba(15,17,21,.82);
+  font-weight:900;
+  font-size:13px;
+}
+@media (min-width: 768px){
+  .lead{font-size:15px;line-height:1.9;}
+}
+.callout{
+  border-radius:16px;
+  padding:12px 12px;
+  background: rgba(224,58,58,.06);
+  border:1px solid rgba(224,58,58,.16);
+  margin:12px 0 14px;
+}
+@media (min-width: 768px){
+  .callout{padding:14px 14px;}
+}
+.callout-title{
+  display:flex;align-items:center;gap:8px;
+  font-weight:950;
+  margin:0 0 6px;
+  color:#7f1d1d;
+  font-size:12px;
+  letter-spacing:.05em;
+}
+.callout-title .dot{
+  width:8px;height:8px;border-radius:99px;background:var(--danger);
+  box-shadow: 0 6px 14px rgba(224,58,58,.22);
+}
+.list{
+  margin:0;
+  padding-left:18px;
+  font-weight:900;
+  color:rgba(15,17,21,.82);
+  font-size:13px;
+}
+@media (min-width: 768px){
+  .list{font-size:14px;}
+}
+.list li{margin:6px 0}
+.note-box{
+  margin-top:14px;
+  border-radius:16px;
+  padding:12px 12px;
+  background: rgba(15,17,21,.04);
+  border:1px solid rgba(15,17,21,.10);
+}
+.note-box .note-title{
+  margin:0 0 6px;
+  font-weight:950;
+  font-size:12px;
+  letter-spacing:.05em;
+  color:rgba(15,17,21,.70);
+}
+.note-box p{margin:0;color:rgba(15,17,21,.72);font-weight:900;font-size:12px;line-height:1.75}
+@media (min-width: 768px){
+  .note-box p{font-size:13px;}
+}
+.link-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:14px;
+}
+.link-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  height:42px;
+  padding:0 14px;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid rgba(15,17,21,.12);
+  font-weight:950;
+  color:#0f172a;
+  box-shadow: 0 10px 22px rgba(0,0,0,.06);
+}
+.link-btn:hover{filter:brightness(.99)}
+.link-btn .arrow{
+  width:22px;height:22px;border-radius:999px;
+  display:grid;place-items:center;
+  background: rgba(31,134,209,.12);
+  border:1px solid rgba(31,134,209,.22);
+  color:#1f5f9a;
+  font-weight:950;
+}
+
+/* Summary footer note */
+.page-note{
+  margin-top:18px;
+  text-align:center;
+  color:var(--muted);
+  font-weight:900;
+  font-size:12px;
+}
+@media (min-width:768px){
+  .page-note{font-size:13px;}
+}
+
+/* ===== FOOTER (same) ===== */
+footer{
+  background: linear-gradient(180deg, #0b0b0b, #101114);
+  color:#fff;
+  padding:50px 0;
+  margin-top:34px;
+}
+.footer-inner{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:30px;
+}
+footer a{color:#ccc}
+.footer-links a{
+  display:block;
+  padding:2px 0;
+}
+@media(max-width:700px){
+  .footer-inner{grid-template-columns:1fr}
+  .footer-links a{padding:3px 0;}
+}
+
+/* ✅ スマホのみ：文字サイズを全体的に小さく */
+@media (max-width: 560px){
+  body{font-size:13px;}
+  .hero-title{font-size:22px;}
+  .notice-text{font-size:12px;}
+  .notice-footnote{font-size:11px;}
+  .frame-chip span{font-size:14px;}
+  .section-title{font-size:14px;}
+  .lead{font-size:12px;}
+  .list{font-size:12px;}
+  .callout-title{font-size:11px;}
+  .note-box .note-title{font-size:11px;}
+  .note-box p{font-size:11px;}
+  .page-note{font-size:11px;}
+  .contact-btn{font-size:12px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a class="brand" href="https://www.dx-academy.com/" aria-label="DXアカデミー株式会社">
+      <img
+        src="https://static.wixstatic.com/media/1696ce_f6dd610345ca4a93b5d02883343db454~mv2.png/v1/crop/x_158%2Cy_149%2Cw_2842%2Ch_541/fill/w_980%2Ch_187%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/DX%E3%83%AD%E3%82%B4%E6%A8%AA%20%281%29.png"
+        alt="DXアカデミー株式会社"
+        loading="eager"
+      />
+    </a>
+    <div class="header-right">
+      <a href="https://www.dx-academy.com/" class="contact-btn">HPへ移動</a>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  <div class="container">
+    <section class="panel" aria-label="計画申請：提出書類案内ページ">
+
+      <div class="hero">
+        <h1 class="hero-title">計画申請：提出書類のご案内</h1>
+        <div class="hr-mark" aria-hidden="true"></div>
+
+        <div class="notice-card" aria-label="案内">
+          <p class="notice-text">計画申請にあたり、下記3点の書類をご用意のうえご提出ください。</p>
+
+          <!-- ✅ ここが「ボタン」 -->
+          <div class="three-cards" aria-label="必要書類3点（クリックで詳細へ）">
+            <button class="doc-btn" type="button" data-target="#doc01" aria-label="書類1の詳細へ移動">
+              <div class="mini-card">
+                <div class="mini-no">1</div>
+                <p class="mini-title">
+                  雇用契約書／労働条件通知書（写し）
+                  <small>受講者全員分をご準備ください</small>
+                </p>
+              </div>
+            </button>
+
+            <button class="doc-btn" type="button" data-target="#doc02" aria-label="書類2の詳細へ移動">
+              <div class="mini-card">
+                <div class="mini-no">2</div>
+                <p class="mini-title">
+                  口座確認資料（通帳の写し等）
+                  <small>表紙および見開き1・2ページ</small>
+                </p>
+              </div>
+            </button>
+
+            <button class="doc-btn" type="button" data-target="#doc03" aria-label="書類3の詳細へ移動">
+              <div class="mini-card">
+                <div class="mini-no">3</div>
+                <p class="mini-title">
+                  雇用保険適用事業所設置届（写し）
+                  <small>所在地の記載をご確認ください</small>
+                </p>
+              </div>
+            </button>
+          </div>
+
+          <p class="notice-footnote">※提出方法・提出期限は、担当者からのご案内に沿ってご対応ください。</p>
+        </div>
+      </div>
+
+      <hr class="sep" />
+
+      <div class="blue-frame" aria-label="提出書類（詳細）">
+        <div class="frame-chip"><span>提出書類の詳細</span></div>
+
+        <!-- ✅ クリック先 -->
+        <div class="card" id="doc01" aria-label="1. 雇用契約書／労働条件通知書">
+          <h2 class="section-title">
+            <span class="badge-no">01</span>
+            研修受講者全員分の「雇用契約書」または「労働条件通知書」（写し）
+          </h2>
+
+          <p class="lead">
+            本研修を受講される方全員分について、雇用契約書または労働条件通知書のいずれかをご提出ください。
+          </p>
+
+          <div class="callout" role="note" aria-label="必須記載事項">
+            <div class="callout-title"><span class="dot" aria-hidden="true"></span>必須記載事項（明示が必要な項目）</div>
+            <ol class="list">
+              <li>労働契約の期間に関する事項</li>
+              <li>期間の定めのある労働契約を更新する場合の基準に関する事項</li>
+              <li>就業の場所および従事すべき業務に関する事項</li>
+              <li>始業・終業時刻、所定労働時間を超える労働の有無、休憩時間、休日・休暇、ならびに交替制勤務に関する事項</li>
+              <li>賃金（退職手当および臨時に支払われる賃金等を除く）の決定・計算・支払方法、賃金の締切りおよび支払時期に関する事項</li>
+              <li>退職に関する事項（解雇の事由を含む）</li>
+              <li>昇給に関する事項</li>
+            </ol>
+          </div>
+
+          <div class="note-box" aria-label="確認事項">
+            <div class="note-title">ご提出前の確認事項</div>
+            <ul class="list" style="margin:0;">
+              <li>契約期間が有効であること（期間満了・失効がないこと）</li>
+              <li>記載賃金が各都道府県の最低賃金を下回っていないこと</li>
+              <li>交付日（作成日）が記載されていること</li>
+            </ul>
+
+            <div class="link-row" aria-label="見本リンク">
+              <a class="link-btn" href="#" aria-label="見本（雇用契約書／労働条件通知書）">
+                見本を確認する <span class="arrow" aria-hidden="true">›</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" id="doc02" aria-label="2. 口座確認資料">
+          <h2 class="section-title">
+            <span class="badge-no">02</span>
+            助成金の受取口座に関する「口座確認資料」（通帳の写し等）
+          </h2>
+
+          <p class="lead">
+            助成金の受取口座としてご指定予定の口座について、口座情報が確認できる資料をご提出ください。
+          </p>
+
+          <ul class="list">
+            <li>通帳をご提出の場合：表紙および見開き1・2ページが確認できる写し</li>
+            <li>写しは、四隅が欠けず、記載内容が判読できる鮮明なものをご用意ください</li>
+          </ul>
+
+          <div class="note-box" aria-label="ネットバンキングの場合">
+            <div class="note-title">ネットバンキングをご利用の場合</div>
+            <p>
+              金融機関名、支店名、店番号、預金種別、口座番号、口座名義（カタカナ名義を含む）が確認できる
+              画面（または同等の情報が確認できる資料）の画像をご提出ください。
+            </p>
+
+            <div class="link-row" aria-label="見本リンク">
+              <a class="link-btn" href="#" aria-label="見本（口座確認資料）">
+                見本を確認する <span class="arrow" aria-hidden="true">›</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" id="doc03" aria-label="3. 雇用保険適用事業所設置届">
+          <h2 class="section-title">
+            <span class="badge-no">03</span>
+            「雇用保険適用事業所設置届」（写し）
+          </h2>
+
+          <div class="callout" role="note" aria-label="重要：住所一致の確認">
+            <div class="callout-title"><span class="dot" aria-hidden="true"></span>重要：住所の一致をご確認ください</div>
+            <p class="lead" style="margin:0;">
+              スプレッドシートへご入力いただいた事業所住所と、設置届に記載の住所が一致していることをご確認ください。<br>
+              相違がある場合、手続き上の確認が必要となる可能性があります。
+            </p>
+          </div>
+
+          <div class="note-box" aria-label="設置届が用意できない場合">
+            <div class="note-title">設置届をご用意いただけない場合</div>
+            <p style="margin:0 0 10px; color:rgba(15,17,21,.72); font-weight:900; font-size:12px; line-height:1.75;">
+              代替として、該当する資料をご提出ください（必要に応じて担当者より追加確認を行います）。
+            </p>
+
+            <ul class="list">
+              <li>雇用保険被保険者証 資格取得確認通知書（事業主通知用）の写し（加入者いずれか1名分）</li>
+              <li>直近の労働保険 概算・確定保険料申告書の写し</li>
+              <li>労働保険料等納入通知書</li>
+            </ul>
+
+            <div class="link-row" aria-label="見本リンク">
+              <a class="link-btn" href="#" aria-label="見本（雇用保険関連）">
+                見本を確認する <span class="arrow" aria-hidden="true">›</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <p class="page-note">© DXアカデミー株式会社</p>
+      </div>
+
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <strong>DXアカデミー株式会社</strong><br />
+      〒106-0032<br />
+      東京都港区六本木3丁目16番12号
+    </div>
+
+    <div class="footer-links">
+      <a href="https://www.dx-academy.com/">ホーム</a>
+      <a href="https://www.dx-academy.com/blank">事業紹介</a>
+      <a href="https://www.dx-academy.com/blank-1">会社紹介</a>
+      <a href="https://www.dx-academy.com/">お問い合わせ</a>
+    </div>
+
+    <div aria-hidden="true"></div>
+  </div>
+</footer>
+
+<script>
+/* ✅ ボタン押下で該当セクションへスムーススクロール（ヘッダー固定分も考慮） */
+(function(){
+  const buttons = document.querySelectorAll('.doc-btn[data-target]');
+  const header = document.querySelector('header');
+
+  function getHeaderOffset(){
+    return header ? header.getBoundingClientRect().height + 16 : 84;
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const sel = btn.getAttribute('data-target');
+      const target = sel ? document.querySelector(sel) : null;
+      if(!target) return;
+
+      const y = window.scrollY + target.getBoundingClientRect().top - getHeaderOffset();
+      window.scrollTo({ top: y, behavior: 'smooth' });
+
+      // アクセシビリティ：移動先をフォーカス（スクリーンリーダー向け）
+      target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
