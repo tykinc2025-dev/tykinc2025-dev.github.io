@@ -1,0 +1,207 @@
+/****************************************************
+ * PDF一括ダウンロード（ZIP）
+ * ・チェック / プルダウン判定
+ * ・名前付き範囲 PRINT_xxx をPDF化
+ * ・①②③ → 1 2 3 変換対応（名前付き範囲が数字でもOK）
+ * ・A4縦 / ページに合わせる
+ ****************************************************/
+
+const CONFIG = {
+  // ★見積書チェック（ここは画像上 I6 でOKそう）
+  checkboxTargets: [
+    { cell: "I6", baseName: "見積書" }
+  ],
+
+  // ★プルダウンは I列にあるはずなので I7/I8/I9 に変更
+  dropdownTargets: [
+    { cell: "I7", baseName: "申込兼契約書" },
+    { cell: "I8", baseName: "請求書" },
+    { cell: "I9", baseName: "領収書" }
+  ]
+};
+
+// =============================
+// ボタンが呼ぶ関数（これを割り当てているならOK）
+// =============================
+function exportSelectedDocsForDownloadZip() {
+  pdfDownloadZip();
+}
+
+// =============================
+// メイン処理
+// =============================
+function pdfDownloadZip() {
+  const ss = SpreadsheetApp.getActive();
+  const sheet = ss.getActiveSheet();
+  const ui = SpreadsheetApp.getUi();
+
+  const targets = [];
+  const readLog = [];
+
+  // チェックボックス
+  CONFIG.checkboxTargets.forEach(t => {
+    const v = sheet.getRange(t.cell).getValue();
+    readLog.push(`${t.cell} = ${String(v)}`);
+    if (v === true) targets.push({ baseName: t.baseName });
+  });
+
+  // プルダウン
+  CONFIG.dropdownTargets.forEach(t => {
+    const val = String(sheet.getRange(t.cell).getDisplayValue() || "").trim();
+    readLog.push(`${t.cell} = "${val}"`);
+    const nums = parseDropdown(val); // ["①","②"] or ["1","2"] etc
+    nums.forEach(n => targets.push({ baseName: t.baseName, suffix: n }));
+  });
+
+  if (targets.length === 0) {
+    ui.alert("出力対象が選ばれてません。\n\n読み取った値:\n" + readLog.join("\n"));
+    return;
+  }
+
+  const tempFolder = getOrCreateFolder_("PDF_TEMP");
+  const createdFiles = [];
+  const notFound = [];
+
+  targets.forEach(t => {
+    const printName = buildPrintName(t.baseName, t.suffix);
+    const named = ss.getRangeByName(printName);
+
+    if (!named) {
+      notFound.push(printName);
+      return;
+    }
+
+    // ★名前付き範囲が属するシートをPDF化
+    const sheetId = named.getSheet().getSheetId();
+
+    // NOTE:
+    // ここは「シート全体」ではなく「印刷範囲（名前付き範囲）」に寄せたい場合は、
+    // export URLに r1/c1/r2/c2 を付ける版に変更可能です（必要なら言ってください）
+    const url = buildPdfUrl_(ss.getId(), sheetId);
+
+    const blob = UrlFetchApp.fetch(url, getFetchOption_()).getBlob()
+      .setName(makeFileName_(t.baseName, t.suffix));
+
+    const file = tempFolder.createFile(blob);
+    createdFiles.push(file);
+  });
+
+  if (createdFiles.length === 0) {
+    ui.alert(
+      "PDFが作成できませんでした。\n\n名前付き範囲が見つからない:\n" +
+      notFound.join("\n") +
+      "\n\n読み取った値:\n" + readLog.join("\n")
+    );
+    return;
+  }
+
+  const zipBlob = Utilities.zip(
+    createdFiles.map(f => f.getBlob().setName(f.getName())),
+    "PDF一括_" + Utilities.formatDate(new Date(), "Asia/Tokyo", "yyyyMMdd_HHmmss") + ".zip"
+  );
+
+  const zipFile = tempFolder.createFile(zipBlob);
+
+  showDownloadDialog_(zipFile, createdFiles, notFound, readLog);
+}
+
+// =============================
+// プルダウン解析（①②③ / 1,2,3 / 「のみ」/ 「①、②」など全部対応）
+// =============================
+function parseDropdown(val) {
+  if (!val) return [];
+
+  // ①②③が含まれていれば優先
+  const circled = (val.match(/[①②③]/g) || []);
+  if (circled.length) return [...new Set(circled)];
+
+  // 数字 1/2/3 が含まれていれば拾う（"1のみ" や "1,2" など）
+  const nums = (val.match(/[123]/g) || []);
+  return [...new Set(nums)];
+}
+
+// =============================
+// PRINT名生成（suffixが①でも1でもOK）
+// 例：請求書 + "①" → PRINT_請求書1
+//     請求書 + "1"  → PRINT_請求書1
+// =============================
+function buildPrintName(base, suffix) {
+  if (!suffix) return "PRINT_" + base;
+
+  const map = { "①": "1", "②": "2", "③": "3", "1": "1", "2": "2", "3": "3" };
+  return "PRINT_" + base + (map[suffix] || suffix);
+}
+
+// =============================
+// PDF URL生成（A4縦・ページに合わせる）
+// =============================
+function buildPdfUrl_(ssid, gid) {
+  const base = "https://docs.google.com/spreadsheets/d/" + ssid + "/export?";
+  const params = {
+    format: "pdf",
+    gid: gid,
+    portrait: true,
+    size: "A4",
+    scale: 4,          // ページに合わせる
+    fitw: true,
+    gridlines: false,
+    sheetnames: false,
+    printtitle: false,
+    pagenumbers: false,
+    fzr: false,
+    top_margin: 0.3,
+    bottom_margin: 0.3,
+    left_margin: 0.3,
+    right_margin: 0.3
+  };
+
+  return base + Object.keys(params).map(k => k + "=" + params[k]).join("&");
+}
+
+function makeFileName_(base, suffix) {
+  const time = Utilities.formatDate(new Date(), "Asia/Tokyo", "yyyyMMdd_HHmmss");
+  return suffix ? ${base}${suffix}_${time}.pdf : `${base}_${time}.pdf`;
+}
+
+function getFetchOption_() {
+  return { headers: { Authorization: "Bearer " + ScriptApp.getOAuthToken() } };
+}
+
+function getOrCreateFolder_(name) {
+  const folders = DriveApp.getFoldersByName(name);
+  if (folders.hasNext()) return folders.next();
+  return DriveApp.createFolder(name);
+}
+
+// =============================
+function showDownloadDialog_(zipFile, files, notFound, readLog) {
+  const esc = s => String(s)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;").replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+
+  let html = `
+    <div style="font-family: Arial, sans-serif; line-height:1.5;">
+      <h3>PDFダウンロード（ZIP一括）</h3>
+      <p>作成完了：${files.length}件</p>
+      <div style="margin:10px 0;">
+        <a href="${esc(zipFile.getDownloadUrl())}" target="_blank">
+          <button style="font-size:16px;padding:10px 20px;">ZIPダウンロード</button>
+        </a>
+      </div>
+  `;
+
+  if (notFound.length) {
+    html += `<hr><b>名前付き範囲が無い:</b><br>${esc(notFound.join("\n")).replace(/\n/g,"<br>")}`;
+  }
+
+  html += `<details style="margin-top:12px;"><summary>読み取ったセル（確認用）</summary>
+            <pre style="background:#f7f7f7;padding:8px;border-radius:6px;">${esc(readLog.join("\n"))}</pre></details>`;
+
+  html += `</div>`;
+
+  SpreadsheetApp.getUi().showModalDialog(
+    HtmlService.createHtmlOutput(html).setWidth(520).setHeight(420),
+    "PDFダウンロード"
+  );
+}
