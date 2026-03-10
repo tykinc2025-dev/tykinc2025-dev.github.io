@@ -550,10 +550,7 @@ footer a{color:#ccc}
         <p class="form-note">下記フォームにご入力ください。原則1営業日以内にご返信いたします。</p>
 
         <div class="form-card">
-          <form id="contactForm"
-                action="https://script.google.com/macros/s/AKfycbx6owWRgXOiIp-Zz-p_e57h76E7nRiTJgwWVnaO2yUpWNM_G2c5v3leIVkZyAVGdsK7vQ/exec"
-                method="post"
-                accept-charset="utf-8">
+          <form id="contactForm" accept-charset="utf-8">
 
             <div class="form-grid">
               <div class="field full">
@@ -597,7 +594,8 @@ footer a{color:#ccc}
                   送信する <span class="chev">›</span>
                 </button>
               </div>
-
+　　　　　　　　 <div id="submitMessage" style="margin-top:16px; font-weight:900; text-align:center;"></div>
+              
               <div class="note" style="margin-top:16px;">© DXアカデミー株式会社</div>
             </div>
           </form>
@@ -630,9 +628,14 @@ footer a{color:#ccc}
 </footer>
 
 <script>
+const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbx6owWRgXOiIp-Zz-p_e57h76E7nRiTJgwWVnaO2yUpWNM_G2c5v3leIVkZyAVGdsK7vQ/exec';
+
 const replyMethod = document.getElementById('reply_method');
 const contact = document.getElementById('contact');
 const contactOptBadge = document.getElementById('contactOptBadge');
+const form = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
+const submitMessage = document.getElementById('submitMessage');
 
 const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 const isPhone = (v) => {
@@ -663,41 +666,69 @@ function syncContactUI(){
 replyMethod.addEventListener('change', syncContactUI);
 syncContactUI();
 
-document.getElementById('contactForm').addEventListener('submit', function(e){
+function showMessage(text, color){
+  submitMessage.textContent = text;
+  submitMessage.style.color = color;
+}
+
+form.addEventListener('submit', async function(e){
+  e.preventDefault();
+
+  showMessage('', '');
+
   const method = replyMethod.value;
   const v = (contact.value || '').trim();
 
   if(method === '電話'){
     if(!v){
-      alert('連絡方法が「電話」のため、連絡先（電話番号）の入力が必要です。');
+      showMessage('連絡方法が「電話」のため、連絡先（電話番号）の入力が必要です。', '#e03a3a');
       contact.focus();
-      e.preventDefault();
       return;
     }
     if(!isPhone(v)){
-      alert('電話番号の形式をご確認ください（数字10〜11桁目安）。');
+      showMessage('電話番号の形式をご確認ください。', '#e03a3a');
       contact.focus();
-      e.preventDefault();
       return;
     }
   }
 
   if(method === 'メール'){
     if(!v){
-      alert('連絡方法が「メール」のため、連絡先（メールアドレス）の入力が必要です。');
+      showMessage('連絡方法が「メール」のため、連絡先（メールアドレス）の入力が必要です。', '#e03a3a');
       contact.focus();
-      e.preventDefault();
       return;
     }
     if(!isEmail(v)){
-      alert('メールアドレスの形式をご確認ください。');
+      showMessage('メールアドレスの形式をご確認ください。', '#e03a3a');
       contact.focus();
-      e.preventDefault();
       return;
     }
   }
+
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '送信中...';
+
+  try {
+    const formData = new FormData(form);
+    formData.append('user_agent', navigator.userAgent);
+
+    await fetch(GAS_WEB_APP_URL, {
+      method: 'POST',
+      body: formData,
+      mode: 'no-cors'
+    });
+
+    showMessage('送信が完了いたしました。', '#1b8fb8');
+    form.reset();
+    syncContactUI();
+
+  } catch (error) {
+    showMessage('送信に失敗しました。時間をおいて再度お試しください。', '#e03a3a');
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = '送信する <span class="chev">›</span>';
+  }
 });
 </script>
-
 </body>
 </html>
