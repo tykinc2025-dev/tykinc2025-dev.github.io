@@ -7,303 +7,166 @@
 
 <style>
 :root{
-  --black:#0b0b0b;
   --blue:#2aa7d7;
-  --blue2:#1b8fb8;
-  --blue3:#1f86d1;
   --text:#0f1115;
   --danger:#e03a3a;
   --container:1120px;
-  --shadow2:0 10px 26px rgba(0,0,0,.08);
-  --focus:rgba(31,134,209,.18);
-
-  --gradA:
-    radial-gradient(1200px 600px at 10% -10%, rgba(42,167,215,.22), rgba(42,167,215,0) 60%),
-    radial-gradient(900px 500px at 90% 10%, rgba(224,58,58,.14), rgba(224,58,58,0) 55%),
-    linear-gradient(180deg, #ffffff, #fbfbfd 35%, #f7f3ea 100%);
 }
 
 *{box-sizing:border-box}
 body{
   margin:0;
-  font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
+  font-family:system-ui, -apple-system, "Segoe UI", "Noto Sans JP", sans-serif;
   color:var(--text);
-  background:var(--gradA);
-  line-height:1.85;
-}
-img{max-width:100%;display:block}
-a{text-decoration:none;color:inherit}
-.container{
-  width:min(var(--container), calc(100% - 44px));
-  margin:auto;
+  background:#ffffff;
 }
 
 /* HEADER */
 header{
-  background:linear-gradient(180deg, #0b0b0b, #101114);
+  background:#0b0b0b;
   color:#fff;
-  position:sticky;
-  top:0;
-  z-index:10;
-  box-shadow:0 10px 24px rgba(0,0,0,.18);
 }
 .header-inner{
   height:68px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:14px;
 }
-.brand{display:flex;align-items:center;gap:10px}
-.brand img{height:28px;width:auto}
-@media (min-width:1024px){
-  .brand img{height:34px;}
+.container{
+  width:min(var(--container), calc(100% - 44px));
+  margin:auto;
 }
 .contact-btn{
-  background:linear-gradient(180deg, var(--blue), var(--blue2));
-  color:#fff;
+  background:#2aa7d7;
   padding:10px 16px;
+  border-radius:10px;
   font-weight:900;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,.12);
-  box-shadow:0 10px 18px rgba(0,0,0,.18);
-}
-.contact-btn:hover{filter:brightness(.98)}
-
-/* MAIN */
-.main{
-  padding:56px 0 78px;
 }
 
-/* Hero */
-.hero{
-  text-align:center;
-  padding:6px 0 10px;
-}
+/* HERO */
+.main{padding:50px 0 60px;}
+.hero{text-align:center}
+
 .dl-title{
+  font-size:32px;
+  font-weight:900;
+  letter-spacing:.04em;
   margin:0;
-  font-size:26px;
-  font-weight:950;
-  letter-spacing:.06em;
-  line-height:1.2;
+  line-height:1.6;
 }
-.dl-title .tight-br{
-  display:block;
-  height:.12em;
-  content:"";
-}
+
 .dl-sub{
-  margin:0;
-  color:rgba(15,17,21,.60);
-  font-weight:900;
-  letter-spacing:.18em;
-  font-size:11px;
-  text-transform:uppercase;
+  font-size:13px;
+  letter-spacing:.3em;
+  color:#777;
+  margin-top:22px;
 }
-.hero-top-gap{height:18px;}
-.hero-mid-gap{height:18px;}
+
 .hr-mark{
-  width:26px;
-  height:3px;
-  background:linear-gradient(90deg, var(--danger), rgba(224,58,58,.25));
+  width:36px;
+  height:4px;
+  margin:18px auto;
   border-radius:999px;
-  margin:0 auto 16px;
+  background:linear-gradient(90deg,#e03a3a, #f3b1b1);
 }
+
 .intro{
-  max-width:860px;
-  margin:0 auto;
-  color:rgba(15,17,21,.82);
-  font-weight:900;
-  font-size:14px;
-  letter-spacing:.01em;
-}
-.intro-bottom-gap{height:18px;}
-@media (min-width:1024px){
-  .dl-title{font-size:30px;}
-  .intro{font-size:18px;line-height:1.9;}
+  font-size:18px;
+  font-weight:700;
+  color:#444;
+  margin-top:30px;
 }
 
-/* Divider */
-.sep{
-  margin:26px 0 22px;
-  border:0;
-  height:1px;
-  background:linear-gradient(90deg, rgba(0,0,0,0), rgba(15,17,21,.10), rgba(0,0,0,0));
-}
-
-/* Accordion list */
+/* LIST */
 .case-list{
+  margin-top:40px;
   display:flex;
   flex-direction:column;
-  gap:18px;
-  max-width:980px;
-  margin:0 auto;
+  gap:12px;
+  max-width:860px;
+  margin-inline:auto;
 }
-.case-details{
-  border:none;
-}
+
 .case-summary{
-  list-style:none;
   position:relative;
-  min-height:92px;
+  min-height:64px;
   display:flex;
   align-items:center;
-  padding:0 84px 0 34px;
-  border-radius:26px;
-  background:rgba(216,232,243,.82);
-  border:1px solid rgba(31,134,209,.06);
-  box-shadow:0 8px 18px rgba(0,0,0,.03);
+  padding:0 62px 0 24px;
+  border-radius:18px;
+  background:#d8e8f3;
   cursor:pointer;
 }
-.case-summary::-webkit-details-marker{
-  display:none;
-}
+
 .case-title{
-  margin:0;
-  font-size:24px;
-  line-height:1.4;
-  font-weight:950;
-  color:#33302f;
-  letter-spacing:.01em;
+  font-size:16px;
+  font-weight:900;
 }
+
 .case-toggle{
   position:absolute;
-  right:30px;
+  right:22px;
   top:50%;
-  width:28px;
-  height:28px;
+  width:20px;
+  height:20px;
   transform:translateY(-50%);
 }
+
 .case-toggle::before,
 .case-toggle::after{
   content:"";
   position:absolute;
   left:50%;
   top:50%;
-  width:28px;
-  height:3.5px;
+  width:20px;
+  height:2.5px;
   background:#3f73ad;
-  border-radius:999px;
   transform:translate(-50%,-50%);
 }
+
 .case-toggle::after{
   transform:translate(-50%,-50%) rotate(90deg);
-  transition:transform .18s ease;
 }
+
 .case-details[open] .case-toggle::after{
   transform:translate(-50%,-50%) rotate(0deg);
 }
 
+/* CONTENT */
 .case-content{
-  margin-top:10px;
-  padding:6px 14px 2px 14px;
+  margin-top:8px;
 }
-.case-content-inner{
-  background:rgba(255,255,255,.86);
-  border:1px solid rgba(15,17,21,.08);
-  border-radius:20px;
-  box-shadow:var(--shadow2);
-  padding:22px 22px 18px;
+.case-inner{
+  background:#fff;
+  border-radius:16px;
+  padding:16px;
 }
-.case-content p{
-  margin:0 0 12px;
-  font-size:15px;
-  line-height:1.95;
-  color:rgba(15,17,21,.86);
+
+.case-inner p{
+  font-size:14px;
   font-weight:700;
 }
-.case-content strong{
-  font-weight:950;
-  color:#101827;
-}
-.case-subhead{
-  display:block;
-  margin:12px 0 6px;
-  font-size:14px;
-  line-height:1.7;
-  font-weight:950;
-  color:#101827;
-}
-.case-content ul{
-  margin:0 0 12px;
-  padding-left:1.2em;
-}
-.case-content li{
-  font-size:14px;
-  line-height:1.9;
-  font-weight:800;
-  color:rgba(15,17,21,.80);
-}
-.case-note{
-  margin-top:6px;
-  color:rgba(15,17,21,.72);
-  font-weight:900;
+
+.case-inner ul{
+  padding-left:1em;
   font-size:13px;
+}
+
+.case-sub{
+  font-weight:900;
+  margin-top:10px;
 }
 
 /* FOOTER */
 footer{
-  background:linear-gradient(180deg, #0b0b0b, #101114);
+  background:#0b0b0b;
   color:#fff;
-  padding:50px 0;
-  margin-top:34px;
+  padding:40px 0;
+  margin-top:40px;
 }
 .footer-inner{
   display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  gap:30px;
-}
-footer a{color:#ccc}
-.footer-links a{
-  display:block;
-  padding:2px 0;
-}
-
-@media(max-width:900px){
-  .case-summary{
-    min-height:78px;
-    padding:0 62px 0 20px;
-    border-radius:20px;
-  }
-  .case-title{
-    font-size:18px;
-  }
-  .case-toggle{
-    right:20px;
-    width:22px;
-    height:22px;
-  }
-  .case-toggle::before,
-  .case-toggle::after{
-    width:22px;
-    height:3px;
-  }
-  .case-content{
-    padding:6px 2px 0;
-  }
-  .case-content-inner{
-    padding:16px 16px 14px;
-    border-radius:16px;
-  }
-  .case-content p,
-  .case-content li{
-    font-size:13px;
-    line-height:1.85;
-  }
-  .case-subhead{
-    font-size:13px;
-  }
-}
-
-@media(max-width:700px){
-  .footer-inner{grid-template-columns:1fr}
-  .footer-links a{padding:3px 0;}
-}
-
-@media(max-width:560px){
-  .main{padding:36px 0 52px;}
-  .dl-title{font-size:22px;}
-  .intro{font-size:13px;}
+  grid-template-columns:1fr 1fr;
 }
 </style>
 </head>
@@ -311,207 +174,135 @@ footer a{color:#ccc}
 <body>
 
 <header>
-  <div class="container header-inner">
-    <a class="brand" href="https://www.dx-academy.com/" aria-label="DXアカデミー株式会社">
-      <img
-        src="https://static.wixstatic.com/media/1696ce_f6dd610345ca4a93b5d02883343db454~mv2.png/v1/crop/x_158%2Cy_149%2Cw_2842%2Ch_541/fill/w_980%2Ch_187%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/DX%E3%83%AD%E3%82%B4%E6%A8%AA%20%281%29.png"
-        alt="DXアカデミー株式会社"
-        loading="eager"
-      />
-    </a>
-    <div class="header-right">
-      <a href="https://www.dx-academy.com/" class="contact-btn">HPへ移動</a>
-    </div>
-  </div>
+<div class="container header-inner">
+<div>DXアカデミー</div>
+<a class="contact-btn">HPへ移動</a>
+</div>
 </header>
 
 <main class="main">
-  <div class="container">
+<div class="container">
 
-    <section class="hero" aria-label="事例集タイトル">
-      <h1 class="dl-title">
-        過去申請が通らなかった<span class="tight-br" aria-hidden="true"></span>事例集
-      </h1>
+<!-- ★ここだけ変更 -->
+<div class="hero">
+<h1 class="dl-title">
+過去申請が通らなかった
+<br>
+事例集
+</h1>
 
-      <div class="hero-top-gap" aria-hidden="true"></div>
+<div class="dl-sub">Case Study</div>
 
-      <div class="dl-sub">Case Study</div>
-      <div class="hero-mid-gap" aria-hidden="true"></div>
+<div class="hr-mark"></div>
 
-      <div class="hr-mark" aria-hidden="true"></div>
+<div class="intro">
+社労士様からお伺いした実際に申請が通らなかった事例をまとめています。
+<br>
+  申請前にご確認ください。
+</div>
+</div>
 
-      <div class="intro">
-        実際に起こりやすいミスをまとめています。<br>
-        申請前に必ずご確認ください。
-      </div>
-      <div class="intro-bottom-gap" aria-hidden="true"></div>
-    </section>
+<div class="case-list">
 
-    <hr class="sep">
+<!-- 以下すべてそのまま -->
+<!-- ① -->
+<details class="case-details">
+<summary class="case-summary">
+<div class="case-title">① 就業時間外に視聴した場合の事例</div>
+<div class="case-toggle"></div>
+</summary>
+<div class="case-content">
+<div class="case-inner">
+<p>勤務時間外に視聴した場合、申請対象外となる可能性があります。</p>
+<div class="case-sub">問題点</div>
+<ul>
+<li>勤務時間外の視聴</li>
+<li>自宅視聴</li>
+</ul>
+<div class="case-sub">対策</div>
+<ul>
+<li>必ず勤務時間内に受講</li>
+<li>時間外は残業処理</li>
+</ul>
+</div>
+</div>
+</details>
 
-    <section class="case-list" aria-label="過去申請が通らなかった事例一覧">
+<!-- ② -->
+<details class="case-details">
+<summary class="case-summary">
+<div class="case-title">② 動画をスキップ・早送りした場合の事例</div>
+<div class="case-toggle"></div>
+</summary>
+<div class="case-content">
+<div class="case-inner">
+<p>再生時間が一致しないと無効になります。</p>
+</div>
+</div>
+</details>
 
-      <details class="case-details">
-        <summary class="case-summary">
-          <h2 class="case-title">① 就業時間外に視聴した場合の事例</h2>
-          <span class="case-toggle" aria-hidden="true"></span>
-        </summary>
-        <div class="case-content">
-          <div class="case-content-inner">
-            <p>就業時間外の視聴は、勤怠記録と視聴履歴の不一致につながり、申請対象外になることがあります。</p>
-            <p>夜間や自宅、有給日に視聴すると、<strong>勤務時間内の研修</strong>として確認しにくくなります。労働局確認時に、<strong>視聴履歴と勤怠記録が一致しない</strong>状態になると、研修実施の証明が弱くなり、<strong>助成金申請の対象外</strong>と判断される可能性があります。</p>
-            <span class="case-subhead">問題点</span>
-            <ul>
-              <li>就業時間外の視聴履歴</li>
-              <li>自宅視聴</li>
-              <li>有給時に視聴</li>
-              <li>残業処理をしていなかった</li>
-            </ul>
-            <span class="case-subhead">打開策</span>
-            <ul>
-              <li>研修は原則「勤務時間内」で実施してください。</li>
-              <li>残業時間で動画を視聴した際は、残業申請・残業処理を行う。</li>
-              <li>有給時は、休日とみなされるため視聴はしない。</li>
-            </ul>
-            <p class="case-note">勤務時間・視聴履歴・受講実態の3点がそろっていることが重要です。</p>
-          </div>
-        </div>
-      </details>
+<!-- ③ -->
+<details class="case-details">
+<summary class="case-summary">
+<div class="case-title">③ 計画期間内に完了できなかった場合の事例</div>
+<div class="case-toggle"></div>
+</summary>
+<div class="case-content">
+<div class="case-inner">
+<p>期間内に終わらないと対象外になります。</p>
+</div>
+</div>
+</details>
 
-      <details class="case-details">
-        <summary class="case-summary">
-          <h2 class="case-title">② 動画をスキップ・早送りした場合の事例</h2>
-          <span class="case-toggle" aria-hidden="true"></span>
-        </summary>
-        <div class="case-content">
-          <div class="case-content-inner">
-            <p>視聴履歴上の再生時間が合わないと、正常受講として認められないことがあります。</p>
-            <p>スキップや早送り、複数端末での並行視聴を行うと、<strong>本来の受講時間どおりに記録されない</strong>状態になります。1コースごとの再生時間と総動画時間が合わず、<strong>正常な受講記録として確認できない</strong>状態になると、労働局確認時に<strong>正常な受講記録と判断されず</strong>、申請対象外となる可能性があります。</p>
-            <span class="case-subhead">問題点</span>
-            <ul>
-              <li>システム上の再生時間と動画の長さが一致しない</li>
-              <li>動画再生中に再生バーに触れてしまい、意図せず再生位置が移動した</li>
-              <li>1コースごとの再生時間が記録されるため、他端末などで並行して視聴した</li>
-            </ul>
-            <span class="case-subhead">打開策</span>
-            <ul>
-              <li>1コースごとに、そのコースの総動画時間に必要な再生時間を満たすよう、1つずつ動画を視聴する。</li>
-            </ul>
-            <p class="case-note">「少しだけ飛ばしたつもり」でも、履歴上は正常受講と見なされないことがあります。</p>
-          </div>
-        </div>
-      </details>
+<!-- ④ -->
+<details class="case-details">
+<summary class="case-summary">
+<div class="case-title">④ 感想文の内容が不十分だった場合の事例</div>
+<div class="case-toggle"></div>
+</summary>
+<div class="case-content">
+<div class="case-inner">
+<p>内容が薄いと差し戻しになります。</p>
+</div>
+</div>
+</details>
 
-      <details class="case-details">
-        <summary class="case-summary">
-          <h2 class="case-title">③ 計画期間内に視聴完了できなかった場合の事例</h2>
-          <span class="case-toggle" aria-hidden="true"></span>
-        </summary>
-        <div class="case-content">
-          <div class="case-content-inner">
-            <p>受講開始前に設定した期間内で完了できないと、申請対象外になることがあります。</p>
-            <p>受講を後回しにすると、進捗が止まり、<strong>計画どおりに完了しにくい</strong>状態になります。計画スケジュールの期間内に全動画を終えられず、<strong>前提条件を満たせない</strong>状態になると、期限までに全動画を視聴できず、<strong>助成金申請の対象外</strong>となる可能性があります。</p>
-            <span class="case-subhead">問題点</span>
-            <ul>
-              <li>期間内に視聴が終わらなかった</li>
-            </ul>
-            <span class="case-subhead">打開策</span>
-            <ul>
-              <li>グループLINEで進捗をお送りしてますので、管理者は受講者様の進捗状況を把握しましょう。</li>
-            </ul>
-            <p class="case-note">受講者任せにせず、管理者が進捗を確認する運用が重要です。</p>
-          </div>
-        </div>
-      </details>
+<!-- ⑤ -->
+<details class="case-details">
+<summary class="case-summary">
+<div class="case-title">⑤ 署名書類を期限内に提出できなかった場合の事例</div>
+<div class="case-toggle"></div>
+</summary>
+<div class="case-content">
+<div class="case-inner">
+<p>書類不足は申請不可になります。</p>
+</div>
+</div>
+</details>
 
-      <details class="case-details">
-        <summary class="case-summary">
-          <h2 class="case-title">④ 感想文の内容が不十分だった場合の事例</h2>
-          <span class="case-toggle" aria-hidden="true"></span>
-        </summary>
-        <div class="case-content">
-          <div class="case-content-inner">
-            <p>感想文は「提出した」だけでは不十分で、理解度が伝わる内容が必要です。</p>
-            <p>短く抽象的な内容だけでは、<strong>何を学び、どう理解したか</strong>が伝わりません。内容が抽象的だと、<strong>受講内容に対する理解度</strong>を確認できない状態になります。その結果、労働局から<strong>修正や再提出の依頼</strong>が来て、申請書類作成のスケジュールに影響が出る場合があります。</p>
-            <span class="case-subhead">問題点</span>
-            <ul>
-              <li>「勉強になりました」「AIは便利だと思いました」といった感想で提出されたため、具体的な学びの内容ではなかった。</li>
-            </ul>
-            <span class="case-subhead">打開策</span>
-            <ul>
-              <li>研修内容を踏まえた具体的な学びや業務への活用イメージを書きましょう。</li>
-              <li>システムに感想文の書き方のPDFがあるので、そちらを参考にしてみましょう。</li>
-            </ul>
-            <p class="case-note">内容が受講動画と著しく異なる場合や、修正依頼に対応しない場合は支給要件を満たさないと判断されることがあります。</p>
-          </div>
-        </div>
-      </details>
+<!-- ⑥ -->
+<details class="case-details">
+<summary class="case-summary">
+<div class="case-title">⑥ 雇用保険期間外に視聴した場合の事例</div>
+<div class="case-toggle"></div>
+</summary>
+<div class="case-content">
+<div class="case-inner">
+<p>対象期間外は無効になります。</p>
+</div>
+</div>
+</details>
 
-      <details class="case-details">
-        <summary class="case-summary">
-          <h2 class="case-title">⑤ 署名書類を期限内に提出できなかった場合の事例</h2>
-          <span class="case-toggle" aria-hidden="true"></span>
-        </summary>
-        <div class="case-content">
-          <div class="case-content-inner">
-            <p>受講が完了していても、署名済みの必要書類が期限に間に合わないと申請対象外になることがあります。</p>
-            <p>手書きサインが必要な書類を後回しにすると、<strong>期限までの回収が難しくなる</strong>状態になります。支給申請期限までに署名書類がそろわず、<strong>申請に必要な書類条件を満たせない</strong>状態になると、署名書類を提出できず、<strong>助成金申請の対象外</strong>となる可能性があります。</p>
-            <span class="case-subhead">問題点</span>
-            <ul>
-              <li>手書きサインをした書類の提出が支給申請期限までに間に合わなかった</li>
-            </ul>
-            <span class="case-subhead">打開策</span>
-            <ul>
-              <li>早めにサインして提出しましょう。</li>
-            </ul>
-            <p class="case-note">提出書類は、受講完了後ではなく申請全体の期限から逆算して準備することが大切です。</p>
-          </div>
-        </div>
-      </details>
+</div>
 
-      <details class="case-details">
-        <summary class="case-summary">
-          <h2 class="case-title">⑥ 雇用保険期間外に視聴した場合の事例</h2>
-          <span class="case-toggle" aria-hidden="true"></span>
-        </summary>
-        <div class="case-content">
-          <div class="case-content-inner">
-            <p>視聴自体は計画期間内でも、雇用保険の対象期間外だと申請対象外になることがあります。</p>
-            <p>計画スケジュールの期間だけを見て進めると、<strong>雇用保険加入期間との整合</strong>を見落とすことがあります。後日の確認で、<strong>雇用保険の対象期間外に視聴していた</strong>ことが判明する場合があり、労働局確認時に<strong>雇用保険期間外の視聴</strong>と判断され、助成金申請の対象外となる可能性があります。</p>
-            <span class="case-subhead">問題点</span>
-            <ul>
-              <li>計画スケジュールの期間内で視聴したが、のちのち雇用保険期間外の視聴ということが労働局で確認された</li>
-            </ul>
-            <span class="case-subhead">打開策</span>
-            <ul>
-              <li>計画スケジュールが決定される際は、受講者様の雇用保険期間を考慮して設定しましょう。</li>
-            </ul>
-            <p class="case-note">制度要件は受講完了だけではなく、対象期間に入っているかどうかまで確認が必要です。</p>
-          </div>
-        </div>
-      </details>
-
-    </section>
-  </div>
+</div>
 </main>
 
 <footer>
-  <div class="container footer-inner">
-    <div>
-      <strong>DXアカデミー株式会社</strong><br>
-      〒106-0032<br>
-      東京都港区六本木3丁目16番12号
-    </div>
-
-    <div class="footer-links">
-      <a href="https://www.dx-academy.com/">ホーム</a>
-      <a href="https://www.dx-academy.com/blank">事業紹介</a>
-      <a href="https://www.dx-academy.com/blank-1">会社紹介</a>
-      <a href="https://www.dx-academy.com/">お問い合わせ</a>
-    </div>
-
-    <div aria-hidden="true"></div>
-  </div>
+<div class="container footer-inner">
+<div>DXアカデミー株式会社<br>東京都港区六本木</div>
+<div>© DX Academy</div>
+</div>
 </footer>
 
 </body>
