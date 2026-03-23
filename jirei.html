@@ -3,274 +3,431 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>助成金申請が落とされた事例集</title>
+<title>過去申請が通らなかった事例集</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-
 body{
-margin:0;
-font-family:"Noto Sans JP",sans-serif;
-background:#f5f7fb;
-color:#222;
-line-height:1.6;
+  margin:0;
+  font-family:"Inter","Noto Sans JP",sans-serif;
+  background:#f5f7fb;
+  color:#222;
+  line-height:1.6;
 }
 
 .container{
-width:min(1100px,92%);
-margin:auto;
+  width:min(1100px,92%);
+  margin:auto;
 }
 
+/* ===== 元のヘッダーに戻す ===== */
 header{
-background:#0b0b0b;
-color:#fff;
-padding:18px 0;
+  background:#0b0b0b;
+  color:#fff;
+  padding:18px 0;
 }
 
 header .container{
-display:flex;
-justify-content:space-between;
-align-items:center;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
 .hpbtn{
-background:#1fa0d8;
-color:#fff;
-padding:8px 16px;
-border-radius:8px;
-font-weight:700;
+  background:#1fa0d8;
+  color:#fff;
+  padding:8px 16px;
+  border-radius:8px;
+  font-weight:700;
+  text-decoration:none;
 }
 
-.hero{
-text-align:center;
-padding:50px 0 20px;
+/* ===== タイトルだけ新デザイン ===== */
+.hero-title-wrap{
+  background:#fff;
+  padding:56px 0 38px;
+  text-align:center;
 }
 
-.hero h1{
-font-size:28px;
-margin-bottom:10px;
+.hero-label{
+  display:block;
+  margin:0 0 14px;
+  color:#6f8095;
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
 }
 
-.hero p{
-color:#666;
-font-size:14px;
+.hero-main-title{
+  margin:0;
+  font-size:clamp(34px,5.4vw,72px);
+  line-height:1.18;
+  font-weight:900;
+  letter-spacing:.01em;
+  color:#2f2a27;
 }
 
-.case-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:12px;
-margin-top:25px;
+.hero-sub{
+  margin:16px 0 0;
+  color:#666;
+  font-size:14px;
+  line-height:1.8;
+}
+
+/* ===== アコーディオン一覧 ===== */
+.main{
+  padding:40px 0 70px;
+}
+
+.case-list{
+  width:min(100%,980px);
+  margin:0 auto;
+}
+
+.case-item + .case-item{
+  margin-top:20px;
+}
+
+.case-details{
+  border:none;
+  margin:0;
+  padding:0;
+}
+
+.case-summary{
+  list-style:none;
+  position:relative;
+  display:flex;
+  align-items:center;
+  min-height:80px;
+  background:#e6f1f8;
+  border-radius:20px;
+  padding:0 78px 0 28px;
+  cursor:pointer;
+}
+
+.case-summary::-webkit-details-marker{
+  display:none;
+}
+
+.case-title{
+  margin:0;
+  font-size:22px;
+  line-height:1.45;
+  font-weight:900;
+  color:#3a3431;
+  letter-spacing:.01em;
+}
+
+.case-toggle{
+  position:absolute;
+  right:28px;
+  top:50%;
+  width:22px;
+  height:22px;
+  transform:translateY(-50%);
+}
+
+.case-toggle::before,
+.case-toggle::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:22px;
+  height:3px;
+  background:#3f73ad;
+  border-radius:999px;
+  transform:translate(-50%,-50%);
+}
+
+.case-toggle::after{
+  transform:translate(-50%,-50%) rotate(90deg);
+  transition:transform .2s ease;
+}
+
+.case-details[open] .case-toggle::after{
+  transform:translate(-50%,-50%) rotate(0deg);
+}
+
+.case-content{
+  background:#fff;
+  padding:20px 28px 6px;
+  border-radius:0 0 18px 18px;
+}
+
+.case-content p{
+  margin:0 0 12px;
+  font-size:16px;
+  line-height:1.95;
+}
+
+.case-content strong{
+  font-weight:900;
+}
+
+.case-subhead{
+  display:block;
+  margin:12px 0 4px;
+  font-size:16px;
+  line-height:1.8;
+  font-weight:900;
+}
+
+.case-content ul{
+  margin:0 0 12px;
+  padding-left:1.2em;
+}
+
+.case-content li{
+  font-size:16px;
+  line-height:1.95;
+}
+
+.case-note{
+  font-weight:700;
+}
+
+/* ===== 元のフッターに戻す ===== */
+footer{
+  background:#0b0b0b;
+  color:#fff;
+  padding:40px 0;
+  margin-top:40px;
 }
 
 @media(max-width:800px){
-.case-grid{grid-template-columns:1fr}
-}
+  .hero-title-wrap{
+    padding:42px 0 28px;
+  }
 
-.case-btn{
-background:white;
-border-radius:14px;
-padding:16px;
-border:1px solid #e3e6ec;
-cursor:pointer;
-display:flex;
-gap:12px;
-align-items:center;
-}
+  .hero-label{
+    font-size:12px;
+    margin-bottom:10px;
+  }
 
-.case-btn:hover{
-box-shadow:0 6px 20px rgba(0,0,0,.08);
-}
+  .hero-sub{
+    font-size:13px;
+  }
 
-.num{
-width:34px;
-height:34px;
-border-radius:10px;
-background:#e8f3fb;
-display:flex;
-align-items:center;
-justify-content:center;
-font-weight:800;
-}
+  .case-list{
+    width:100%;
+  }
 
-.title{
-font-weight:700;
-font-size:14px;
-}
+  .case-item + .case-item{
+    margin-top:16px;
+  }
 
-.section{
-margin-top:40px;
-background:#eaf1f8;
-padding:30px;
-border-radius:18px;
-}
+  .case-summary{
+    min-height:68px;
+    padding:0 56px 0 18px;
+    border-radius:16px;
+  }
 
-.card{
-background:white;
-padding:22px;
-border-radius:16px;
-margin-bottom:20px;
-box-shadow:0 5px 16px rgba(0,0,0,.05);
-}
+  .case-title{
+    font-size:17px;
+  }
 
-.card h3{
-margin:0 0 10px;
-font-size:16px;
-}
+  .case-toggle{
+    right:18px;
+    width:18px;
+    height:18px;
+  }
 
-.bad{
-background:#fdeeee;
-border-radius:12px;
-padding:12px;
-margin-top:10px;
-font-size:13px;
-}
+  .case-toggle::before,
+  .case-toggle::after{
+    width:18px;
+    height:2.5px;
+  }
 
-.tip{
-background:#f4f4f4;
-border-radius:12px;
-padding:12px;
-margin-top:10px;
-font-size:13px;
-}
+  .case-content{
+    padding:16px 18px 4px;
+  }
 
-footer{
-background:#0b0b0b;
-color:#fff;
-padding:40px 0;
-margin-top:40px;
+  .case-content p,
+  .case-content li,
+  .case-subhead{
+    font-size:14px;
+    line-height:1.85;
+  }
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
-<div class="container">
-<div>DXアカデミー</div>
-<a class="hpbtn" href="#">HPへ移動</a>
-</div>
+  <div class="container">
+    <div>DXアカデミー</div>
+    <a class="hpbtn" href="#">HPへ移動</a>
+  </div>
 </header>
 
-<div class="container">
+<section class="hero-title-wrap">
+  <div class="container">
+    <span class="hero-label">CASE STUDY</span>
+    <h1 class="hero-main-title">過去申請が通らなかった事例集</h1>
+    <p class="hero-sub">
+      実際に起こりやすいミスをまとめています。<br>申請前に必ずご確認ください。
+    </p>
+  </div>
+</section>
 
-<div class="hero">
-<h1>助成金申請が落とされた事例集</h1>
-<p>実際に起こりやすいミスをまとめています。<br>申請前に必ずご確認ください。</p>
+<main class="main">
+  <div class="container">
+    <div class="case-list">
 
-<div class="case-grid">
+      <section class="case-item">
+        <details class="case-details">
+          <summary class="case-summary">
+            <h2 class="case-title">就業時間外に視聴した場合の事例</h2>
+            <span class="case-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="case-content">
+            <p>就業時間外の視聴は、勤怠記録と視聴履歴の不一致につながり、申請対象外になることがあります。</p>
+            <p>夜間や自宅、有給日に視聴すると、<strong>勤務時間内の研修</strong>として確認しにくくなります。労働局確認時に、<strong>視聴履歴と勤怠記録が一致しない</strong>状態になると、研修実施の証明が弱くなり、<strong>助成金申請の対象外</strong>と判断される可能性があります。</p>
+            <span class="case-subhead">問題点</span>
+            <ul>
+              <li>就業時間外の視聴履歴</li>
+              <li>自宅視聴</li>
+              <li>有給時に視聴</li>
+              <li>残業処理をしていなかった</li>
+            </ul>
+            <span class="case-subhead">打開策</span>
+            <ul>
+              <li>研修は原則「勤務時間内」で実施してください。</li>
+              <li>残業時間で動画を視聴した際は、残業申請・残業処理を行う。</li>
+              <li>有給時は、休日とみなされるため視聴はしない。</li>
+            </ul>
+            <p class="case-note">勤務時間・視聴履歴・受講実態の3点がそろっていることが重要です。</p>
+          </div>
+        </details>
+      </section>
 
-<div class="case-btn"><div class="num">1</div><div class="title">就業時間外に視聴</div></div>
-<div class="case-btn"><div class="num">2</div><div class="title">残業処理なし</div></div>
-<div class="case-btn"><div class="num">3</div><div class="title">早送り・スキップ</div></div>
-<div class="case-btn"><div class="num">4</div><div class="title">再生バー誤操作</div></div>
-<div class="case-btn"><div class="num">5</div><div class="title">感想文文字数不足</div></div>
-<div class="case-btn"><div class="num">6</div><div class="title">感想文が簡単すぎ</div></div>
+      <section class="case-item">
+        <details class="case-details">
+          <summary class="case-summary">
+            <h2 class="case-title">動画をスキップ・早送りした場合の事例</h2>
+            <span class="case-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="case-content">
+            <p>視聴履歴上の再生時間が合わないと、正常受講として認められないことがあります。</p>
+            <p>スキップや早送り、複数端末での並行視聴を行うと、<strong>本来の受講時間どおりに記録されない</strong>状態になります。1コースごとの再生時間と総動画時間が合わず、<strong>正常な受講記録として確認できない</strong>状態になると、労働局確認時に<strong>正常な受講記録と判断されず</strong>、申請対象外となる可能性があります。</p>
+            <span class="case-subhead">問題点</span>
+            <ul>
+              <li>システム上の再生時間と動画の長さが一致しない</li>
+              <li>動画再生中に再生バーに触れてしまい、意図せず再生位置が移動した</li>
+              <li>1コースごとの再生時間が記録されるため、他端末などで並行して視聴した</li>
+            </ul>
+            <span class="case-subhead">打開策</span>
+            <ul>
+              <li>1コースごとに、そのコースの総動画時間に必要な再生時間を満たすよう、1つずつ動画を視聴する。</li>
+            </ul>
+            <p class="case-note">「少しだけ飛ばしたつもり」でも、履歴上は正常受講と見なされないことがあります。</p>
+          </div>
+        </details>
+      </section>
 
-</div>
-</div>
+      <section class="case-item">
+        <details class="case-details">
+          <summary class="case-summary">
+            <h2 class="case-title">計画期間内に視聴完了できなかった場合の事例</h2>
+            <span class="case-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="case-content">
+            <p>受講開始前に設定した期間内で完了できないと、申請対象外になることがあります。</p>
+            <p>受講を後回しにすると、進捗が止まり、<strong>計画どおりに完了しにくい</strong>状態になります。計画スケジュールの期間内に全動画を終えられず、<strong>前提条件を満たせない</strong>状態になると、期限までに全動画を視聴できず、<strong>助成金申請の対象外</strong>となる可能性があります。</p>
+            <span class="case-subhead">問題点</span>
+            <ul>
+              <li>期間内に視聴が終わらなかった</li>
+            </ul>
+            <span class="case-subhead">打開策</span>
+            <ul>
+              <li>グループLINEで進捗をお送りしてますので、管理者は受講者様の進捗状況を把握しましょう。</li>
+            </ul>
+            <p class="case-note">受講者任せにせず、管理者が進捗を確認する運用が重要です。</p>
+          </div>
+        </details>
+      </section>
 
-<div class="section">
+      <section class="case-item">
+        <details class="case-details">
+          <summary class="case-summary">
+            <h2 class="case-title">感想文の内容が不十分だった場合の事例</h2>
+            <span class="case-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="case-content">
+            <p>感想文は「提出した」だけでは不十分で、理解度が伝わる内容が必要です。</p>
+            <p>短く抽象的な内容だけでは、<strong>何を学び、どう理解したか</strong>が伝わりません。内容が抽象的だと、<strong>受講内容に対する理解度</strong>を確認できない状態になります。その結果、労働局から<strong>修正や再提出の依頼</strong>が来て、申請書類作成のスケジュールに影響が出る場合があります。</p>
+            <span class="case-subhead">問題点</span>
+            <ul>
+              <li>「勉強になりました」「AIは便利だと思いました」といった感想で提出されたため、具体的な学びの内容ではなかった。</li>
+            </ul>
+            <span class="case-subhead">打開策</span>
+            <ul>
+              <li>研修内容を踏まえた具体的な学びや業務への活用イメージを書きましょう。</li>
+              <li>システムに感想文の書き方のPDFがあるので、そちらを参考にしてみましょう。</li>
+            </ul>
+            <p class="case-note">内容が受講動画と著しく異なる場合や、修正依頼に対応しない場合は支給要件を満たさないと判断されることがあります。</p>
+          </div>
+        </details>
+      </section>
 
-<div class="card">
-<h3>① 就業時間外に視聴してしまった</h3>
-動画を夜間に自宅で視聴していたため、勤務時間内の研修と確認できず申請対象外となりました。
+      <section class="case-item">
+        <details class="case-details">
+          <summary class="case-summary">
+            <h2 class="case-title">署名書類を期限内に提出できなかった場合の事例</h2>
+            <span class="case-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="case-content">
+            <p>受講が完了していても、署名済みの必要書類が期限に間に合わないと申請対象外になることがあります。</p>
+            <p>手書きサインが必要な書類を後回しにすると、<strong>期限までの回収が難しくなる</strong>状態になります。支給申請期限までに署名書類がそろわず、<strong>申請に必要な書類条件を満たせない</strong>状態になると、署名書類を提出できず、<strong>助成金申請の対象外</strong>となる可能性があります。</p>
+            <span class="case-subhead">問題点</span>
+            <ul>
+              <li>手書きサインをした書類の提出が支給申請期限までに間に合わなかった</li>
+            </ul>
+            <span class="case-subhead">打開策</span>
+            <ul>
+              <li>早めにサインして提出しましょう。</li>
+            </ul>
+            <p class="case-note">提出書類は、受講完了後ではなく申請全体の期限から逆算して準備することが大切です。</p>
+          </div>
+        </details>
+      </section>
 
-<div class="bad">
-● 問題<br>
-・勤務時間外の視聴履歴<br>
-・自宅視聴
-</div>
+      <section class="case-item">
+        <details class="case-details">
+          <summary class="case-summary">
+            <h2 class="case-title">雇用保険期間外に視聴した場合の事例</h2>
+            <span class="case-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="case-content">
+            <p>視聴自体は計画期間内でも、雇用保険の対象期間外だと申請対象外になることがあります。</p>
+            <p>計画スケジュールの期間だけを見て進めると、<strong>雇用保険加入期間との整合</strong>を見落とすことがあります。後日の確認で、<strong>雇用保険の対象期間外に視聴していた</strong>ことが判明する場合があり、労働局確認時に<strong>雇用保険期間外の視聴</strong>と判断され、助成金申請の対象外となる可能性があります。</p>
+            <span class="case-subhead">問題点</span>
+            <ul>
+              <li>計画スケジュールの期間内で視聴したが、のちのち雇用保険期間外の視聴ということが労働局で確認された</li>
+            </ul>
+            <span class="case-subhead">打開策</span>
+            <ul>
+              <li>計画スケジュールが決定される際は、受講者様の雇用保険期間を考慮して設定しましょう。</li>
+            </ul>
+            <p class="case-note">制度要件は受講完了だけではなく、対象期間に入っているかどうかまで確認が必要です。</p>
+          </div>
+        </details>
+      </section>
 
-<div class="tip">
-注意：研修は原則「勤務時間内」で実施してください。
-</div>
-</div>
-
-<div class="card">
-<h3>② 残業処理をしていなかった</h3>
-就業時間外に会社で視聴しましたが、残業申請がなく勤怠記録と一致しませんでした。
-
-<div class="bad">
-● 問題<br>
-・残業申請なし<br>
-・勤怠と履歴不一致
-</div>
-
-<div class="tip">
-注意：時間外受講の場合は残業処理が必要です。
-</div>
-</div>
-
-<div class="card">
-<h3>③ スキップ・早送りをした</h3>
-動画を途中スキップしたため、視聴時間が一致せず正常受講と認められませんでした。
-
-<div class="bad">
-● 問題<br>
-・再生時間の不一致<br>
-・正常受講記録なし
-</div>
-
-<div class="tip">
-注意：動画は最後まで通常再生してください。
-</div>
-</div>
-
-<div class="card">
-<h3>④ 再生バーを誤操作</h3>
-再生バーを触ってしまい、履歴上スキップ視聴として記録されました。
-
-<div class="bad">
-● 問題<br>
-・途中視聴扱い<br>
-・履歴不整合
-</div>
-
-<div class="tip">
-注意：スマホ操作は誤タップに注意してください。
-</div>
-</div>
-
-<div class="card">
-<h3>⑤ 感想文の文字数不足</h3>
-200文字程度で提出し、350文字以上の条件を満たしていませんでした。
-
-<div class="bad">
-● 問題<br>
-・文字数不足<br>
-・再提出
-</div>
-
-<div class="tip">
-注意：感想文は350文字以上必要です。
-</div>
-</div>
-
-<div class="card">
-<h3>⑥ 感想文が簡単すぎた</h3>
-「勉強になりました」など短い内容のみで理解度が確認できませんでした。
-
-<div class="bad">
-● 問題<br>
-・具体性不足<br>
-・差し戻し
-</div>
-
-<div class="tip">
-注意：学びや業務活用を具体的に書きましょう。
-</div>
-</div>
-
-</div>
-
-</div>
+    </div>
+  </div>
+</main>
 
 <footer>
-<div class="container">
-DXアカデミー株式会社<br>
-東京都港区六本木3丁目16番12号
-</div>
+  <div class="container">
+    DXアカデミー株式会社<br>
+    東京都港区六本木3丁目16番12号
+  </div>
 </footer>
 
 </body>
