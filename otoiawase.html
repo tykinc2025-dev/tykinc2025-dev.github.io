@@ -3,40 +3,32 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DXアカデミー株式会社 | 受講中のお客様専用お問い合わせ</title>
+<title>DXアカデミー株式会社 | 過去申請が通らなかった事例集</title>
 
 <style>
 :root{
   --black:#0b0b0b;
-
   --blue:#2aa7d7;
   --blue2:#1b8fb8;
   --blue3:#1f86d1;
-
   --text:#0f1115;
   --danger:#e03a3a;
-
   --container:1120px;
-  --shadow2: 0 10px 26px rgba(0,0,0,.08);
+  --shadow2:0 10px 26px rgba(0,0,0,.08);
+  --focus:rgba(31,134,209,.18);
 
-  --radius2:22px;
-  --focus: rgba(31,134,209,.18);
-
-  --gradA: radial-gradient(1200px 600px at 10% -10%, rgba(42,167,215,.22), rgba(42,167,215,0) 60%),
-           radial-gradient(900px 500px at 90% 10%, rgba(224,58,58,.14), rgba(224,58,58,0) 55%),
-           linear-gradient(180deg, #ffffff, #fbfbfd 35%, #f7f3ea 100%);
-
-  --frameBg: linear-gradient(180deg, rgba(31,134,209,.14), rgba(255,255,255,.78));
-  --frameBd: rgba(31,134,209,.26);
-  --frameGlow: 0 18px 44px rgba(31,134,209,.10);
+  --gradA:
+    radial-gradient(1200px 600px at 10% -10%, rgba(42,167,215,.22), rgba(42,167,215,0) 60%),
+    radial-gradient(900px 500px at 90% 10%, rgba(224,58,58,.14), rgba(224,58,58,0) 55%),
+    linear-gradient(180deg, #ffffff, #fbfbfd 35%, #f7f3ea 100%);
 }
 
 *{box-sizing:border-box}
 body{
   margin:0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
+  font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
   color:var(--text);
-  background: var(--gradA);
+  background:var(--gradA);
   line-height:1.85;
 }
 img{max-width:100%;display:block}
@@ -48,12 +40,12 @@ a{text-decoration:none;color:inherit}
 
 /* HEADER */
 header{
-  background: linear-gradient(180deg, #0b0b0b, #101114);
+  background:linear-gradient(180deg, #0b0b0b, #101114);
   color:#fff;
   position:sticky;
   top:0;
   z-index:10;
-  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+  box-shadow:0 10px 24px rgba(0,0,0,.18);
 }
 .header-inner{
   height:68px;
@@ -64,26 +56,30 @@ header{
 }
 .brand{display:flex;align-items:center;gap:10px}
 .brand img{height:28px;width:auto}
-@media (min-width: 1024px){
+@media (min-width:1024px){
   .brand img{height:34px;}
 }
 .contact-btn{
-  background: linear-gradient(180deg, var(--blue), var(--blue2));
+  background:linear-gradient(180deg, var(--blue), var(--blue2));
   color:#fff;
   padding:10px 16px;
   font-weight:900;
   border-radius:12px;
   border:1px solid rgba(255,255,255,.12);
-  box-shadow: 0 10px 18px rgba(0,0,0,.18);
+  box-shadow:0 10px 18px rgba(0,0,0,.18);
 }
 .contact-btn:hover{filter:brightness(.98)}
 
 /* MAIN */
-.main{padding:56px 0 78px;}
-.panel{background:transparent;border:0;box-shadow:none;padding:0}
+.main{
+  padding:56px 0 78px;
+}
 
 /* Hero */
-.hero{text-align:center;padding:6px 0 10px}
+.hero{
+  text-align:center;
+  padding:6px 0 10px;
+}
 .dl-title{
   margin:0;
   font-size:26px;
@@ -106,9 +102,9 @@ header{
 }
 .hero-top-gap{height:18px;}
 .hero-mid-gap{height:18px;}
-
 .hr-mark{
-  width:26px;height:3px;
+  width:26px;
+  height:3px;
   background:linear-gradient(90deg, var(--danger), rgba(224,58,58,.25));
   border-radius:999px;
   margin:0 auto 16px;
@@ -122,7 +118,8 @@ header{
   letter-spacing:.01em;
 }
 .intro-bottom-gap{height:18px;}
-@media (min-width: 1024px){
+@media (min-width:1024px){
+  .dl-title{font-size:30px;}
   .intro{font-size:18px;line-height:1.9;}
 }
 
@@ -134,332 +131,119 @@ header{
   background:linear-gradient(90deg, rgba(0,0,0,0), rgba(15,17,21,.10), rgba(0,0,0,0));
 }
 
-/* Blue frame */
-.blue-frame{
-  border-radius:22px;
-  background: var(--frameBg);
-  border:1px solid var(--frameBd);
-  box-shadow: var(--frameGlow), var(--shadow2);
-  padding:18px 18px 16px;
-}
-@media (min-width: 768px){
-  .blue-frame{padding:26px 28px 22px;}
-}
-
-/* Title chip inside frame */
-.frame-chip{
+/* Accordion list */
+.case-list{
   display:flex;
-  justify-content:center;
-  margin:0 0 14px;
+  flex-direction:column;
+  gap:18px;
+  max-width:980px;
+  margin:0 auto;
 }
-.frame-chip span{
-  display:inline-block;
-  padding:10px 16px;
-  background: rgba(31,134,209,.22);
-  border:1px solid rgba(31,134,209,.28);
-  color:#101827;
-  font-weight:950;
-  font-size:22px;
-  letter-spacing:.03em;
-  border-radius:14px;
+.case-details{
+  border:none;
 }
-/* スマホ：2. のタイトルだけ 2pt相当小さく */
-@media (max-width: 560px){
-  .frame-chip span{font-size:16px;padding:10px 14px;letter-spacing:.02em;}
-  .frame-chip.form span{font-size:14px;}
-}
-@media (min-width: 768px){
-  .frame-chip{margin:2px 0 18px;}
-  .frame-chip span{
-    background: linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.62));
-    border:1px solid rgba(15,17,21,.10);
-    color:#0f172a;
-    border-radius:999px;
-    padding:10px 18px;
-    font-size:20px;
-    letter-spacing:.02em;
-    box-shadow: 0 10px 22px rgba(0,0,0,.08);
-    position:relative;
-  }
-  .frame-chip span::before{
-    content:"";
-    position:absolute;
-    left:16px; right:16px; bottom:-7px;
-    height:3px;
-    border-radius:999px;
-    background:linear-gradient(90deg, rgba(31,134,209,0), rgba(31,134,209,.55), rgba(31,134,209,0));
-    opacity:.9;
-  }
-}
-
-/* Phone block */
-.phone-hero-inner{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:16px;
-  flex-wrap:wrap;
-  text-align:center;
-}
-.phone-badge{
-  width:auto;height:auto;
-  border:0;
-  background:transparent;
-  border-radius:0;
-  display:grid;place-items:center;
-  color:#1f5f9a;
-  line-height:1;
-}
-.phone-icon{
-  width:34px;
-  height:54px;
-  border-radius:10px;
-  background: rgba(31,134,209,.14);
-  border:2px solid rgba(31,134,209,.45);
+.case-summary{
+  list-style:none;
   position:relative;
-  box-shadow: 0 8px 16px rgba(31,134,209,.14);
-}
-.phone-icon::before{
-  content:"";
-  position:absolute;
-  left:50%;
-  top:6px;
-  width:14px;
-  height:3px;
-  transform:translateX(-50%);
-  border-radius:999px;
-  background: rgba(31,134,209,.55);
-}
-.phone-icon::after{
-  content:"";
-  position:absolute;
-  left:50%;
-  bottom:6px;
-  width:10px;
-  height:10px;
-  transform:translateX(-50%);
-  border-radius:999px;
-  border:2px solid rgba(31,134,209,.45);
-  background: rgba(255,255,255,.65);
-}
-@media (max-width: 560px){
-  .phone-icon{width:30px;height:48px;border-radius:10px;}
-}
-@media (min-width: 768px){
-  .phone-icon{width:36px;height:58px;}
-}
-
-/* PC/タブレット：番号とボタンを真横に */
-.phone-hero a{
-  display:inline-flex;
-  align-items:center;
-  gap:14px;
-  font-weight:950;
-  color:#1f5f9a;
-}
-.phone-hero .num{
-  font-size:44px;
-  letter-spacing:.02em;
-  line-height:1;
-  display:inline-block;
-}
-.phone-hero .tap{
-  font-size:12px;
-  font-weight:950;
-  color:#0f1115;
-  border:1px solid rgba(15,17,21,.12);
-  background:#fff;
-  padding:8px 12px;
-  border-radius:999px;
-  line-height:1;
-  display:inline-flex;
-  align-items:center;
-  height:34px;
-}
-
-/* mobile */
-@media (max-width: 560px){
-  .phone-hero a{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:8px;
-  }
-  .phone-hero .tap{display:none;}
-}
-@media (max-width: 420px){
-  .phone-hero .num{font-size:30px;letter-spacing:.01em;}
-  .phone-icon{width:28px;height:44px;}
-}
-
-.phone-meta{
-  margin-top:10px;
-  text-align:center;
-  color:rgba(15,17,21,.62);
-  font-size:12px;
-  font-weight:900;
-}
-.tap-hint{
-  display:none;
-  margin-top:6px;
-  text-align:center;
-  color:rgba(15,17,21,.62);
-  font-size:12px;
-  font-weight:900;
-}
-@media (max-width: 560px){
-  .tap-hint{display:block;}
-}
-.tel-link:focus-visible{
-  outline:3px solid var(--focus);
-  outline-offset:4px;
-  border-radius:16px;
-}
-
-/* Form note */
-.form-note{
-  margin-top:28px;
-  margin-bottom:28px;
-  text-align:center;
-  font-weight:950;
-  color:rgba(15,17,21,.82);
-  font-size:13px;
-}
-@media (min-width: 768px){
-  .form-note{font-size:17px;line-height:1.9;}
-}
-
-/* Form card */
-.form-card{
-  margin-top:12px;
-  border:1px solid rgba(15,17,21,.10);
-  border-radius:18px;
-  background:rgba(255,255,255,.88);
-  backdrop-filter: blur(10px);
-  box-shadow: var(--shadow2);
-  padding:18px 18px 16px;
-}
-@media (min-width: 768px){
-  .form-card{padding:26px 26px 22px;}
-}
-
-.form-grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap:14px 16px;
-  margin-top:10px;
-}
-@media (min-width: 768px){
-  .form-grid{gap:18px 22px;margin-top:14px;}
-}
-@media (max-width: 960px){
-  .form-grid{grid-template-columns:1fr}
-}
-
-.field{min-width:0}
-.field.full{grid-column:1/-1}
-
-.label{
+  min-height:92px;
   display:flex;
   align-items:center;
-  gap:8px;
-  font-size:12px;
-  font-weight:950;
-  color:#111827;
-  margin:0 0 6px;
-  letter-spacing:.02em;
-}
-@media (min-width: 768px){
-  .label{margin-bottom:8px;font-size:13px;}
-}
-
-.req{
-  display:inline-flex;align-items:center;justify-content:center;
-  height:18px;padding:0 8px;font-size:10px;font-weight:950;
-  border:1px solid rgba(224,58,58,.22);
-  background:rgba(224,58,58,.08);
-  color:#b11e1e;border-radius:999px;letter-spacing:.08em;
-}
-.opt{
-  display:inline-flex;align-items:center;justify-content:center;
-  height:18px;padding:0 8px;font-size:10px;font-weight:950;
-  border:1px solid rgba(15,17,21,.10);
-  background:rgba(15,17,21,.04);
-  color:rgba(15,17,21,.60);border-radius:999px;letter-spacing:.08em;
-}
-
-.input, .textarea, .select{
-  width:100%;
-  border:1px solid rgba(15,17,21,.12);
-  border-radius:14px;
-  padding:12px 12px;
-  font-size:13px;
-  font-weight:800;
-  outline:none;
-  background:#fff;
-}
-@media (min-width: 768px){
-  .input, .textarea, .select{padding:14px 14px;font-size:14px;}
-}
-.textarea{min-height:150px;resize:vertical}
-@media (min-width: 768px){
-  .textarea{min-height:180px;}
-}
-.input::placeholder, .textarea::placeholder{color:rgba(15,17,21,.45);font-weight:800}
-.input:focus, .textarea:focus, .select:focus{
-  border-color: rgba(31,134,209,.55);
-  box-shadow: 0 0 0 5px var(--focus);
-}
-
-.inline-help{
-  margin-top:8px;
-  color:rgba(15,17,21,.58);
-  font-size:11px;
-  font-weight:900;
-  line-height:1.7;
-}
-@media (min-width: 768px){
-  .inline-help{margin-top:10px;font-size:12px;line-height:1.75;}
-}
-.inline-help + .inline-help{margin-top:4px}
-@media (min-width: 768px){
-  .inline-help + .inline-help{margin-top:6px;}
-}
-
-/* CTA */
-.form-area{text-align:center;margin-top:18px}
-@media (min-width: 768px){
-  .form-area{margin-top:22px;}
-}
-.btn-row{display:flex;justify-content:center;flex-wrap:wrap}
-.primary-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  width:min(380px, 100%);
-  height:56px;
-  background: linear-gradient(180deg, var(--blue3), #166db6);
-  color:#fff;
-  font-weight:950;
-  border-radius:14px;
-  border:1px solid rgba(0,0,0,.10);
-  box-shadow: 0 14px 28px rgba(31,134,209,.22);
-  padding:0 16px;
+  padding:0 84px 0 34px;
+  border-radius:26px;
+  background:rgba(216,232,243,.82);
+  border:1px solid rgba(31,134,209,.06);
+  box-shadow:0 8px 18px rgba(0,0,0,.03);
   cursor:pointer;
 }
-.primary-btn:hover{filter:brightness(.98)}
-.note{
-  margin:14px 0 0;
-  color:rgba(15,17,21,.62);
-  font-size:12px;
+.case-summary::-webkit-details-marker{
+  display:none;
+}
+.case-title{
+  margin:0;
+  font-size:24px;
+  line-height:1.4;
+  font-weight:950;
+  color:#33302f;
+  letter-spacing:.01em;
+}
+.case-toggle{
+  position:absolute;
+  right:30px;
+  top:50%;
+  width:28px;
+  height:28px;
+  transform:translateY(-50%);
+}
+.case-toggle::before,
+.case-toggle::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:28px;
+  height:3.5px;
+  background:#3f73ad;
+  border-radius:999px;
+  transform:translate(-50%,-50%);
+}
+.case-toggle::after{
+  transform:translate(-50%,-50%) rotate(90deg);
+  transition:transform .18s ease;
+}
+.case-details[open] .case-toggle::after{
+  transform:translate(-50%,-50%) rotate(0deg);
+}
+
+.case-content{
+  margin-top:10px;
+  padding:6px 14px 2px 14px;
+}
+.case-content-inner{
+  background:rgba(255,255,255,.86);
+  border:1px solid rgba(15,17,21,.08);
+  border-radius:20px;
+  box-shadow:var(--shadow2);
+  padding:22px 22px 18px;
+}
+.case-content p{
+  margin:0 0 12px;
+  font-size:15px;
+  line-height:1.95;
+  color:rgba(15,17,21,.86);
+  font-weight:700;
+}
+.case-content strong{
+  font-weight:950;
+  color:#101827;
+}
+.case-subhead{
+  display:block;
+  margin:12px 0 6px;
+  font-size:14px;
+  line-height:1.7;
+  font-weight:950;
+  color:#101827;
+}
+.case-content ul{
+  margin:0 0 12px;
+  padding-left:1.2em;
+}
+.case-content li{
+  font-size:14px;
+  line-height:1.9;
+  font-weight:800;
+  color:rgba(15,17,21,.80);
+}
+.case-note{
+  margin-top:6px;
+  color:rgba(15,17,21,.72);
   font-weight:900;
-  text-align:center;
+  font-size:13px;
 }
 
 /* FOOTER */
 footer{
-  background: linear-gradient(180deg, #0b0b0b, #101114);
+  background:linear-gradient(180deg, #0b0b0b, #101114);
   color:#fff;
   padding:50px 0;
   margin-top:34px;
@@ -470,17 +254,56 @@ footer{
   gap:30px;
 }
 footer a{color:#ccc}
-
-/* ✅リンクを“同じ並び”で表示（スマホでも「お問い合わせ」が浮かない） */
 .footer-links a{
   display:block;
   padding:2px 0;
 }
 
-/* mobile */
+@media(max-width:900px){
+  .case-summary{
+    min-height:78px;
+    padding:0 62px 0 20px;
+    border-radius:20px;
+  }
+  .case-title{
+    font-size:18px;
+  }
+  .case-toggle{
+    right:20px;
+    width:22px;
+    height:22px;
+  }
+  .case-toggle::before,
+  .case-toggle::after{
+    width:22px;
+    height:3px;
+  }
+  .case-content{
+    padding:6px 2px 0;
+  }
+  .case-content-inner{
+    padding:16px 16px 14px;
+    border-radius:16px;
+  }
+  .case-content p,
+  .case-content li{
+    font-size:13px;
+    line-height:1.85;
+  }
+  .case-subhead{
+    font-size:13px;
+  }
+}
+
 @media(max-width:700px){
   .footer-inner{grid-template-columns:1fr}
   .footer-links a{padding:3px 0;}
+}
+
+@media(max-width:560px){
+  .main{padding:36px 0 52px;}
+  .dl-title{font-size:22px;}
+  .intro{font-size:13px;}
 }
 </style>
 </head>
@@ -504,103 +327,169 @@ footer a{color:#ccc}
 
 <main class="main">
   <div class="container">
-    <section class="panel" aria-label="お問い合わせページ">
 
-      <div class="hero">
-        <h1 class="dl-title">
-          受講中のお客様専用<span class="tight-br" aria-hidden="true"></span>お問い合わせ
-        </h1>
+    <section class="hero" aria-label="事例集タイトル">
+      <h1 class="dl-title">
+        過去申請が通らなかった<span class="tight-br" aria-hidden="true"></span>事例集
+      </h1>
 
-        <div class="hero-top-gap" aria-hidden="true"></div>
+      <div class="hero-top-gap" aria-hidden="true"></div>
 
-        <div class="dl-sub">Contact</div>
-        <div class="hero-mid-gap" aria-hidden="true"></div>
+      <div class="dl-sub">Case Study</div>
+      <div class="hero-mid-gap" aria-hidden="true"></div>
 
-        <div class="hr-mark" aria-hidden="true"></div>
+      <div class="hr-mark" aria-hidden="true"></div>
 
-        <div class="intro">
-          弊社へのお問い合わせ方法は、お電話とお問い合わせフォームの2通りをご用意しております。<br>
-        </div>
-        <div class="intro-bottom-gap" aria-hidden="true"></div>
+      <div class="intro">
+        実際に起こりやすいミスをまとめています。<br>
+        申請前に必ずご確認ください。
       </div>
+      <div class="intro-bottom-gap" aria-hidden="true"></div>
+    </section>
 
-      <hr class="sep">
+    <hr class="sep">
 
-      <div class="blue-frame phone-hero" aria-label="電話案内（青枠）">
-        <div class="frame-chip"><span>1．フリーダイヤルでのお問い合わせ</span></div>
+    <section class="case-list" aria-label="過去申請が通らなかった事例一覧">
 
-        <div class="phone-hero-inner">
-          <span class="phone-badge" aria-hidden="true"><span class="phone-icon" aria-hidden="true"></span></span>
-
-          <a class="tel-link" href="tel:0120438348" aria-label="電話をかける 0120-438-348">
-            <span class="num">0120-438-348</span>
-            <span class="tap">ワンタップで発信</span>
-          </a>
+      <details class="case-details">
+        <summary class="case-summary">
+          <h2 class="case-title">① 就業時間外に視聴した場合の事例</h2>
+          <span class="case-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="case-content">
+          <div class="case-content-inner">
+            <p>就業時間外の視聴は、勤怠記録と視聴履歴の不一致につながり、申請対象外になることがあります。</p>
+            <p>夜間や自宅、有給日に視聴すると、<strong>勤務時間内の研修</strong>として確認しにくくなります。労働局確認時に、<strong>視聴履歴と勤怠記録が一致しない</strong>状態になると、研修実施の証明が弱くなり、<strong>助成金申請の対象外</strong>と判断される可能性があります。</p>
+            <span class="case-subhead">問題点</span>
+            <ul>
+              <li>就業時間外の視聴履歴</li>
+              <li>自宅視聴</li>
+              <li>有給時に視聴</li>
+              <li>残業処理をしていなかった</li>
+            </ul>
+            <span class="case-subhead">打開策</span>
+            <ul>
+              <li>研修は原則「勤務時間内」で実施してください。</li>
+              <li>残業時間で動画を視聴した際は、残業申請・残業処理を行う。</li>
+              <li>有給時は、休日とみなされるため視聴はしない。</li>
+            </ul>
+            <p class="case-note">勤務時間・視聴履歴・受講実態の3点がそろっていることが重要です。</p>
+          </div>
         </div>
+      </details>
 
-        <div class="tap-hint">※電話番号をタップいただけると発信できます。</div>
-        <div class="phone-meta">※受付時間：9時-18時（土日祝日除く）</div>
-      </div>
-
-      <hr class="sep">
-
-      <div class="blue-frame" aria-label="フォーム全体（青枠）">
-        <div class="frame-chip form"><span>2．お問い合わせフォームでのお問い合わせ</span></div>
-
-        <p class="form-note">下記フォームにご入力ください。原則1営業日以内にご返信いたします。</p>
-
-        <div class="form-card">
-          <form id="contactForm" accept-charset="utf-8">
-
-            <div class="form-grid">
-              <div class="field full">
-                <div class="label">お名前またはログインID <span class="req">必須</span></div>
-                <input class="input" type="text" name="name_or_login" required placeholder="例：山田 太郎 / login_id_123">
-              </div>
-
-              <div class="field">
-                <div class="label">回答の連絡方法 <span class="req">必須</span></div>
-                <select class="select" name="reply_method" id="reply_method" required>
-                  <option value="" selected disabled>選択してください</option>
-                  <option value="グループLINE">グループLINE</option>
-                  <option value="電話">電話</option>
-                  <option value="メール">メール</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <div class="label">連絡先（電話 または メール） <span class="opt" id="contactOptBadge">任意</span></div>
-                <input class="input" type="text" name="contact" id="contact"
-                       placeholder="例：09012345678 / sample@example.com">
-
-                <div class="inline-help" id="contactHelp">
-                  ※連絡方法が「電話／メール」の場合は入力してください
-                </div>
-                <div class="inline-help" id="contactHelp2">
-                  ※連絡先の入力がない場合は、グループLINEで返信させていただいております。ご了承ください。
-                </div>
-              </div>
-
-              <div class="field full">
-                <div class="label">お問い合わせ内容 <span class="req">必須</span></div>
-                <textarea class="textarea" name="message" required
-                  placeholder="お問い合わせ内容をご記入ください"></textarea>
-              </div>
-            </div>
-
-            <div class="form-area">
-              <div class="btn-row">
-                <button class="primary-btn" type="submit" id="submitBtn">
-                  送信する <span class="chev">›</span>
-                </button>
-              </div>
-　　　　　　　　 <div id="submitMessage" style="margin-top:16px; font-weight:900; text-align:center;"></div>
-              
-              <div class="note" style="margin-top:16px;">© DXアカデミー株式会社</div>
-            </div>
-          </form>
+      <details class="case-details">
+        <summary class="case-summary">
+          <h2 class="case-title">② 動画をスキップ・早送りした場合の事例</h2>
+          <span class="case-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="case-content">
+          <div class="case-content-inner">
+            <p>視聴履歴上の再生時間が合わないと、正常受講として認められないことがあります。</p>
+            <p>スキップや早送り、複数端末での並行視聴を行うと、<strong>本来の受講時間どおりに記録されない</strong>状態になります。1コースごとの再生時間と総動画時間が合わず、<strong>正常な受講記録として確認できない</strong>状態になると、労働局確認時に<strong>正常な受講記録と判断されず</strong>、申請対象外となる可能性があります。</p>
+            <span class="case-subhead">問題点</span>
+            <ul>
+              <li>システム上の再生時間と動画の長さが一致しない</li>
+              <li>動画再生中に再生バーに触れてしまい、意図せず再生位置が移動した</li>
+              <li>1コースごとの再生時間が記録されるため、他端末などで並行して視聴した</li>
+            </ul>
+            <span class="case-subhead">打開策</span>
+            <ul>
+              <li>1コースごとに、そのコースの総動画時間に必要な再生時間を満たすよう、1つずつ動画を視聴する。</li>
+            </ul>
+            <p class="case-note">「少しだけ飛ばしたつもり」でも、履歴上は正常受講と見なされないことがあります。</p>
+          </div>
         </div>
-      </div>
+      </details>
+
+      <details class="case-details">
+        <summary class="case-summary">
+          <h2 class="case-title">③ 計画期間内に視聴完了できなかった場合の事例</h2>
+          <span class="case-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="case-content">
+          <div class="case-content-inner">
+            <p>受講開始前に設定した期間内で完了できないと、申請対象外になることがあります。</p>
+            <p>受講を後回しにすると、進捗が止まり、<strong>計画どおりに完了しにくい</strong>状態になります。計画スケジュールの期間内に全動画を終えられず、<strong>前提条件を満たせない</strong>状態になると、期限までに全動画を視聴できず、<strong>助成金申請の対象外</strong>となる可能性があります。</p>
+            <span class="case-subhead">問題点</span>
+            <ul>
+              <li>期間内に視聴が終わらなかった</li>
+            </ul>
+            <span class="case-subhead">打開策</span>
+            <ul>
+              <li>グループLINEで進捗をお送りしてますので、管理者は受講者様の進捗状況を把握しましょう。</li>
+            </ul>
+            <p class="case-note">受講者任せにせず、管理者が進捗を確認する運用が重要です。</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="case-details">
+        <summary class="case-summary">
+          <h2 class="case-title">④ 感想文の内容が不十分だった場合の事例</h2>
+          <span class="case-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="case-content">
+          <div class="case-content-inner">
+            <p>感想文は「提出した」だけでは不十分で、理解度が伝わる内容が必要です。</p>
+            <p>短く抽象的な内容だけでは、<strong>何を学び、どう理解したか</strong>が伝わりません。内容が抽象的だと、<strong>受講内容に対する理解度</strong>を確認できない状態になります。その結果、労働局から<strong>修正や再提出の依頼</strong>が来て、申請書類作成のスケジュールに影響が出る場合があります。</p>
+            <span class="case-subhead">問題点</span>
+            <ul>
+              <li>「勉強になりました」「AIは便利だと思いました」といった感想で提出されたため、具体的な学びの内容ではなかった。</li>
+            </ul>
+            <span class="case-subhead">打開策</span>
+            <ul>
+              <li>研修内容を踏まえた具体的な学びや業務への活用イメージを書きましょう。</li>
+              <li>システムに感想文の書き方のPDFがあるので、そちらを参考にしてみましょう。</li>
+            </ul>
+            <p class="case-note">内容が受講動画と著しく異なる場合や、修正依頼に対応しない場合は支給要件を満たさないと判断されることがあります。</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="case-details">
+        <summary class="case-summary">
+          <h2 class="case-title">⑤ 署名書類を期限内に提出できなかった場合の事例</h2>
+          <span class="case-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="case-content">
+          <div class="case-content-inner">
+            <p>受講が完了していても、署名済みの必要書類が期限に間に合わないと申請対象外になることがあります。</p>
+            <p>手書きサインが必要な書類を後回しにすると、<strong>期限までの回収が難しくなる</strong>状態になります。支給申請期限までに署名書類がそろわず、<strong>申請に必要な書類条件を満たせない</strong>状態になると、署名書類を提出できず、<strong>助成金申請の対象外</strong>となる可能性があります。</p>
+            <span class="case-subhead">問題点</span>
+            <ul>
+              <li>手書きサインをした書類の提出が支給申請期限までに間に合わなかった</li>
+            </ul>
+            <span class="case-subhead">打開策</span>
+            <ul>
+              <li>早めにサインして提出しましょう。</li>
+            </ul>
+            <p class="case-note">提出書類は、受講完了後ではなく申請全体の期限から逆算して準備することが大切です。</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="case-details">
+        <summary class="case-summary">
+          <h2 class="case-title">⑥ 雇用保険期間外に視聴した場合の事例</h2>
+          <span class="case-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="case-content">
+          <div class="case-content-inner">
+            <p>視聴自体は計画期間内でも、雇用保険の対象期間外だと申請対象外になることがあります。</p>
+            <p>計画スケジュールの期間だけを見て進めると、<strong>雇用保険加入期間との整合</strong>を見落とすことがあります。後日の確認で、<strong>雇用保険の対象期間外に視聴していた</strong>ことが判明する場合があり、労働局確認時に<strong>雇用保険期間外の視聴</strong>と判断され、助成金申請の対象外となる可能性があります。</p>
+            <span class="case-subhead">問題点</span>
+            <ul>
+              <li>計画スケジュールの期間内で視聴したが、のちのち雇用保険期間外の視聴ということが労働局で確認された</li>
+            </ul>
+            <span class="case-subhead">打開策</span>
+            <ul>
+              <li>計画スケジュールが決定される際は、受講者様の雇用保険期間を考慮して設定しましょう。</li>
+            </ul>
+            <p class="case-note">制度要件は受講完了だけではなく、対象期間に入っているかどうかまで確認が必要です。</p>
+          </div>
+        </div>
+      </details>
 
     </section>
   </div>
@@ -614,7 +503,6 @@ footer a{color:#ccc}
       東京都港区六本木3丁目16番12号
     </div>
 
-    <!-- ✅「お問い合わせ」を同じリンク群に入れて、スマホで浮かないようにする -->
     <div class="footer-links">
       <a href="https://www.dx-academy.com/">ホーム</a>
       <a href="https://www.dx-academy.com/blank">事業紹介</a>
@@ -622,113 +510,9 @@ footer a{color:#ccc}
       <a href="https://www.dx-academy.com/">お問い合わせ</a>
     </div>
 
-    <!-- 3列目はスペース調整用（PC時のバランスを保つ） -->
     <div aria-hidden="true"></div>
   </div>
 </footer>
 
-<script>
-const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbx6owWRgXOiIp-Zz-p_e57h76E7nRiTJgwWVnaO2yUpWNM_G2c5v3leIVkZyAVGdsK7vQ/exec';
-
-const replyMethod = document.getElementById('reply_method');
-const contact = document.getElementById('contact');
-const contactOptBadge = document.getElementById('contactOptBadge');
-const form = document.getElementById('contactForm');
-const submitBtn = document.getElementById('submitBtn');
-const submitMessage = document.getElementById('submitMessage');
-
-const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-const isPhone = (v) => {
-  const digits = v.replace(/[^\d]/g,'');
-  return digits.length === 10 || digits.length === 11;
-};
-
-function setContactRequired(isRequired){
-  contact.required = isRequired;
-  contactOptBadge.textContent = isRequired ? '必須' : '任意';
-  contactOptBadge.className = isRequired ? 'req' : 'opt';
-}
-
-function syncContactUI(){
-  const v = replyMethod.value;
-
-  if(v === '電話'){
-    setContactRequired(true);
-    contact.placeholder = '例：09012345678';
-  }else if(v === 'メール'){
-    setContactRequired(true);
-    contact.placeholder = '例：sample@example.com';
-  }else{
-    setContactRequired(false);
-    contact.placeholder = '例：09012345678 / sample@example.com';
-  }
-}
-replyMethod.addEventListener('change', syncContactUI);
-syncContactUI();
-
-function showMessage(text, color){
-  submitMessage.textContent = text;
-  submitMessage.style.color = color;
-}
-
-form.addEventListener('submit', async function(e){
-  e.preventDefault();
-
-  showMessage('', '');
-
-  const method = replyMethod.value;
-  const v = (contact.value || '').trim();
-
-  if(method === '電話'){
-    if(!v){
-      showMessage('連絡方法が「電話」のため、連絡先（電話番号）の入力が必要です。', '#e03a3a');
-      contact.focus();
-      return;
-    }
-    if(!isPhone(v)){
-      showMessage('電話番号の形式をご確認ください。', '#e03a3a');
-      contact.focus();
-      return;
-    }
-  }
-
-  if(method === 'メール'){
-    if(!v){
-      showMessage('連絡方法が「メール」のため、連絡先（メールアドレス）の入力が必要です。', '#e03a3a');
-      contact.focus();
-      return;
-    }
-    if(!isEmail(v)){
-      showMessage('メールアドレスの形式をご確認ください。', '#e03a3a');
-      contact.focus();
-      return;
-    }
-  }
-
-  submitBtn.disabled = true;
-  submitBtn.innerHTML = '送信中...';
-
-  try {
-    const formData = new FormData(form);
-    formData.append('user_agent', navigator.userAgent);
-
-    await fetch(GAS_WEB_APP_URL, {
-      method: 'POST',
-      body: formData,
-      mode: 'no-cors'
-    });
-
-    showMessage('送信が完了いたしました。', '#1b8fb8');
-    form.reset();
-    syncContactUI();
-
-  } catch (error) {
-    showMessage('送信に失敗しました。時間をおいて再度お試しください。', '#e03a3a');
-  } finally {
-    submitBtn.disabled = false;
-    submitBtn.innerHTML = '送信する <span class="chev">›</span>';
-  }
-});
-</script>
 </body>
 </html>
