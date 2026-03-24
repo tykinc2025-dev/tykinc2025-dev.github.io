@@ -150,7 +150,7 @@ header{
   margin:14px auto 0;
   width:min(980px, 100%);
   display:grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap:12px;
 }
 @media (max-width:900px){
@@ -516,10 +516,9 @@ footer a{color:#ccc}
         <div class="hr-mark" aria-hidden="true"></div>
 
         <div class="notice-card" aria-label="案内">
-          <p class="notice-text">計画申請にあたり、下記3点の書類をご用意のうえご提出ください。</p>
+          <p class="notice-text">計画申請にあたり、下記4点の書類をご用意のうえご提出ください。</p>
 
-          <!-- ✅ ここが「ボタン」 -->
-          <div class="three-cards" aria-label="必要書類3点（クリックで詳細へ）">
+          <div class="three-cards" aria-label="必要書類4点（クリックで詳細へ）">
             <button class="doc-btn" type="button" data-target="#doc01" aria-label="書類1の詳細へ移動">
               <div class="mini-card">
                 <div class="mini-no">1</div>
@@ -549,6 +548,16 @@ footer a{color:#ccc}
                 </p>
               </div>
             </button>
+
+            <button class="doc-btn" type="button" data-target="#doc04" aria-label="書類4の詳細へ移動">
+              <div class="mini-card">
+                <div class="mini-no">4</div>
+                <p class="mini-title">
+                  登記簿謄本（履歴事項全部証明書）
+                  <small>発行から3ヶ月以内のもの</small>
+                </p>
+              </div>
+            </button>
           </div>
 
           <p class="notice-footnote">※提出方法・提出期限は、担当者からのご案内に沿ってご対応ください。</p>
@@ -560,7 +569,6 @@ footer a{color:#ccc}
       <div class="blue-frame" aria-label="提出書類（詳細）">
         <div class="frame-chip"><span>提出書類の詳細</span></div>
 
-        <!-- ✅ クリック先 -->
         <div class="card" id="doc01" aria-label="1. 雇用契約書／労働条件通知書">
           <h2 class="section-title">
             <span class="badge-no">01</span>
@@ -571,8 +579,8 @@ footer a{color:#ccc}
             本研修を受講される方全員分について、雇用契約書または労働条件通知書のいずれかをご提出ください。
           </p>
 
-          <div class="callout" role="note" aria-label="必須記載事項">
-            <div class="callout-title"><span class="dot" aria-hidden="true"></span>必須記載事項（明示が必要な項目）</div>
+          <div class="callout" role="note" aria-label="必須記載事項および確認事項">
+            <div class="callout-title"><span class="dot" aria-hidden="true"></span>必須記載事項およびご提出前の確認事項</div>
             <ol class="list">
               <li>労働契約の期間に関する事項</li>
               <li>期間の定めのある労働契約を更新する場合の基準に関する事項</li>
@@ -581,16 +589,10 @@ footer a{color:#ccc}
               <li>賃金（退職手当および臨時に支払われる賃金等を除く）の決定・計算・支払方法、賃金の締切りおよび支払時期に関する事項</li>
               <li>退職に関する事項（解雇の事由を含む）</li>
               <li>昇給に関する事項</li>
-            </ol>
-          </div>
-
-          <div class="note-box" aria-label="確認事項">
-            <div class="note-title">ご提出前の確認事項</div>
-            <ul class="list" style="margin:0;">
               <li>契約期間が有効であること（期間満了・失効がないこと）</li>
               <li>記載賃金が各都道府県の最低賃金を下回っていないこと</li>
               <li>交付日（作成日）が記載されていること</li>
-            </ul>
+            </ol>
 
             <div class="link-row" aria-label="見本リンク">
               <a class="link-btn" href="#" aria-label="見本（雇用契約書／労働条件通知書）">
@@ -661,6 +663,35 @@ footer a{color:#ccc}
                 見本を確認する <span class="arrow" aria-hidden="true">›</span>
               </a>
             </div>
+          </div>
+        </div>
+
+        <div class="card" id="doc04" aria-label="4. 登記簿謄本">
+          <h2 class="section-title">
+            <span class="badge-no">04</span>
+            「登記簿謄本（履歴事項全部証明書）」
+          </h2>
+
+          <p class="lead">
+            法人の実在確認および基本情報確認のため、登記簿謄本をご提出ください。
+          </p>
+
+          <div class="callout" role="note" aria-label="提出条件">
+            <div class="callout-title"><span class="dot" aria-hidden="true"></span>提出条件</div>
+            <ul class="list">
+             
+              <li>履歴事項全部証明書をご提出ください</li>
+              
+            </ul>
+          </div>
+
+          <div class="note-box" aria-label="確認事項">
+            <div class="note-title">ご提出前の確認事項</div>
+            <ul class="list" style="margin:0;">
+              <li>会社名・所在地が最新であること</li>
+              <li>代表者名が確認できること</li>
+              <li>文字が鮮明に判読できること</li>
+            </ul>
           </div>
         </div>
 
