@@ -39,7 +39,7 @@
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;} /* ✅ クリックでスライド（スムーススクロール） */
+html{scroll-behavior:smooth;}
 body{
   margin:0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
@@ -54,7 +54,7 @@ a{text-decoration:none;color:inherit}
   margin:auto;
 }
 
-/* ===== HEADER (same) ===== */
+/* ===== HEADER ===== */
 header{
   background: linear-gradient(180deg, #0b0b0b, #101114);
   color:#fff;
@@ -145,13 +145,14 @@ header{
   .notice-footnote{font-size:13px;}
 }
 
-/* ===== ✅ 3つを「ボタン化」(デザインそのまま) ===== */
+/* ===== カード一覧 ===== */
 .three-cards{
   margin:14px auto 0;
   width:min(980px, 100%);
   display:grid;
   grid-template-columns: repeat(4, 1fr);
   gap:12px;
+  align-items:stretch;
 }
 @media (max-width:900px){
   .three-cards{grid-template-columns:1fr; gap:10px;}
@@ -167,6 +168,8 @@ header{
   text-align:left;
   cursor:pointer;
   width:100%;
+  height:100%;
+  display:block;
 }
 
 /* the "card" */
@@ -180,6 +183,7 @@ header{
   align-items:center;
   gap:14px;
   min-height:86px;
+  height:100%;
   transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
 }
 @media (max-width:560px){
@@ -310,8 +314,6 @@ header{
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow2);
   padding:18px 18px 16px;
-
-  /* ✅ scroll先がヘッダーで隠れないように */
   scroll-margin-top: 92px;
 }
 @media (min-width: 768px){
@@ -437,6 +439,129 @@ header{
   font-weight:950;
 }
 
+/* ===== accordion 共通 ===== */
+.accordion{
+  margin:12px 0 14px;
+  border-radius:16px;
+  background: rgba(224,58,58,.06);
+  border:1px solid rgba(224,58,58,.16);
+  overflow:hidden;
+}
+
+.accordion summary{
+  list-style:none;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:14px 16px;
+  font-weight:950;
+  color:#7f1d1d;
+  font-size:12px;
+  letter-spacing:.05em;
+  transition: background .15s ease;
+}
+
+.accordion summary:hover{
+  background: rgba(224,58,58,.04);
+}
+
+.accordion summary::-webkit-details-marker{
+  display:none;
+}
+
+.accordion-label{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.accordion-label .dot{
+  width:8px;
+  height:8px;
+  border-radius:99px;
+  background:var(--danger);
+  box-shadow: 0 6px 14px rgba(224,58,58,.22);
+  flex:0 0 auto;
+}
+
+.accordion-side{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex:0 0 auto;
+}
+
+.accordion-hint{
+  font-size:11px;
+  font-weight:950;
+  color:rgba(127,29,29,.78);
+  letter-spacing:.04em;
+}
+
+.accordion-icon{
+  width:40px;
+  height:40px;
+  border-radius:999px;
+  display:grid;
+  place-items:center;
+  background: rgba(255,255,255,.72);
+  border:1px solid rgba(224,58,58,.18);
+  color:#7f1d1d;
+  font-size:18px;
+  line-height:1;
+  flex:0 0 auto;
+  transition: transform .2s ease, background .15s ease;
+}
+
+.accordion summary:hover .accordion-icon{
+  background: rgba(255,255,255,.92);
+}
+
+.accordion[open] .accordion-icon{
+  transform:rotate(180deg);
+}
+
+.accordion[open] .accordion-hint::before{
+  content:"閉じる";
+}
+
+.accordion:not([open]) .accordion-hint::before{
+  content:"開く";
+}
+
+.accordion-body{
+  padding:0 16px 14px;
+}
+
+.doc-subnote{
+  margin:0 0 12px;
+  color:rgba(15,17,21,.72);
+  font-weight:900;
+  font-size:12px;
+  line-height:1.8;
+}
+
+@media (min-width: 768px){
+  .accordion summary{
+    padding:16px 18px;
+    font-size:13px;
+  }
+
+  .accordion-body{
+    padding:0 18px 16px;
+  }
+
+  .doc-subnote{
+    font-size:13px;
+  }
+
+  .accordion-hint{
+    font-size:12px;
+  }
+}
+
 /* Summary footer note */
 .page-note{
   margin-top:18px;
@@ -449,7 +574,7 @@ header{
   .page-note{font-size:13px;}
 }
 
-/* ===== FOOTER (same) ===== */
+/* ===== FOOTER ===== */
 footer{
   background: linear-gradient(180deg, #0b0b0b, #101114);
   color:#fff;
@@ -471,7 +596,7 @@ footer a{color:#ccc}
   .footer-links a{padding:3px 0;}
 }
 
-/* ✅ スマホのみ：文字サイズを全体的に小さく */
+/* スマホのみ */
 @media (max-width: 560px){
   body{font-size:13px;}
   .hero-title{font-size:22px;}
@@ -486,6 +611,7 @@ footer a{color:#ccc}
   .note-box p{font-size:11px;}
   .page-note{font-size:11px;}
   .contact-btn{font-size:12px;}
+  .accordion-hint{display:none;}
 }
 </style>
 </head>
@@ -516,7 +642,8 @@ footer a{color:#ccc}
         <div class="hr-mark" aria-hidden="true"></div>
 
         <div class="notice-card" aria-label="案内">
-          <p class="notice-text">計画申請にあたり、下記4点の書類をご用意のうえご提出ください。</p>
+          <p class="notice-text">計画申請にあたり、下記4点の書類をご用意のうえご提出ください。<br>
+          ※提出期限・方法は、担当者からのご案内に沿ってご対応をお願いいたします。</p>
 
           <div class="three-cards" aria-label="必要書類4点（クリックで詳細へ）">
             <button class="doc-btn" type="button" data-target="#doc01" aria-label="書類1の詳細へ移動">
@@ -560,7 +687,7 @@ footer a{color:#ccc}
             </button>
           </div>
 
-          <p class="notice-footnote">※提出方法・提出期限は、担当者からのご案内に沿ってご対応ください。</p>
+          <p class="notice-footnote"></p>
         </div>
       </div>
 
@@ -579,26 +706,42 @@ footer a{color:#ccc}
             本研修を受講される方全員分について、雇用契約書または労働条件通知書のいずれかをご提出ください。
           </p>
 
-          <div class="callout" role="note" aria-label="必須記載事項および確認事項">
-            <div class="callout-title"><span class="dot" aria-hidden="true"></span>必須記載事項およびご提出前の確認事項</div>
-            <ol class="list">
-              <li>労働契約の期間に関する事項</li>
-              <li>期間の定めのある労働契約を更新する場合の基準に関する事項</li>
-              <li>就業の場所および従事すべき業務に関する事項</li>
-              <li>始業・終業時刻、所定労働時間を超える労働の有無、休憩時間、休日・休暇、ならびに交替制勤務に関する事項</li>
-              <li>賃金（退職手当および臨時に支払われる賃金等を除く）の決定・計算・支払方法、賃金の締切りおよび支払時期に関する事項</li>
-              <li>退職に関する事項（解雇の事由を含む）</li>
-              <li>昇給に関する事項</li>
-              <li>契約期間が有効であること（期間満了・失効がないこと）</li>
-              <li>記載賃金が各都道府県の最低賃金を下回っていないこと</li>
-              <li>交付日（作成日）が記載されていること</li>
-            </ol>
+          <p class="doc-subnote">
+            記載内容に不備や不足がある場合、確認や再提出をお願いすることがあります。必須記載事項およびご提出前の確認事項をご確認のうえ、ご提出ください。
+          </p>
 
-            <div class="link-row" aria-label="見本リンク">
-              <a class="link-btn" href="#" aria-label="見本（雇用契約書／労働条件通知書）">
-                見本を確認する <span class="arrow" aria-hidden="true">›</span>
-              </a>
+          <details class="accordion" aria-label="必須記載事項およびご提出前の確認事項">
+            <summary>
+              <span class="accordion-label">
+                <span class="dot" aria-hidden="true"></span>
+                必須記載事項およびご提出前の確認事項
+              </span>
+              <span class="accordion-side">
+                <span class="accordion-hint" aria-hidden="true"></span>
+                <span class="accordion-icon" aria-hidden="true">⌄</span>
+              </span>
+            </summary>
+
+            <div class="accordion-body">
+              <ol class="list">
+                <li>労働契約の期間に関する事項</li>
+                <li>期間の定めのある労働契約を更新する場合の基準に関する事項</li>
+                <li>就業の場所および従事すべき業務に関する事項</li>
+                <li>始業・終業時刻、所定労働時間を超える労働の有無、休憩時間、休日・休暇、ならびに交替制勤務に関する事項</li>
+                <li>賃金（退職手当および臨時に支払われる賃金等を除く）の決定・計算・支払方法、賃金の締切りおよび支払時期に関する事項</li>
+                <li>退職に関する事項（解雇の事由を含む）</li>
+                <li>昇給に関する事項</li>
+                <li>契約期間が有効であること（期間満了・失効がないこと）</li>
+                <li>記載賃金が各都道府県の最低賃金を下回っていないこと</li>
+                <li>交付日（作成日）が記載されていること</li>
+              </ol>
             </div>
+          </details>
+
+          <div class="link-row" aria-label="見本リンク">
+            <a class="link-btn" href="#" aria-label="見本（雇用契約書／労働条件通知書）">
+              見本を確認する <span class="arrow" aria-hidden="true">›</span>
+            </a>
           </div>
         </div>
 
@@ -612,23 +755,35 @@ footer a{color:#ccc}
             助成金の受取口座としてご指定予定の口座について、口座情報が確認できる資料をご提出ください。
           </p>
 
-          <ul class="list">
-            <li>通帳をご提出の場合：表紙および見開き1・2ページが確認できる写し</li>
-            <li>写しは、四隅が欠けず、記載内容が判読できる鮮明なものをご用意ください</li>
-          </ul>
+          <p class="doc-subnote">
+            提出前に、必要なページや記載内容が鮮明に確認できるかをご確認ください。ネットバンキングをご利用の場合は、同等の情報が確認できる画面画像をご提出ください。
+          </p>
 
-          <div class="note-box" aria-label="ネットバンキングの場合">
-            <div class="note-title">ネットバンキングをご利用の場合</div>
-            <p>
-              金融機関名、支店名、店番号、預金種別、口座番号、口座名義（カタカナ名義を含む）が確認できる
-              画面（または同等の情報が確認できる資料）の画像をご提出ください。
-            </p>
+          <details class="accordion" aria-label="口座確認資料の提出条件">
+            <summary>
+              <span class="accordion-label">
+                <span class="dot" aria-hidden="true"></span>
+                提出条件およびご提出前の確認事項
+              </span>
+              <span class="accordion-side">
+                <span class="accordion-hint" aria-hidden="true"></span>
+                <span class="accordion-icon" aria-hidden="true">⌄</span>
+              </span>
+            </summary>
 
-            <div class="link-row" aria-label="見本リンク">
-              <a class="link-btn" href="#" aria-label="見本（口座確認資料）">
-                見本を確認する <span class="arrow" aria-hidden="true">›</span>
-              </a>
+            <div class="accordion-body">
+              <ul class="list">
+                <li>通帳をご提出の場合：表紙および見開き1・2ページが確認できる写し</li>
+                <li>写しは、四隅が欠けず、記載内容が判読できる鮮明なものをご用意ください</li>
+                <li>ネットバンキングをご利用の場合は、金融機関名、支店名、店番号、預金種別、口座番号、口座名義（カタカナ名義を含む）が確認できる画面画像をご提出ください</li>
+              </ul>
             </div>
+          </details>
+
+          <div class="link-row" aria-label="見本リンク">
+            <a class="link-btn" href="#" aria-label="見本（口座確認資料）">
+              見本を確認する <span class="arrow" aria-hidden="true">›</span>
+            </a>
           </div>
         </div>
 
@@ -638,31 +793,41 @@ footer a{color:#ccc}
             「雇用保険適用事業所設置届」（写し）
           </h2>
 
-          <div class="callout" role="note" aria-label="重要：住所一致の確認">
-            <div class="callout-title"><span class="dot" aria-hidden="true"></span>重要：住所の一致をご確認ください</div>
-            <p class="lead" style="margin:0;">
-              スプレッドシートへご入力いただいた事業所住所と、設置届に記載の住所が一致していることをご確認ください。<br>
-              相違がある場合、手続き上の確認が必要となる可能性があります。
-            </p>
-          </div>
+          <p class="lead">
+            スプレッドシートへご入力いただいた事業所住所と、設置届に記載の住所が一致していることをご確認ください。
+          </p>
 
-          <div class="note-box" aria-label="設置届が用意できない場合">
-            <div class="note-title">設置届をご用意いただけない場合</div>
-            <p style="margin:0 0 10px; color:rgba(15,17,21,.72); font-weight:900; font-size:12px; line-height:1.75;">
-              代替として、該当する資料をご提出ください（必要に応じて担当者より追加確認を行います）。
-            </p>
+          <p class="doc-subnote">
+            設置届をご用意いただけない場合は、代替資料でのご提出が可能です。該当資料がある場合は、下記をご確認ください。
+          </p>
 
-            <ul class="list">
-              <li>雇用保険被保険者証 資格取得確認通知書（事業主通知用）の写し（加入者いずれか1名分）</li>
-              <li>直近の労働保険 概算・確定保険料申告書の写し</li>
-              <li>労働保険料等納入通知書</li>
-            </ul>
+          <details class="accordion" aria-label="雇用保険適用事業所設置届の確認事項">
+            <summary>
+              <span class="accordion-label">
+                <span class="dot" aria-hidden="true"></span>
+                確認事項および代替提出資料
+              </span>
+              <span class="accordion-side">
+                <span class="accordion-hint" aria-hidden="true"></span>
+                <span class="accordion-icon" aria-hidden="true">⌄</span>
+              </span>
+            </summary>
 
-            <div class="link-row" aria-label="見本リンク">
-              <a class="link-btn" href="#" aria-label="見本（雇用保険関連）">
-                見本を確認する <span class="arrow" aria-hidden="true">›</span>
-              </a>
+            <div class="accordion-body">
+              <ul class="list">
+                <li>スプレッドシートへご入力いただいた事業所住所と、設置届に記載の住所が一致していること</li>
+                <li>相違がある場合、手続き上の確認が必要となる可能性があります</li>
+                <li>設置届をご用意いただけない場合は、雇用保険被保険者証 資格取得確認通知書（事業主通知用）の写し（加入者いずれか1名分）をご提出ください</li>
+                <li>または、直近の労働保険 概算・確定保険料申告書の写しをご提出ください</li>
+                <li>または、労働保険料等納入通知書をご提出ください</li>
+              </ul>
             </div>
+          </details>
+
+          <div class="link-row" aria-label="見本リンク">
+            <a class="link-btn" href="#" aria-label="見本（雇用保険関連）">
+              見本を確認する <span class="arrow" aria-hidden="true">›</span>
+            </a>
           </div>
         </div>
 
@@ -676,23 +841,33 @@ footer a{color:#ccc}
             法人の実在確認および基本情報確認のため、登記簿謄本をご提出ください。
           </p>
 
-          <div class="callout" role="note" aria-label="提出条件">
-            <div class="callout-title"><span class="dot" aria-hidden="true"></span>提出条件</div>
-            <ul class="list">
-             
-              <li>履歴事項全部証明書をご提出ください</li>
-              
-            </ul>
-          </div>
+          <p class="doc-subnote">
+            最新の法人情報が確認できるものをご提出ください。発行時期や記載内容が不鮮明な場合は、再提出をお願いすることがあります。
+          </p>
 
-          <div class="note-box" aria-label="確認事項">
-            <div class="note-title">ご提出前の確認事項</div>
-            <ul class="list" style="margin:0;">
-              <li>会社名・所在地が最新であること</li>
-              <li>代表者名が確認できること</li>
-              <li>文字が鮮明に判読できること</li>
-            </ul>
-          </div>
+          <details class="accordion" aria-label="登記簿謄本の提出条件">
+            <summary>
+              <span class="accordion-label">
+                <span class="dot" aria-hidden="true"></span>
+                提出条件およびご提出前の確認事項
+              </span>
+              <span class="accordion-side">
+                <span class="accordion-hint" aria-hidden="true"></span>
+                <span class="accordion-icon" aria-hidden="true">⌄</span>
+              </span>
+            </summary>
+
+            <div class="accordion-body">
+              <ul class="list">
+                <li>発行から3ヶ月以内のもの</li>
+                <li>履歴事項全部証明書をご提出ください</li>
+                <li>PDFまたは画像で提出可能です</li>
+                <li>会社名・所在地が最新であることをご確認ください</li>
+                <li>代表者名が確認できることをご確認ください</li>
+                <li>文字が鮮明に判読できることをご確認ください</li>
+              </ul>
+            </div>
+          </details>
         </div>
 
         <p class="page-note">© DXアカデミー株式会社</p>
@@ -722,7 +897,6 @@ footer a{color:#ccc}
 </footer>
 
 <script>
-/* ✅ ボタン押下で該当セクションへスムーススクロール（ヘッダー固定分も考慮） */
 (function(){
   const buttons = document.querySelectorAll('.doc-btn[data-target]');
   const header = document.querySelector('header');
@@ -740,7 +914,6 @@ footer a{color:#ccc}
       const y = window.scrollY + target.getBoundingClientRect().top - getHeaderOffset();
       window.scrollTo({ top: y, behavior: 'smooth' });
 
-      // アクセシビリティ：移動先をフォーカス（スクリーンリーダー向け）
       target.setAttribute('tabindex', '-1');
       target.focus({ preventScroll: true });
     });
