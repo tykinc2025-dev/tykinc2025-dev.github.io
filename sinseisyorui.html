@@ -135,6 +135,9 @@ header{
 @media (min-width:768px){
   .notice-text{font-size:16px;}
 }
+.notice-text .important-red{
+  color: var(--danger);
+}
 .notice-footnote{
   margin:10px 0 0;
   color:rgba(15,17,21,.58);
@@ -229,16 +232,6 @@ header{
 }
 @media (max-width:560px){
   .mini-title{font-size:14px;}
-}
-.mini-title small{
-  display:block;
-  margin-top:6px;
-  font-weight:900;
-  color:rgba(15,17,21,.55);
-  font-size:12px;
-}
-@media (max-width:560px){
-  .mini-title small{font-size:11px;margin-top:4px;}
 }
 
 /* Divider */
@@ -642,16 +635,17 @@ footer a{color:#ccc}
         <div class="hr-mark" aria-hidden="true"></div>
 
         <div class="notice-card" aria-label="案内">
-          <p class="notice-text">計画申請にあたり、下記4点の書類をご用意のうえご提出ください。<br>
-          ※提出期限・方法は、担当者からのご案内に沿ってご対応をお願いいたします。</p>
+          <p class="notice-text">
+            計画申請にあたり、下記4点の書類をご用意のうえご提出ください。<br>
+            <span class="important-red">※提出期限・方法は、担当者からのご案内に沿ってご対応をお願いいたします。</span>
+          </p>
 
           <div class="three-cards" aria-label="必要書類4点（クリックで詳細へ）">
             <button class="doc-btn" type="button" data-target="#doc01" aria-label="書類1の詳細へ移動">
               <div class="mini-card">
                 <div class="mini-no">1</div>
                 <p class="mini-title">
-                  雇用契約書／労働条件通知書（写し）
-                  <small>受講者全員分をご準備ください</small>
+                  雇用保険適用事業所設置届（写し）
                 </p>
               </div>
             </button>
@@ -660,8 +654,7 @@ footer a{color:#ccc}
               <div class="mini-card">
                 <div class="mini-no">2</div>
                 <p class="mini-title">
-                  口座確認資料（通帳の写し等）
-                  <small>表紙および見開き1・2ページ</small>
+                  雇用契約書／労働条件通知書（写し）
                 </p>
               </div>
             </button>
@@ -670,8 +663,7 @@ footer a{color:#ccc}
               <div class="mini-card">
                 <div class="mini-no">3</div>
                 <p class="mini-title">
-                  雇用保険適用事業所設置届（写し）
-                  <small>所在地の記載をご確認ください</small>
+                  登記簿謄本（履歴事項全部証明書）
                 </p>
               </div>
             </button>
@@ -680,8 +672,7 @@ footer a{color:#ccc}
               <div class="mini-card">
                 <div class="mini-no">4</div>
                 <p class="mini-title">
-                  登記簿謄本（履歴事項全部証明書）
-                  <small>発行から3ヶ月以内のもの</small>
+                  口座確認資料（通帳の写し等）
                 </p>
               </div>
             </button>
@@ -696,9 +687,53 @@ footer a{color:#ccc}
       <div class="blue-frame" aria-label="提出書類（詳細）">
         <div class="frame-chip"><span>提出書類の詳細</span></div>
 
-        <div class="card" id="doc01" aria-label="1. 雇用契約書／労働条件通知書">
+        <div class="card" id="doc01" aria-label="1. 雇用保険適用事業所設置届">
           <h2 class="section-title">
             <span class="badge-no">01</span>
+            「雇用保険適用事業所設置届」（写し）
+          </h2>
+
+          <p class="lead">
+            スプレッドシートへご入力いただいた事業所住所と、設置届に記載の住所が一致していることをご確認ください。
+          </p>
+
+          <p class="doc-subnote">
+            設置届をご用意いただけない場合は、代替資料でのご提出が可能です。該当資料がある場合は、下記をご確認ください。
+          </p>
+
+          <details class="accordion" aria-label="雇用保険適用事業所設置届の確認事項">
+            <summary>
+              <span class="accordion-label">
+                <span class="dot" aria-hidden="true"></span>
+                確認事項および代替提出資料
+              </span>
+              <span class="accordion-side">
+                <span class="accordion-hint" aria-hidden="true"></span>
+                <span class="accordion-icon" aria-hidden="true">⌄</span>
+              </span>
+            </summary>
+
+            <div class="accordion-body">
+              <ul class="list">
+                <li>スプレッドシートへご入力いただいた事業所住所と、設置届に記載の住所が一致していること</li>
+                <li>相違がある場合、手続き上の確認が必要となる可能性があります</li>
+                <li>設置届をご用意いただけない場合は、雇用保険被保険者証 資格取得確認通知書（事業主通知用）の写し（加入者いずれか1名分）をご提出ください</li>
+                <li>または、直近の労働保険 概算・確定保険料申告書の写しをご提出ください</li>
+                <li>または、労働保険料等納入通知書をご提出ください</li>
+              </ul>
+            </div>
+          </details>
+
+          <div class="link-row" aria-label="見本リンク">
+            <a class="link-btn" href="#" aria-label="見本（雇用保険関連）">
+              見本を確認する <span class="arrow" aria-hidden="true">›</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card" id="doc02" aria-label="2. 雇用契約書／労働条件通知書">
+          <h2 class="section-title">
+            <span class="badge-no">02</span>
             研修受講者全員分の「雇用契約書」または「労働条件通知書」（写し）
           </h2>
 
@@ -745,9 +780,48 @@ footer a{color:#ccc}
           </div>
         </div>
 
-        <div class="card" id="doc02" aria-label="2. 口座確認資料">
+        <div class="card" id="doc03" aria-label="3. 登記簿謄本">
           <h2 class="section-title">
-            <span class="badge-no">02</span>
+            <span class="badge-no">03</span>
+            「登記簿謄本（履歴事項全部証明書）」
+          </h2>
+
+          <p class="lead">
+            法人の実在確認および基本情報確認のため、登記簿謄本をご提出ください。
+          </p>
+
+          <p class="doc-subnote">
+            最新の法人情報が確認できるものをご提出ください。発行時期や記載内容が不鮮明な場合は、再提出をお願いすることがあります。
+          </p>
+
+          <details class="accordion" aria-label="登記簿謄本の提出条件">
+            <summary>
+              <span class="accordion-label">
+                <span class="dot" aria-hidden="true"></span>
+                提出条件およびご提出前の確認事項
+              </span>
+              <span class="accordion-side">
+                <span class="accordion-hint" aria-hidden="true"></span>
+                <span class="accordion-icon" aria-hidden="true">⌄</span>
+              </span>
+            </summary>
+
+            <div class="accordion-body">
+              <ul class="list">
+                <li>発行から3ヶ月以内のもの</li>
+                <li>履歴事項全部証明書をご提出ください</li>
+                <li>PDFまたは画像で提出可能です</li>
+                <li>会社名・所在地が最新であることをご確認ください</li>
+                <li>代表者名が確認できることをご確認ください</li>
+                <li>文字が鮮明に判読できることをご確認ください</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <div class="card" id="doc04" aria-label="4. 口座確認資料">
+          <h2 class="section-title">
+            <span class="badge-no">04</span>
             助成金の受取口座に関する「口座確認資料」（通帳の写し等）
           </h2>
 
@@ -785,89 +859,6 @@ footer a{color:#ccc}
               見本を確認する <span class="arrow" aria-hidden="true">›</span>
             </a>
           </div>
-        </div>
-
-        <div class="card" id="doc03" aria-label="3. 雇用保険適用事業所設置届">
-          <h2 class="section-title">
-            <span class="badge-no">03</span>
-            「雇用保険適用事業所設置届」（写し）
-          </h2>
-
-          <p class="lead">
-            スプレッドシートへご入力いただいた事業所住所と、設置届に記載の住所が一致していることをご確認ください。
-          </p>
-
-          <p class="doc-subnote">
-            設置届をご用意いただけない場合は、代替資料でのご提出が可能です。該当資料がある場合は、下記をご確認ください。
-          </p>
-
-          <details class="accordion" aria-label="雇用保険適用事業所設置届の確認事項">
-            <summary>
-              <span class="accordion-label">
-                <span class="dot" aria-hidden="true"></span>
-                確認事項および代替提出資料
-              </span>
-              <span class="accordion-side">
-                <span class="accordion-hint" aria-hidden="true"></span>
-                <span class="accordion-icon" aria-hidden="true">⌄</span>
-              </span>
-            </summary>
-
-            <div class="accordion-body">
-              <ul class="list">
-                <li>スプレッドシートへご入力いただいた事業所住所と、設置届に記載の住所が一致していること</li>
-                <li>相違がある場合、手続き上の確認が必要となる可能性があります</li>
-                <li>設置届をご用意いただけない場合は、雇用保険被保険者証 資格取得確認通知書（事業主通知用）の写し（加入者いずれか1名分）をご提出ください</li>
-                <li>または、直近の労働保険 概算・確定保険料申告書の写しをご提出ください</li>
-                <li>または、労働保険料等納入通知書をご提出ください</li>
-              </ul>
-            </div>
-          </details>
-
-          <div class="link-row" aria-label="見本リンク">
-            <a class="link-btn" href="#" aria-label="見本（雇用保険関連）">
-              見本を確認する <span class="arrow" aria-hidden="true">›</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="card" id="doc04" aria-label="4. 登記簿謄本">
-          <h2 class="section-title">
-            <span class="badge-no">04</span>
-            「登記簿謄本（履歴事項全部証明書）」
-          </h2>
-
-          <p class="lead">
-            法人の実在確認および基本情報確認のため、登記簿謄本をご提出ください。
-          </p>
-
-          <p class="doc-subnote">
-            最新の法人情報が確認できるものをご提出ください。発行時期や記載内容が不鮮明な場合は、再提出をお願いすることがあります。
-          </p>
-
-          <details class="accordion" aria-label="登記簿謄本の提出条件">
-            <summary>
-              <span class="accordion-label">
-                <span class="dot" aria-hidden="true"></span>
-                提出条件およびご提出前の確認事項
-              </span>
-              <span class="accordion-side">
-                <span class="accordion-hint" aria-hidden="true"></span>
-                <span class="accordion-icon" aria-hidden="true">⌄</span>
-              </span>
-            </summary>
-
-            <div class="accordion-body">
-              <ul class="list">
-                <li>発行から3ヶ月以内のもの</li>
-                <li>履歴事項全部証明書をご提出ください</li>
-                <li>PDFまたは画像で提出可能です</li>
-                <li>会社名・所在地が最新であることをご確認ください</li>
-                <li>代表者名が確認できることをご確認ください</li>
-                <li>文字が鮮明に判読できることをご確認ください</li>
-              </ul>
-            </div>
-          </details>
         </div>
 
         <p class="page-note">© DXアカデミー株式会社</p>
