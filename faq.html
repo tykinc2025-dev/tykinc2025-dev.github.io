@@ -1,506 +1,455 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DXアカデミー株式会社 | 過去申請が通らなかった事例集</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>よくあるご質問</title>
+  <style>
+    :root{
+      --bg:#f3f3f3;
+      --text:#0f1115;
+      --muted:#777;
+      --light-blue:#d8e8f3;
+      --danger:#e03a3a;
+      --danger-soft:#f3b1b1;
+      --plus:#3f73ad;
+      --white:#ffffff;
+      --container:1120px;
+    }
 
-<style>
-:root{
-  --blue:#2aa7d7;
-  --blue2:#1b8fb8;
-  --text:#0f1115;
-  --danger:#e03a3a;
-  --container:1120px;
-}
+    *{box-sizing:border-box}
 
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:system-ui, -apple-system, "Segoe UI", "Noto Sans JP", sans-serif;
-  color:var(--text);
-  background:#ffffff;
-}
-a{text-decoration:none;color:inherit}
+    body{
+      margin:0;
+      font-family:system-ui, -apple-system, "Segoe UI", "Noto Sans JP", sans-serif;
+      color:var(--text);
+      background:var(--bg);
+    }
 
-/* HEADER */
-header{
-  background: linear-gradient(180deg, #0b0b0b, #101114);
-  color:#fff;
-  position:sticky;
-  top:0;
-  z-index:10;
-  box-shadow: 0 10px 24px rgba(0,0,0,.18);
-}
-.header-inner{
-  height:68px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:14px;
-}
-.container{
-  width:min(var(--container), calc(100% - 44px));
-  margin:auto;
-}
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-.brand img{
-  height:28px;
-  width:auto;
-  display:block;
-}
-@media (min-width: 1024px){
-  .brand img{height:34px;}
-}
-.contact-btn{
-  background: linear-gradient(180deg, var(--blue), var(--blue2));
-  color:#fff;
-  padding:10px 16px;
-  border-radius:12px;
-  font-weight:900;
-  border:1px solid rgba(255,255,255,.12);
-  box-shadow: 0 10px 18px rgba(0,0,0,.18);
-}
-.contact-btn:hover{filter:brightness(.98)}
+    .container{
+      width:min(var(--container), calc(100% - 44px));
+      margin:auto;
+    }
 
-/* HERO */
-.main{padding:50px 0 60px;}
-.hero{text-align:center}
+    .main{
+      padding:50px 0 60px;
+    }
 
-.dl-title{
-  font-size:32px;
-  font-weight:900;
-  letter-spacing:.04em;
-  margin:0;
-  line-height:1.6;
-}
+    .hero{
+      text-align:center;
+      margin-bottom:42px;
+    }
 
-.dl-sub{
-  font-size:13px;
-  letter-spacing:.3em;
-  color:#777;
-  margin-top:22px;
-}
+    .faq-title{
+      font-size:32px;
+      font-weight:900;
+      letter-spacing:.04em;
+      margin:0;
+      line-height:1.6;
+      color:#0b1730;
+    }
 
-.hr-mark{
-  width:36px;
-  height:4px;
-  margin:18px auto;
-  border-radius:999px;
-  background:linear-gradient(90deg,#e03a3a, #f3b1b1);
-}
+    .faq-divider{
+      width:36px;
+      height:4px;
+      margin:18px auto;
+      border-radius:999px;
+      background:linear-gradient(90deg,#e03a3a,#f3b1b1);
+    }
 
-.intro{
-  font-size:18px;
-  font-weight:700;
-  color:#444;
-  margin-top:30px;
-}
+    .faq-description{
+      font-size:18px;
+      font-weight:700;
+      color:#777;
+      margin-top:30px;
+      line-height:1.9;
+    }
 
-/* LIST */
-.case-list{
-  margin-top:40px;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  max-width:860px;
-  margin-inline:auto;
-}
+    .faq-groups{
+      display:flex;
+      flex-direction:column;
+      gap:34px;
+      max-width:860px;
+      margin:0 auto;
+    }
 
-.case-summary{
-  position:relative;
-  min-height:64px;
-  display:flex;
-  align-items:center;
-  padding:0 62px 0 24px;
-  border-radius:18px;
-  background:#d8e8f3;
-  cursor:pointer;
-}
+    .faq-group-title{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin:0 0 14px;
+    }
 
-.case-title{
-  font-size:16px;
-  font-weight:800;
-  line-height:1.5;
-  letter-spacing:.01em;
-}
+    .faq-group-dot{
+      width:12px;
+      height:12px;
+      border-radius:999px;
+      background:#2aa7d7;
+      flex:0 0 auto;
+    }
 
-/* スマホのみ調整 */
-@media (max-width: 767px){
-  .case-summary{
-    min-height:auto;
-    padding:14px 54px 14px 18px;
-  }
+    .faq-group-title h2{
+      margin:0;
+      font-size:24px;
+      font-weight:900;
+      line-height:1.5;
+      color:#0f1115;
+    }
 
-  .case-title{
-    font-size:13px;
-    font-weight:700;
-    line-height:1.55;
-    letter-spacing:.02em;
-  }
+    .faq-list{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
 
-  .text-danger{
-    display:block;
-    margin-top:4px;
-    font-size:12px;
-    line-height:1.4;
-  }
-}
-.case-toggle{
-  position:absolute;
-  right:22px;
-  top:50%;
-  width:20px;
-  height:20px;
-  transform:translateY(-50%);
-}
+    .faq-item{
+      background:transparent;
+    }
 
-.case-toggle::before,
-.case-toggle::after{
-  content:"";
-  position:absolute;
-  left:50%;
-  top:50%;
-  width:20px;
-  height:2.5px;
-  background:#3f73ad;
-  transform:translate(-50%,-50%);
-}
+    .faq-question{
+      position:relative;
+      min-height:64px;
+      display:flex;
+      align-items:center;
+      width:100%;
+      padding:0 62px 0 24px;
+      border:none;
+      border-radius:18px;
+      background:#d8e8f3;
+      cursor:pointer;
+      text-align:left;
+      color:#0f1115;
+    }
 
-.case-toggle::after{
-  transform:translate(-50%,-50%) rotate(90deg);
-}
+    .faq-question-text{
+      font-size:16px;
+      font-weight:800;
+      line-height:1.5;
+      letter-spacing:.01em;
+    }
 
-.case-details[open] .case-toggle::after{
-  transform:translate(-50%,-50%) rotate(0deg);
-}
-.case-note{
-  color: var(--danger);
-  font-size: 13px;
-  font-weight: 800;
-  margin-top: 12px;
-  padding:10px 12px;
-  background: #fff3f3;
-  border-left: 4px solid var(--danger);
-  border-radius: 6px;
-}
-/* CONTENT */
-.case-content{
-  margin-top:8px;
-}
-.case-inner{
-  background:#fff;
-  border-radius:16px;
-  padding:16px;
-}
+    .faq-toggle{
+      position:absolute;
+      right:22px;
+      top:50%;
+      width:20px;
+      height:20px;
+      transform:translateY(-50%);
+    }
 
-.case-inner p{
-  font-size:14px;
-  font-weight:700;
-}
+    .faq-toggle::before,
+    .faq-toggle::after{
+      content:"";
+      position:absolute;
+      left:50%;
+      top:50%;
+      width:20px;
+      height:2.5px;
+      background:#3f73ad;
+      transform:translate(-50%,-50%);
+      border-radius:999px;
+      transition:.2s ease;
+    }
 
-.case-inner ul{
-  padding-left:1em;
-  font-size:13px;
-}
+    .faq-toggle::after{
+      transform:translate(-50%,-50%) rotate(90deg);
+    }
 
-.case-sub{
-  font-weight:900;
-  margin-top:10px;
-}
+    .faq-item.open .faq-toggle::after{
+      transform:translate(-50%,-50%) rotate(0deg);
+    }
 
-.text-danger{
-  color: var(--danger);
-  font-weight: 900;
-}
-  
-/* FOOTER */
-footer{
-  background: linear-gradient(180deg, #0b0b0b, #101114);
-  color:#fff;
-  padding:50px 0;
-  margin-top:40px;
-}
-.footer-inner{
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  gap:30px;
-}
-footer a{color:#ccc}
-.footer-links a{
-  display:block;
-  padding:2px 0;
-}
-@media(max-width:700px){
-  .footer-inner{grid-template-columns:1fr}
-  .footer-links a{padding:3px 0;}
-}
-  @media (max-width: 767px){
-  .dl-title{
-    font-size:24px;
-    line-height:1.5;
-  }
-}
+    .faq-answer{
+      display:none;
+      margin-top:8px;
+    }
 
-  
-</style>
+    .faq-answer-inner{
+      background:#fff;
+      border-radius:16px;
+      padding:16px;
+    }
+
+    .faq-answer-inner p{
+      margin:0;
+      font-size:14px;
+      font-weight:700;
+      line-height:1.9;
+      color:#444;
+    }
+
+    @media (max-width: 767px){
+      .main{
+        padding:40px 0 48px;
+      }
+
+      .faq-title{
+        font-size:24px;
+        line-height:1.5;
+      }
+
+      .faq-divider{
+        margin:16px auto;
+      }
+
+      .faq-description{
+        font-size:16px;
+        margin-top:24px;
+        line-height:1.9;
+      }
+
+      .faq-groups{
+        gap:28px;
+      }
+
+      .faq-group-title h2{
+        font-size:19px;
+      }
+
+      .faq-question{
+        min-height:auto;
+        padding:14px 54px 14px 18px;
+      }
+
+      .faq-question-text{
+        font-size:13px;
+        font-weight:700;
+        line-height:1.55;
+        letter-spacing:.02em;
+      }
+
+      .faq-answer-inner{
+        padding:14px 16px;
+        border-radius:14px;
+      }
+
+      .faq-answer-inner p{
+        font-size:13px;
+        line-height:1.8;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <main class="main">
+    <div class="container">
+      <section class="hero">
+        <h1 class="faq-title">よくあるご質問</h1>
+        <div class="faq-divider"></div>
+        <div class="faq-description">
+          質問をクリックすると回答が開きます。内容が見つからない場合は、ページ下部の問い合わせ窓口をご利用ください。
+        </div>
+      </section>
 
-<header>
-  <div class="container header-inner">
-    <a class="brand" href="https://www.dx-academy.com/" aria-label="DXアカデミー株式会社">
-      <img src="https://static.wixstatic.com/media/1696ce_f6dd610345ca4a93b5d02883343db454~mv2.png/v1/crop/x_158%2Cy_149%2Cw_2842%2Ch_541/fill/w_980%2Ch_187%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/DX%E3%83%AD%E3%82%B4%E6%A8%AA%20%281%29.png" alt="DXアカデミー株式会社">
-    </a>
-    <div class="header-right">
-      <a href="https://www.dx-academy.com/" class="contact-btn">HPへ移動</a>
+      <section class="faq-groups" id="faqGroups"></section>
     </div>
-  </div>
-</header>
+  </main>
 
-<main class="main">
-<div class="container">
+  <script>
+    const categories = [
+      {
+        key: "progress",
+        label: "視聴状況・修了",
+        faqs: [
+          {
+            q: "視聴済みなのに『0％』『100％未満』『完了にならない』と表示されます",
+            a: "視聴履歴は正常に記録されていても、表示反映にタイムラグや一時的な不具合が生じる場合があります。まずは時間を置いて再読み込みしてください。再視聴が不要なケースもあるため、改善しない場合は受講者名・講座名を添えてお問い合わせください。"
+          },
+          {
+            q: "最後まで見たのに修了証書が出ません／ダウンロードできません",
+            a: "システム反映の遅延や一時的な不具合が原因の場合があります。再ログインのうえ再度ご確認ください。改善しない場合は、対象講座名と受講者様名をお知らせいただければ確認いたします。"
+          },
+          {
+            q: "管理者画面に視聴状況が反映されません",
+            a: "管理者画面の表示は、実際の視聴記録より遅れて反映される場合があります。受講者側で視聴が完了していても、管理画面上ですぐに表示が変わらないことがあります。時間を置いても変わらない場合はお問い合わせください。"
+          },
+          {
+            q: "終了日時とは何を示していますか？",
+            a: "画面上の『終了日時』は、最後に動画を視聴した日時が反映される仕様です。すべての動画を視聴完了した場合は、ユニットの修了状態欄に『3/3』などの完了表示がされます。"
+          },
+          {
+            q: "講座終了者数が0人のままですが問題ないですか？",
+            a: "対象となる複数コースをすべて受講完了した時点で反映される仕組みです。現在受講中のコースのみ完了している段階では、終了者数が0人と表示される場合があります。"
+          }
+        ]
+      },
+      {
+        key: "playback",
+        label: "動画再生・操作",
+        faqs: [
+          {
+            q: "動画が再生できない／途中で止まる／見られなくなりました",
+            a: "画面が読み込み中のまま・途中で止まる・サイト自体が開けない・エラーメッセージが出る、など状況により確認方法が異なります。可能であればスクリーンショットを添えてお問い合わせください。"
+          },
+          {
+            q: "スマホで視聴すると落ちる・進まないです",
+            a: "安定した受講のため、パソコンまたはタブレットでの視聴を推奨しています。特にブラウザは最新版のGoogle Chrome、通信環境は安定したWi-Fiをご利用ください。"
+          },
+          {
+            q: "PC推奨ですか？ iPadやスマホでも見られますか？",
+            a: "基本的には誤操作を防ぎやすいパソコン視聴をおすすめしていますが、iPadやスマートフォンでも視聴は可能です。端末によっては再生挙動が異なることがあります。"
+          },
+          {
+            q: "早送りやスキップはできますか？",
+            a: "本講座は、早送りやスキップができない仕様です。各動画を順番に最後までご視聴ください。助成金申請時には視聴履歴が確認対象となるため、再生位置の操作はお控えください。"
+          },
+          {
+            q: "巻き戻し・繰り返し視聴はできますか？",
+            a: "一度最後まで視聴し、視聴完了となった後に再生バーが表示される仕様です。視聴完了後は必要に応じて振り返り視聴が可能です。なお、一部端末では完了前に再生バーが表示される場合があり、操作すると意図せずスキップ扱いとなることがあります。"
+          },
+          {
+            q: "スキップ扱いになってしまった場合はどうなりますか？",
+            a: "再生バーの操作などにより、意図せずスキップとして記録されることがあります。その場合は、最後に正常に記録された位置から再視聴が必要になることがあります。詳細は履歴確認のうえご案内します。"
+          }
+        ]
+      },
+      {
+        key: "period",
+        label: "受講期間・公開期間",
+        faqs: [
+          {
+            q: "『期間外』と表示されます",
+            a: "視聴期間外、または対象外コースへアクセスしている可能性があります。弊社側で期間設定を確認のうえ必要な対応を行う場合がありますので、ログイン後の画面情報とあわせてお問い合わせください。"
+          },
+          {
+            q: "別コースの動画を開いて見られません",
+            a: "現在視聴できるのは、対象期間内のコースのみです。別コースは公開開始日以降に視聴可能になる場合があります。"
+          },
+          {
+            q: "受講期間内に終わらなかった場合はどうなりますか？",
+            a: "受講期間内に視聴が完了しなかった場合、助成金申請時に対象外となる可能性があります。制度上、後から修正できないため、期間内完了にご協力ください。"
+          },
+          {
+            q: "案内された日付の中なら、いつ受講してもよいですか？",
+            a: "はい。ご案内している受講期間内であれば、どの日にご受講いただいても問題ありません。可能な範囲で就業時間内の受講をお願いします。"
+          }
+        ]
+      },
+      {
+        key: "subsidy",
+        label: "助成金申請・就業時間",
+        faqs: [
+          {
+            q: "受講は就業時間内でないといけませんか？",
+            a: "助成金申請をご予定の場合、原則として就業時間内での受講をお願いしております。申請時には視聴履歴と出勤記録等の整合確認が必要となるためです。やむを得ず就業時間外に受講される場合は、残業代等の適切な処理が必要です。"
+          },
+          {
+            q: "就業時間は何時から何時ですか？",
+            a: "各受講者様の雇用契約書や就業規則に定められた就業時間内での受講をお願いしています。会社ごとに異なるため、社内規定をご確認ください。"
+          },
+          {
+            q: "感想文も就業時間内に記入する必要がありますか？ 何文字必要ですか？",
+            a: "助成金申請をご予定の場合、感想文の記入も就業時間内での対応をお願いします。また、管理画面上で完了表示とするためには350文字以上の記入が必要です。"
+          },
+          {
+            q: "視聴履歴は管理されていますか？",
+            a: "はい。視聴履歴はシステム上で記録されます。助成金申請時には、視聴履歴と出勤記録等を照合して申請手続きを進めます。"
+          },
+          {
+            q: "労働局から社員へ電話確認はありますか？",
+            a: "基本的には多くありませんが、状況に応じて勤務時間の確認資料や残業代支給状況などの提出を求められる場合があります。"
+          }
+        ]
+      },
+      {
+        key: "account",
+        label: "ログイン・アカウント",
+        faqs: [
+          {
+            q: "ログインできません",
+            a: "ID・パスワードをコピー＆ペーストする際、前後に空白が入っているとエラーになる場合があります。不要なスペースがないか確認のうえ再度お試しください。改善しない場合は画面表示内容とあわせてご連絡ください。"
+          },
+          {
+            q: "管理者も動画を視聴する必要がありますか？",
+            a: "管理者様ご自身が動画を視聴する必要はありません。受講者様が期限内に完了できるよう、進捗確認やお声がけをお願いいたします。"
+          },
+          {
+            q: "対象コース・対象アカウントはどれですか？",
+            a: "弊社よりご案内している対象コース／対象アカウントのみが対応対象です。対象外アカウントは視聴不要です。"
+          },
+          {
+            q: "対象外アカウントはユニット終了にしなくてよいですか？",
+            a: "はい、対象外アカウントについてはユニット終了にしていただく必要はありません。対象の受講者様のみ視聴完了いただいていれば問題ありません。"
+          }
+        ]
+      },
+      {
+        key: "materials",
+        label: "教材・再視聴・言語対応",
+        faqs: [
+          {
+            q: "教材テキストはありますか？",
+            a: "教材テキストは別途ご案内またはお届けにて対応しております。振り返り学習の際にもご活用いただけます。"
+          },
+          {
+            q: "振り返り視聴はできますか？",
+            a: "受講期間中かつ一度視聴完了している場合に可能です。受講期間終了後は制度上、再視聴できません。"
+          },
+          {
+            q: "振り返り視聴は就業時間外でもよいですか？",
+            a: "一度視聴完了している動画の振り返り視聴については、就業時間外でも問題ありません。ただし、正式な受講として扱われる初回視聴は就業時間内での対応をお願いいたします。"
+          },
+          {
+            q: "外国語版の動画はありますか？",
+            a: "現在、ベトナム語版・インドネシア語版の動画はございません。復習用として教材テキストをご活用ください。"
+          }
+        ]
+      }
+    ];
 
-<div class="hero">
-<h1 class="dl-title">
-申請が承認されなかった<br>事例一覧
-</h1>
+    const faqGroups = document.getElementById("faqGroups");
 
-<div class="dl-sub">Case Study</div>
+    categories.forEach((category) => {
+      const group = document.createElement("section");
+      group.className = "faq-group";
+      group.id = category.key;
 
-<div class="hr-mark"></div>
+      const title = document.createElement("div");
+      title.className = "faq-group-title";
+      title.innerHTML = `
+        <div class="faq-group-dot"></div>
+        <h2>${category.label}</h2>
+      `;
+      group.appendChild(title);
 
-<div class="intro">
-実際に申請が承認されなかった事例を整理しております。<br>
-申請前の確認資料としてご活用ください。
-</div>
-</div>
+      const list = document.createElement("div");
+      list.className = "faq-list";
 
-<div class="case-list">
+      category.faqs.forEach((faq) => {
+        const item = document.createElement("div");
+        item.className = "faq-item";
 
-<!-- ① -->
-<details class="case-details">
-<summary class="case-summary">
-<div class="case-title">１．就業時間外に受講・視聴が行われたケース</div>
-<div class="case-toggle"></div>
-</summary>
-<div class="case-content">
-<div class="case-inner">
-<p>申請条件として、研修は就業時間内での受講が原則となります。<br>
-そのため、就業時間外に視聴した場合は、勤怠記録との照合により助成金申請の対象外となります。<br>
-また、休日や残業時間に視聴した場合でも、正式な残業申請が行われている場合のみ有効と認められます。<br>
-有給休暇は休日扱いとなりますので就業時間外となります。　</p>
+        const button = document.createElement("button");
+        button.className = "faq-question";
+        button.type = "button";
+        button.innerHTML = `
+          <span class="faq-question-text"></span>
+          <span class="faq-toggle"></span>
+        `;
+        button.querySelector(".faq-question-text").textContent = faq.q;
 
+        const answer = document.createElement("div");
+        answer.className = "faq-answer";
+        answer.innerHTML = `
+          <div class="faq-answer-inner">
+            <p></p>
+          </div>
+        `;
+        answer.querySelector("p").textContent = faq.a;
 
-<div class="case-sub">問題点</div>
-<ul>
-<li>就業時間外に視聴している</li>
-<li>有給休暇中に視聴している</li>
-<li>残業申請や処理が行われていない</li>
-</ul>
+        button.addEventListener("click", () => {
+          item.classList.toggle("open");
+          answer.style.display = item.classList.contains("open") ? "block" : "none";
+        });
 
-<div class="case-sub">受講時のポイント</div>
-<ul>
-<li>研修は基本的に就業時間内に受講するようにしてください。</li>
-<li>残業時間や休日出勤時に視聴する場合は、事前に残業申請を行い、適切な勤怠処理を実施してください。</li>
-<li>有給休暇中の視聴は避けてください。</li>
-</ul>
-</div>
-</div>
-</details>
+        item.appendChild(button);
+        item.appendChild(answer);
+        list.appendChild(item);
+      });
 
-<!-- ② -->
-<details class="case-details">
-<summary class="case-summary">
-<div class="case-title">
-２．動画のスキップまたは倍速再生が確認されたケース　
-<span class="text-danger">※再視聴処理のご案内</span>
-</div>
-<div class="case-toggle"></div>
-</summary>
-<div class="case-content">
-<div class="case-inner">
-<p>受講は「決められた受講期間内に、所定の動画時間を正しく視聴しているか」が重要です。<br>
-スキップや早送り、倍速再生などを行った場合、実際の動画時間どおりに視聴していないため、正常な受講として認められません。システム上では再生時間がすべて記録されており、視聴時間が不足している場合は、助成金申請の対象外となります。</p>
-
-<div class="case-sub">問題点</div>
-<ul>
-<li>システム上の再生時間と動画の長さが一致しない</li>
-<li>動画をスキップ・早送り・倍速再生している</li>
-<li>動画再生中に再生バーに触れてしまい、意図せず再生位置が移動した</li>
-<li>複数端末などで並行して視聴した</li>
-</ul>
-
-<div class="case-sub">受講時のポイント</div>
-<ul>
-<li>各コースごとに、動画の総時間を満たすように1つずつ正しく視聴してください。</li>
-<li>「少しだけ飛ばしたつもり」でも、履歴には正確に記録され、正常受講とは認められません。</li>
-  <p class="case-note">
-※スキップをしてしまった場合の対応（再視聴処理）<br><br>
-スキップ操作が行われた場合、弊社システム上で検知されます。<br>
-通常はスキップができない仕様となっておりますが、ご利用の端末やブラウザ環境によっては、まれに操作が可能となる場合があります。<br><br>
-
-視聴条件を満たさない状態でスキップが行われた場合、基本的には視聴記録が反映されない仕様となっておりますが、状況によっては再生記録が正しく反映されない状態になり動画の再生時間が0秒に戻る場合があります。<br><br>
-
-該当する場合は、弊社にて「再視聴処理」（最終の視聴記録時点まで巻き戻し）を行いますので、恐れ入りますが、改めてご視聴いただきますようお願いいたします。<br>
-※再生時間も最終の視聴記録時点に戻ります。
-</p>
-</ul>
-</div>
-</div>
-</details>
-
-<!-- ③ -->
-<details class="case-details">
-<summary class="case-summary">
-<div class="case-title">３．計画期間内に受講を完了できなかったケース</div>
-<div class="case-toggle"></div>
-</summary>
-<div class="case-content">
-<div class="case-inner">
-<p>受講は、事前に定められた受講期間内にすべて完了していることが条件です。<br>
-期間内に視聴が完了していない場合は、助成金申請の対象外となります。<br>
-また、受講期間外は視聴自体ができず、事前に申請した期間の変更もできません。そのため、期間内にすべての動画を見終える必要があります。</p>
-
-<div class="case-sub">問題点</div>
-<ul>
-<li>受講期間内にすべての動画を視聴しきれなかった</li>
-<li>受講の進捗管理ができていなかった</li>
-</ul>
-
-<div class="case-sub">受講時のポイント</div>
-<ul>
-<li>受講開始後は計画的に視聴を進め、期間内に完了するようにしてください。</li>
-<li>管理アカウントの進捗状況を活用し、管理者は受講者の進捗を定期的に確認してください。</li>
-</ul>
-</div>
-</div>
-</details>
-
-<!-- ④ -->
-<details class="case-details">
-<summary class="case-summary">
-<div class="case-title">４．出された感想文の内容が不十分と判断されたケース</div>
-<div class="case-toggle"></div>
-</summary>
-<div class="case-content">
-<div class="case-inner">
-<p>本申請では、感想文の提出が必須条件となっています。<br>
-感想文が未提出の場合は、その時点で助成金申請の対象外となります。<br>
-また、感想文の内容についても、受講内容を踏まえたうえで「自身の業務にどのように活かすか」が具体的に記載されている必要があります。計画申請時に提出している業種・職種との整合性も審査で確認されるため、現在の業務内容と関連性がない場合は、対象外と判断される可能性があります。</p>
-
-<div class="case-sub">問題点</div>
-<ul>
-<li>感想文を提出していない</li>
-<li>内容が抽象的で、具体的な学びが記載されていない</li>
-<li>自身の業務との関連性が書かれていない</li>
-<li>申請時の業種・職種と内容が一致していない</li>
-<li>受講した内容と感想文の内容が一致していない</li>
-</ul>
-
-<div class="case-sub">受講時のポイント</div>
-<ul>
-<li>必ず感想文を提出してください。未提出は即対象外となります。</li>
-<li>受講内容を踏まえ、「何を学び、どのように業務へ活かすか」を具体的に記載してください。</li>
-<li>申請時の業種・職種と紐づけて、自身の業務に関連する内容で記載してください。</li>
-<li>受講内容と一致した内容で記載してください。</li>
-<li>システムにある”感想文の書き方”も参考に使ってください。</li>
-</ul>
-</div>
-</div>
-</details>
-
-<!-- ⑤ -->
-<details class="case-details">
-<summary class="case-summary">
-<div class="case-title">５．署名書類が期限内に提出されなかったケース</div>
-<div class="case-toggle"></div>
-</summary>
-<div class="case-content">
-<div class="case-inner">
-<p>受講が完了していても、署名済みの必要書類が支給申請期限までにそろっていない場合は、助成金申請の対象外となります。<br>
-本申請では手書きサインが必要な書類があるため、対応を後回しにすると回収が間に合わなくなるケースが多く見られます。また、サインの未記入や、雇用契約書と筆跡が大きく異なる場合なども審査対象となるため、正確に記入することが重要です。<br>
-申請は社労士による労働局への提出が必要となるため、提出期限だけでなく、その前段の準備期間も考慮する必要があります。</p>
-
-<div class="case-sub">問題点</div>
-<ul>
-<li>手書きサイン済み書類の提出が期限までに間に合わなかった</li>
-<li>書類対応を後回しにしてしまった</li>
-<li>サイン漏れや記入不備があった</li>
-<li>雇用契約書と筆跡が一致していない</li>
-</ul>
-
-<div class="case-sub">受講時のポイント</div>
-<ul>
-<li>書類は後回しにせず、早めに署名・提出を行ってください。</li>
-<li>サイン漏れや記入ミスがないよう、提出前に必ず確認してください。</li>
-<li>雇用契約書と同一の本人による署名を行ってください。</li>
-<li>申請期限だけでなく、社労士への提出締切も意識して余裕を持って対応してください。</li>
-</ul>
-</div>
-</div>
-</details>
-
-<!-- ⑥ -->
-<details class="case-details">
-<summary class="case-summary">
-<div class="case-title">６．雇用保険の適用期間外に計画スケジュールが設定されていたケース</div>
-<div class="case-toggle"></div>
-</summary>
-<div class="case-content">
-<div class="case-inner">
-<p>本制度では、受講期間が雇用保険の対象期間内であることが申請条件となります。<br>
-そのため、視聴自体が計画期間内であっても、雇用保険の対象期間外に該当している場合は、助成金申請の対象外となります。<br>
-計画申請時にも確認は行われますが、まれにその段階では見落とされ、支給申請時の審査で発覚し、対象外と判断されるケースがあります。<br>
-※受講期間中に雇用保険に加入していれば、支給申請時点で加入していなくても問題ありません。</p>
-
-<div class="case-sub">問題点</div>
-<ul>
-<li>雇用保険の対象期間を考慮せずに計画スケジュールを設定してしまった</li>
-<li>退職や有給消化により、受講時間が不足してしまった</li>
-</ul>
-
-<div class="case-sub">受講時のポイント</div>
-<ul>
-<li>計画スケジュールを設定する際は、必ず受講者の雇用保険加入期間を考慮ください。</li>
-<li>退職予定や有給消化の期間も考慮し、受講時間が確保できるスケジュールを設定してください。</li>
-<li>不明点がある場合は、事前に確認したうえでスケジュールを設定してください。</li>
-</ul>
-
-<p>※制度要件は受講完了だけでなく、「対象期間内であること」まで含めて満たしている必要があります。</p>
-
-</div>
-</div>
-</details>
-
-</div>
-
-</div>
-</main>
-
-<footer>
-  <div class="container footer-inner">
-    <div>
-      <strong>DXアカデミー株式会社</strong><br>
-      〒106-0032<br>
-      東京都港区六本木3丁目16番12号
-    </div>
-
-    <div class="footer-links">
-      <a href="https://www.dx-academy.com/">ホーム</a>
-      <a href="https://www.dx-academy.com/blank">事業紹介</a>
-      <a href="https://www.dx-academy.com/blank-1">会社紹介</a>
-      <a href="https://www.dx-academy.com/">お問い合わせ</a>
-    </div>
-
-    <div aria-hidden="true"></div>
-  </div>
-</footer>
-
+      group.appendChild(list);
+      faqGroups.appendChild(group);
+    });
+  </script>
 </body>
 </html>
