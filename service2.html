@@ -2,8 +2,9 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>人材開発支援助成金申請手続きの流れ</title>
+
   <style>
     :root{
       --bg:#f3f3f3;
@@ -19,15 +20,11 @@
       box-sizing:border-box;
     }
 
-    html,body{
-      margin:0;
-      padding:0;
-    }
-
     body{
-      font-family:system-ui, -apple-system, "Segoe UI", "Noto Sans JP", sans-serif;
-      color:var(--text);
+      margin:0;
+      font-family:system-ui, -apple-system, "Noto Sans JP", sans-serif;
       background:var(--bg);
+      color:var(--text);
     }
 
     .container{
@@ -41,47 +38,42 @@
 
     .hero{
       text-align:center;
-      margin-bottom:42px;
+      margin-bottom:40px;
     }
 
-    .page-title{
+    .title{
       font-size:32px;
       font-weight:900;
-      letter-spacing:.04em;
       margin:0;
-      line-height:1.6;
       color:#0b1730;
     }
 
-    .page-divider{
+    .divider{
       width:36px;
       height:4px;
-      margin:18px auto;
+      margin:16px auto;
       border-radius:999px;
       background:linear-gradient(90deg,#e03a3a,#f3b1b1);
     }
 
-    .page-description{
+    .desc{
       font-size:18px;
       font-weight:700;
       color:var(--muted);
-      margin-top:30px;
-      line-height:1.9;
+      margin-top:20px;
+      line-height:1.8;
     }
 
-    .pdf-section{
+    .pdf-wrap{
       max-width:960px;
       margin:0 auto;
-    }
-
-    .pdf-frame-wrap{
-      background:var(--white);
+      background:#fff;
       border-radius:20px;
       overflow:hidden;
-      box-shadow:0 10px 30px rgba(15,17,21,.08);
+      box-shadow:0 10px 30px rgba(0,0,0,.08);
     }
 
-    .pdf-frame{
+    .pdf{
       width:100%;
       height:1200px;
       border:none;
@@ -89,86 +81,65 @@
       background:#fff;
     }
 
-    .pdf-note{
-      margin-top:16px;
-      font-size:13px;
-      line-height:1.8;
-      color:#666;
+    .note{
       text-align:center;
-      font-weight:600;
+      margin-top:12px;
+      font-size:13px;
+      color:#666;
     }
 
     @media (max-width:767px){
-      .main{
-        padding:40px 0 48px;
-      }
-
-      .page-title{
+      .title{
         font-size:24px;
-        line-height:1.5;
       }
 
-      .page-divider{
-        margin:16px auto;
+      .desc{
+        font-size:15px;
       }
 
-      .page-description{
-        font-size:16px;
-        margin-top:24px;
-        line-height:1.9;
-      }
-
-      .pdf-frame-wrap{
-        border-radius:14px;
-      }
-
-      .pdf-frame{
+      .pdf{
         height:75vh;
-        min-height:520px;
-      }
-
-      .pdf-note{
-        font-size:12px;
-        line-height:1.7;
       }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- ヘッダーそのまま -->
+  <!-- ===== ヘッダー（そのまま使う） ===== -->
   <header>
-    <!-- 既存ヘッダーをここに貼り付け -->
+    <!-- ここに既存ヘッダーを貼る -->
   </header>
 
+  <!-- ===== メイン ===== -->
   <main class="main">
     <div class="container">
+
       <section class="hero">
-        <h1 class="page-title">人材開発支援助成金申請手続きの流れ</h1>
-        <div class="page-divider"></div>
-        <div class="page-description">
+        <h1 class="title">人材開発支援助成金申請手続きの流れ</h1>
+        <div class="divider"></div>
+        <div class="desc">
           以下の資料をそのまま画面内でご確認いただけます。
         </div>
       </section>
 
-      <section class="pdf-section">
-        <div class="pdf-frame-wrap">
-          <iframe
-            class="pdf-frame"
-            src="./schedule-402.pdf"
-            title="人材開発支援助成金申請手続きの流れ PDF">
-          </iframe>
-        </div>
-        <p class="pdf-note">
-          PDFが表示されない場合は、ブラウザの再読み込み後にもう一度ご確認ください。
-        </p>
+      <section class="pdf-wrap">
+        <iframe 
+          class="pdf"
+          src="./schedule-402.pdf#toolbar=0&navpanes=0&scrollbar=0">
+        </iframe>
       </section>
+
+      <div class="note">
+        ※ 表示されない場合はページを再読み込みしてください
+      </div>
+
     </div>
   </main>
 
-  <!-- フッターそのまま -->
+  <!-- ===== フッター（そのまま使う） ===== -->
   <footer>
-    <!-- 既存フッターをここに貼り付け -->
+    <!-- ここに既存フッターを貼る -->
   </footer>
 
 </body>
