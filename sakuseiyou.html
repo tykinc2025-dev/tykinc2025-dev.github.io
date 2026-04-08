@@ -80,7 +80,7 @@ header{
 
 .tab-buttons{
   display:grid;
-  grid-template-columns:repeat(4, 1fr);
+  grid-template-columns:repeat(5, 1fr);
   gap:14px;
   max-width:980px;
   margin:0 auto 28px;
@@ -372,19 +372,22 @@ footer a{color:#ccc}
     <!-- タブボタン：見た目は元コードのまま -->
     <div class="tab-wrap">
       <div class="tab-buttons" role="tablist" aria-label="ページ内メニュー">
-        <button class="tab-btn is-active" type="button" role="tab" aria-selected="true" data-tab="flow">
-          全体の流れ
-        </button>
-        <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="documents">
-          申請書類一覧
-        </button>
-        <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="faq">
-          FAQ
-        </button>
-        <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="cases">
-          対象外事例
-        </button>
-      </div>
+  <button class="tab-btn is-active" type="button" role="tab" aria-selected="true" data-tab="flow">
+    全体の流れ
+  </button>
+  <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="documents">
+    申請書類一覧
+  </button>
+  <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="required-docs">
+    求められる場合のある書類
+  </button>
+  <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="faq">
+    FAQ
+  </button>
+  <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="cases">
+    対象外事例
+  </button>
+</div>
 
       <!-- =========================================
            タブ1：全体の流れ
@@ -509,9 +512,43 @@ footer a{color:#ccc}
           })();
         </script>
       </section>
-
       <!-- =========================================
-           タブ3：FAQ
+           タブ3：求められる場合のある書類
+           HTML / CSS / JS
+      ========================================== -->
+      <section class="tab-panel" id="tab-required-docs" role="tabpanel">
+        
+        <!-- HTML -->
+        <div class="tab-box">
+          <h2>求められる場合のある書類</h2>
+          <p>状況に応じて、追加で提出をお願いする場合がある書類です。</p>
+          <ul>
+            <li>雇用契約書</li>
+            <li>出勤簿・勤怠記録</li>
+            <li>賃金台帳</li>
+            <li>本人確認書類</li>
+            <li>その他補足資料</li>
+          </ul>
+        </div>
+
+        <!-- CSS -->
+        <style>
+          /* タブ3専用CSSがあればここに追加 */
+          #tab-required-docs .tab-box{}
+        </style>
+
+        <!-- JS -->
+        <script>
+          (function(){
+            function initTabRequiredDocs(){
+              // タブ3専用JSがあればここに追加
+            }
+            initTabRequiredDocs();
+          })();
+        </script>
+      </section>
+      <!-- =========================================
+           タブ4：FAQ
            HTML / CSS / JS
       ========================================== -->
       <section class="tab-panel" id="tab-faq" role="tabpanel">
@@ -546,7 +583,7 @@ footer a{color:#ccc}
       </section>
 
       <!-- =========================================
-           タブ4：対象外事例
+           タブ5：対象外事例
            HTML / CSS / JS
       ========================================== -->
       <section class="tab-panel" id="tab-cases" role="tabpanel">
