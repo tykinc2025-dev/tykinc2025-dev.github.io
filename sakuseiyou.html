@@ -393,102 +393,69 @@ footer a{color:#ccc}
       <section class="tab-panel is-active" id="tab-flow" role="tabpanel">
 
   <!-- HTML -->
-  <div class="flow-container">
+ <div class="flow-container">
 
-    <section class="flow-hero">
-      <h1 class="flow-title">サービス全体の流れ
-        <li>人材開発支援助成金のご利用をご希望の場合</h1>
-      <div class="flow-divider"></div>
-      <div class="flow-desc">
-        以下の資料をご確認ください。
-      </div>
-    </section>
+  <div class="hero">
+    <h1 class="dl-title">
+      サービス全体の流れ<br>
+      人材開発支援助成金のご利用をご希望の場合
+    </h1>
 
-    <section class="flow-image-wrap">
-      <img src="./nagare.png" alt="申請手続きの流れ">
-    </section>
+    <div class="hr-mark"></div>
 
-    <div class="flow-note">
-      
+    <div class="intro">
+      以下の資料をご確認ください。
     </div>
-
   </div>
 
+  <section class="flow-image-wrap">
+    <img src="./nagare.png" alt="申請手続きの流れ">
+  </section>
+
+  <div class="flow-note"></div>
+
+</div>
+        
   <!-- CSS（タブ1専用） -->
   <style>
     #tab-flow{
-      background:#ffffff;
-      padding:50px 0 60px;
-    }
+  background:#fff;
+  padding:50px 0 60px;
+}
 
-    .flow-container{
-      width:min(1120px, calc(100% - 44px));
-      margin:auto;
-    }
+.flow-container{
+  width:min(1120px, calc(100% - 44px));
+  margin:auto;
+}
 
-    .flow-hero{
-      text-align:center;
-      margin-bottom:40px;
-    }
+.flow-image-wrap{
+  max-width:960px;
+  margin:40px auto 0;
+  background:#fff;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
 
-    .flow-title{
-      font-size:32px;
-      font-weight:900;
-      margin:0;
-      color:#0b1730;
-    }
+.flow-image-wrap img{
+  width:100%;
+  height:auto;
+  display:block;
+}
 
-    .flow-divider{
-      width:36px;
-      height:4px;
-      margin:16px auto;
-      border-radius:999px;
-      background:linear-gradient(90deg,#e03a3a,#f3b1b1);
-    }
+.flow-note{
+  text-align:center;
+  margin-top:12px;
+  font-size:13px;
+  color:#666;
+}
 
-    .flow-desc{
-      font-size:18px;
-      font-weight:700;
-      color:#777;
-      margin-top:20px;
-      line-height:1.8;
-    }
-
-    .flow-image-wrap{
-      max-width:960px;
-      margin:0 auto;
-      background:#fff;
-      border-radius:20px;
-      overflow:hidden;
-      box-shadow:0 10px 30px rgba(0,0,0,.08);
-    }
-
-    .flow-image-wrap img{
-      width:100%;
-      height:auto;
-      display:block;
-    }
-
-    .flow-note{
-      text-align:center;
-      margin-top:12px;
-      font-size:13px;
-      color:#666;
-    }
-
-    @media (max-width:767px){
-      .flow-title{
-        font-size:24px;
-      }
-
-      .flow-desc{
-        font-size:15px;
-      }
-
-      .flow-image-wrap{
-        border-radius:12px;
-      }
-    }
+@media (max-width:767px){
+  .flow-image-wrap{
+    margin-top:28px;
+    border-radius:12px;
+  }
+}
   </style>
 
   <!-- JS（不要ならこのままでOK） -->
