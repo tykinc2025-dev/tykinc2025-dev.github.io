@@ -487,53 +487,60 @@ footer a{color:#ccc}
   <!-- HTML -->
   <div class="docs-panel" aria-label="計画申請：提出書類案内ページ">
 
-    <div class="docs-hero">
-      <h1 class="docs-hero-title">計画申請：提出書類のご案内</h1>
-      <div class="docs-hr-mark" aria-hidden="true"></div>
+    <!-- 上部だけ「全体の流れ」デザインに変更 -->
+    <div class="hero">
+      <h1 class="dl-title">
+        計画申請：提出書類のご案内
+      </h1>
 
-      <div class="docs-notice-card" aria-label="案内">
-        <p class="docs-notice-text">
-          計画申請にあたり、下記4点の書類をご用意のうえご提出ください。<br>
-          <span class="docs-important-red">※提出期限・方法は、担当者からのご案内に沿ってご対応をお願いいたします。</span>
-        </p>
+      <div class="dl-sub">Documents Guide</div>
 
-        <div class="docs-three-cards" aria-label="必要書類4点（クリックで詳細へ）">
-          <button class="docs-doc-btn" type="button" data-target="#docs-doc01" aria-label="書類1の詳細へ移動">
-            <div class="docs-mini-card">
-              <div class="docs-mini-no">1</div>
-              <p class="docs-mini-title">
-                雇用保険適用事業所設置届（写し）
-              </p>
-            </div>
-          </button>
+      <div class="hr-mark"></div>
 
-          <button class="docs-doc-btn" type="button" data-target="#docs-doc02" aria-label="書類2の詳細へ移動">
-            <div class="docs-mini-card">
-              <div class="docs-mini-no">2</div>
-              <p class="docs-mini-title">
-                雇用契約書／労働条件通知書（写し）
-              </p>
-            </div>
-          </button>
+      <div class="intro">
+        下記4点の書類をご用意のうえご提出ください。<br>
+        <span class="docs-important-red">※提出期限・方法は、担当者からのご案内に沿ってご対応をお願いいたします。</span>
+      </div>
+    </div>
 
-          <button class="docs-doc-btn" type="button" data-target="#docs-doc03" aria-label="書類3の詳細へ移動">
-            <div class="docs-mini-card">
-              <div class="docs-mini-no">3</div>
-              <p class="docs-mini-title">
-                登記簿謄本（履歴事項全部証明書）
-              </p>
-            </div>
-          </button>
+    <!-- ここから下は今のまま -->
+    <div class="docs-notice-card" aria-label="案内">
+      <div class="docs-three-cards" aria-label="必要書類4点（クリックで詳細へ）">
+        <button class="docs-doc-btn" type="button" data-target="#docs-doc01" aria-label="書類1の詳細へ移動">
+          <div class="docs-mini-card">
+            <div class="docs-mini-no">1</div>
+            <p class="docs-mini-title">
+              雇用保険適用事業所設置届（写し）
+            </p>
+          </div>
+        </button>
 
-          <button class="docs-doc-btn" type="button" data-target="#docs-doc04" aria-label="書類4の詳細へ移動">
-            <div class="docs-mini-card">
-              <div class="docs-mini-no">4</div>
-              <p class="docs-mini-title">
-                口座確認資料（通帳の写し等）
-              </p>
-            </div>
-          </button>
-        </div>
+        <button class="docs-doc-btn" type="button" data-target="#docs-doc02" aria-label="書類2の詳細へ移動">
+          <div class="docs-mini-card">
+            <div class="docs-mini-no">2</div>
+            <p class="docs-mini-title">
+              雇用契約書／労働条件通知書（写し）
+            </p>
+          </div>
+        </button>
+
+        <button class="docs-doc-btn" type="button" data-target="#docs-doc03" aria-label="書類3の詳細へ移動">
+          <div class="docs-mini-card">
+            <div class="docs-mini-no">3</div>
+            <p class="docs-mini-title">
+              登記簿謄本（履歴事項全部証明書）
+            </p>
+          </div>
+        </button>
+
+        <button class="docs-doc-btn" type="button" data-target="#docs-doc04" aria-label="書類4の詳細へ移動">
+          <div class="docs-mini-card">
+            <div class="docs-mini-no">4</div>
+            <p class="docs-mini-title">
+              口座確認資料（通帳の写し等）
+            </p>
+          </div>
+        </button>
       </div>
     </div>
 
@@ -740,29 +747,50 @@ footer a{color:#ccc}
       line-height:1.85;
     }
 
-    #tab-documents .docs-hero{
+    /* 上部は flow タブと同じ見た目に合わせる */
+    #tab-documents .hero{
       text-align:center;
-      padding:10px 0 12px;
+      padding-top:10px;
     }
 
-    #tab-documents .docs-hero-title{
-      margin:0;
-      font-size:26px;
-      font-weight:950;
+    #tab-documents .dl-title{
+      font-size:32px;
+      font-weight:900;
       letter-spacing:.04em;
-      line-height:1.25;
+      margin:0;
+      line-height:1.6;
     }
 
-    #tab-documents .docs-hr-mark{
-      width:26px;
-      height:3px;
-      background:linear-gradient(90deg, #e03a3a, rgba(224,58,58,.25));
+    #tab-documents .dl-sub{
+      font-size:13px;
+      letter-spacing:.3em;
+      color:#777;
+      margin-top:22px;
+    }
+
+    #tab-documents .hr-mark{
+      width:36px;
+      height:4px;
+      margin:18px auto;
       border-radius:999px;
-      margin:18px auto 18px;
+      background:linear-gradient(90deg,#e03a3a, #f3b1b1);
+    }
+
+    #tab-documents .intro{
+      font-size:18px;
+      font-weight:700;
+      color:#444;
+      margin-top:30px;
+      line-height:1.9;
+    }
+
+    #tab-documents .docs-important-red{
+      color:#e03a3a;
+      font-weight:900;
     }
 
     #tab-documents .docs-notice-card{
-      margin:0 auto;
+      margin:34px auto 0;
       width:min(980px, 100%);
       background:rgba(255,255,255,.82);
       border:1px solid rgba(15,17,21,.10);
@@ -772,19 +800,8 @@ footer a{color:#ccc}
       backdrop-filter:blur(10px);
     }
 
-    #tab-documents .docs-notice-text{
-      margin:0;
-      font-weight:950;
-      color:rgba(15,17,21,.86);
-      font-size:14px;
-    }
-
-    #tab-documents .docs-important-red{
-      color:#e03a3a;
-    }
-
     #tab-documents .docs-three-cards{
-      margin:14px auto 0;
+      margin:0 auto;
       width:min(980px, 100%);
       display:grid;
       grid-template-columns:repeat(4, 1fr);
@@ -1088,9 +1105,6 @@ footer a{color:#ccc}
     }
 
     @media (min-width:768px){
-      #tab-documents .docs-hero-title{font-size:30px;}
-      #tab-documents .docs-notice-card{padding:22px 24px 18px;}
-      #tab-documents .docs-notice-text{font-size:16px;}
       #tab-documents .docs-blue-frame{padding:26px 28px 22px;}
       #tab-documents .docs-frame-chip{margin:2px 0 12px;}
       #tab-documents .docs-frame-chip span{
@@ -1133,14 +1147,28 @@ footer a{color:#ccc}
       }
     }
 
+    @media (max-width:767px){
+      #tab-documents .dl-title{
+        font-size:24px;
+        line-height:1.5;
+      }
+
+      #tab-documents .docs-notice-card{
+        margin-top:28px;
+      }
+    }
+
     @media (max-width:560px){
       #tab-documents{padding:6px 0 24px;}
-      #tab-documents .docs-hero-title{font-size:22px;}
-      #tab-documents .docs-notice-text{font-size:12px;}
-      #tab-documents .docs-frame-chip span{font-size:14px; padding:10px 14px; letter-spacing:.02em;}
+      #tab-documents .dl-sub{font-size:12px;}
+      #tab-documents .intro{
+        font-size:14px;
+        margin-top:20px;
+      }
       #tab-documents .docs-mini-card{padding:14px 14px; border-radius:20px; min-height:78px;}
       #tab-documents .docs-mini-no{width:40px; height:40px; border-radius:14px; font-size:16px;}
       #tab-documents .docs-mini-title{font-size:14px;}
+      #tab-documents .docs-frame-chip span{font-size:14px; padding:10px 14px; letter-spacing:.02em;}
       #tab-documents .docs-section-title{font-size:14px;}
       #tab-documents .docs-badge-no{min-width:44px; height:26px; font-size:12px;}
       #tab-documents .docs-lead{font-size:12px;}
