@@ -729,454 +729,273 @@ footer a{color:#ccc}
   </div>
 
   <!-- CSS -->
+ 
   <style>
-    #tab-documents{
-      background:
-        radial-gradient(1200px 600px at 10% -10%, rgba(42,167,215,.20), rgba(42,167,215,0) 60%),
-        radial-gradient(900px 500px at 90% 10%, rgba(224,58,58,.10), rgba(224,58,58,0) 55%),
-        linear-gradient(180deg, #ffffff, #fbfbfd 35%, #f7f3ea 100%);
-      padding:10px 0 30px;
-    }
 
-    #tab-documents *{box-sizing:border-box}
 
-    #tab-documents .docs-panel{
-      width:min(1120px, calc(100% - 44px));
-      margin:auto;
-      color:#0f1115;
-      line-height:1.85;
-    }
+#tab-documents{
+  background:#ffffff;
+  padding:10px 0 30px;
+}
 
-    /* 上部は flow タブと同じ見た目に合わせる */
-    #tab-documents .hero{
-      text-align:center;
-      padding-top:10px;
-    }
+#tab-documents *{
+  box-sizing:border-box;
+}
 
-    #tab-documents .dl-title{
-      font-size:32px;
-      font-weight:900;
-      letter-spacing:.04em;
-      margin:0;
-      line-height:1.6;
-    }
+#tab-documents .docs-panel{
+  width:min(1120px, calc(100% - 44px));
+  margin:auto;
+  color:#0f1115;
+  line-height:1.85;
+}
 
-    #tab-documents .dl-sub{
-      font-size:13px;
-      letter-spacing:.3em;
-      color:#777;
-      margin-top:22px;
-    }
+/* ===== 上部（flowと統一） ===== */
 
-    #tab-documents .hr-mark{
-      width:36px;
-      height:4px;
-      margin:18px auto;
-      border-radius:999px;
-      background:linear-gradient(90deg,#e03a3a, #f3b1b1);
-    }
+#tab-documents .hero{
+  text-align:center;
+  padding-top:10px;
+}
 
-    #tab-documents .intro{
-      font-size:18px;
-      font-weight:700;
-      color:#444;
-      margin-top:30px;
-      line-height:1.9;
-    }
+#tab-documents .dl-title{
+  font-size:32px;
+  font-weight:900;
+  letter-spacing:.04em;
+  margin:0;
+  line-height:1.6;
+}
 
-    #tab-documents .docs-important-red{
-      color:#e03a3a;
-      font-weight:900;
-    }
+#tab-documents .dl-sub{
+  font-size:13px;
+  letter-spacing:.3em;
+  color:#777;
+  margin-top:22px;
+}
 
-    #tab-documents .docs-notice-card{
-      margin:34px auto 0;
-      width:min(980px, 100%);
-      background:rgba(255,255,255,.82);
-      border:1px solid rgba(15,17,21,.10);
-      border-radius:22px;
-      box-shadow:0 18px 44px rgba(0,0,0,.08);
-      padding:18px 18px 16px;
-      backdrop-filter:blur(10px);
-    }
+#tab-documents .hr-mark{
+  width:36px;
+  height:4px;
+  margin:18px auto;
+  border-radius:999px;
+  background:linear-gradient(90deg,#e03a3a,#f3b1b1);
+}
 
-    #tab-documents .docs-three-cards{
-      margin:0 auto;
-      width:min(980px, 100%);
-      display:grid;
-      grid-template-columns:repeat(4, 1fr);
-      gap:12px;
-      align-items:stretch;
-    }
+#tab-documents .intro{
+  font-size:18px;
+  font-weight:700;
+  color:#444;
+  margin-top:30px;
+  line-height:1.9;
+}
 
-    #tab-documents .docs-doc-btn{
-      appearance:none;
-      -webkit-appearance:none;
-      border:0;
-      padding:0;
-      background:transparent;
-      text-align:left;
-      cursor:pointer;
-      width:100%;
-      height:100%;
-      display:block;
-    }
+#tab-documents .docs-important-red{
+  color:#e03a3a;
+  font-weight:900;
+}
 
-    #tab-documents .docs-mini-card{
-      background:rgba(255,255,255,.92);
-      border:1px solid rgba(15,17,21,.10);
-      border-radius:24px;
-      box-shadow:0 12px 30px rgba(0,0,0,.06);
-      padding:16px 16px;
-      display:flex;
-      align-items:center;
-      gap:14px;
-      min-height:86px;
-      height:100%;
-      transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
-    }
+/* ===== カード外枠 ===== */
 
-    #tab-documents .docs-doc-btn:hover .docs-mini-card{
-      transform:translateY(-1px);
-      box-shadow:0 16px 34px rgba(0,0,0,.08);
-      border-color:rgba(31,134,209,.22);
-    }
+#tab-documents .docs-notice-card{
+  margin:34px auto 0;
+  width:min(980px, 100%);
+  background:#ffffff;
+  border:1px solid rgba(15,17,21,.08);
+  border-radius:22px;
+  box-shadow:0 18px 44px rgba(0,0,0,.06);
+  padding:18px;
+}
 
-    #tab-documents .docs-doc-btn:focus-visible .docs-mini-card{
-      outline:4px solid rgba(31,134,209,.18);
-      outline-offset:4px;
-    }
+/* ===== 4つのカード ===== */
 
-    #tab-documents .docs-mini-no{
-      width:44px;
-      height:44px;
-      border-radius:16px;
-      display:grid;
-      place-items:center;
-      font-weight:950;
-      font-size:18px;
-      color:#0f172a;
-      background:rgba(31,134,209,.10);
-      border:2px solid rgba(31,134,209,.22);
-      box-shadow:0 10px 22px rgba(31,134,209,.10);
-      flex:0 0 auto;
-    }
+#tab-documents .docs-three-cards{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:12px;
+}
 
-    #tab-documents .docs-mini-title{
-      margin:0;
-      font-weight:950;
-      color:rgba(15,17,21,.90);
-      font-size:16px;
-      line-height:1.3;
-    }
+#tab-documents .docs-doc-btn{
+  border:none;
+  background:none;
+  padding:0;
+  cursor:pointer;
+}
 
-    #tab-documents .docs-sep{
-      margin:26px 0 22px;
-      border:0;
-      height:1px;
-      background:linear-gradient(90deg, rgba(0,0,0,0), rgba(15,17,21,.10), rgba(0,0,0,0));
-    }
+/* ★ここが今回のメイン変更 */
+#tab-documents .docs-mini-card{
+  background: linear-gradient(180deg, #2aa7d7, #1b8fb8);
+  border:1px solid rgba(20,98,128,.22);
+  border-radius:24px;
+  box-shadow:0 12px 30px rgba(27,143,184,.18);
+  padding:16px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-height:86px;
+  transition:.15s;
+}
 
-    #tab-documents .docs-blue-frame{
-      border-radius:22px;
-      background:linear-gradient(180deg, rgba(31,134,209,.12), rgba(255,255,255,.78));
-      border:1px solid rgba(31,134,209,.22);
-      box-shadow:0 18px 44px rgba(31,134,209,.10), 0 10px 26px rgba(0,0,0,.08);
-      padding:18px 18px 16px;
-    }
+#tab-documents .docs-doc-btn:hover .docs-mini-card{
+  transform:translateY(-2px);
+  box-shadow:0 16px 34px rgba(27,143,184,.24);
+}
 
-    #tab-documents .docs-frame-chip{
-      display:flex;
-      justify-content:center;
-      margin:0 0 10px;
-    }
+/* 番号 */
+#tab-documents .docs-mini-no{
+  width:44px;
+  height:44px;
+  border-radius:16px;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  font-size:18px;
+  color:#ffffff;
 
-    #tab-documents .docs-frame-chip span{
-      display:inline-block;
-      padding:10px 16px;
-      background:rgba(31,134,209,.22);
-      border:1px solid rgba(31,134,209,.28);
-      color:#101827;
-      font-weight:950;
-      font-size:18px;
-      letter-spacing:.03em;
-      border-radius:14px;
-    }
+  /* プロっぽい色 */
+  background: rgba(255,255,255,.14);
+  border:2px solid rgba(255,255,255,.30);
+}
 
-    #tab-documents .docs-card{
-      margin-top:12px;
-      border:1px solid rgba(15,17,21,.10);
-      border-radius:18px;
-      background:rgba(255,255,255,.90);
-      backdrop-filter:blur(10px);
-      box-shadow:0 10px 26px rgba(0,0,0,.08);
-      padding:18px 18px 16px;
-      scroll-margin-top:92px;
-    }
+/* タイトル */
+#tab-documents .docs-mini-title{
+  margin:0;
+  font-weight:900;
+  color:#ffffff;
+  font-size:15px;
+  line-height:1.4;
+}
 
-    #tab-documents .docs-section-title{
-      display:flex;
-      align-items:flex-start;
-      gap:10px;
-      margin:0 0 10px;
-      font-weight:950;
-      font-size:16px;
-      letter-spacing:.02em;
-    }
+/* ===== 区切り ===== */
 
-    #tab-documents .docs-badge-no{
-      flex:0 0 auto;
-      min-width:46px;
-      height:28px;
-      padding:0 10px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      border-radius:999px;
-      background:rgba(31,134,209,.14);
-      border:1px solid rgba(31,134,209,.28);
-      color:#0f172a;
-      font-weight:950;
-      letter-spacing:.10em;
-    }
+#tab-documents .docs-sep{
+  margin:28px 0;
+  height:1px;
+  border:0;
+  background:rgba(0,0,0,.08);
+}
 
-    #tab-documents .docs-lead{
-      margin:0 0 12px;
-      color:rgba(15,17,21,.82);
-      font-weight:900;
-      font-size:13px;
-    }
+/* ===== 詳細エリア ===== */
 
-    #tab-documents .docs-doc-subnote{
-      margin:0 0 12px;
-      color:rgba(15,17,21,.72);
-      font-weight:900;
-      font-size:12px;
-      line-height:1.8;
-    }
+#tab-documents .docs-blue-frame{
+  border-radius:22px;
+  background:#f8fbff;
+  border:1px solid rgba(31,134,209,.18);
+  padding:24px;
+}
 
-    #tab-documents .docs-accordion{
-      margin:12px 0 14px;
-      border-radius:16px;
-      background:rgba(224,58,58,.06);
-      border:1px solid rgba(224,58,58,.16);
-      overflow:hidden;
-    }
+#tab-documents .docs-frame-chip{
+  text-align:center;
+  margin-bottom:14px;
+}
 
-    #tab-documents .docs-accordion summary{
-      list-style:none;
-      cursor:pointer;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding:14px 16px;
-      font-weight:950;
-      color:#7f1d1d;
-      font-size:12px;
-      letter-spacing:.05em;
-      transition:background .15s ease;
-    }
+#tab-documents .docs-frame-chip span{
+  background:#ffffff;
+  border:1px solid rgba(0,0,0,.08);
+  padding:10px 18px;
+  border-radius:999px;
+  font-weight:900;
+  box-shadow:0 6px 16px rgba(0,0,0,.06);
+}
 
-    #tab-documents .docs-accordion summary::-webkit-details-marker{
-      display:none;
-    }
+/* ===== 各カード ===== */
 
-    #tab-documents .docs-accordion summary:hover{
-      background:rgba(224,58,58,.04);
-    }
+#tab-documents .docs-card{
+  margin-top:16px;
+  background:#ffffff;
+  border-radius:18px;
+  padding:20px;
+  border:1px solid rgba(0,0,0,.08);
+  box-shadow:0 8px 22px rgba(0,0,0,.05);
+}
 
-    #tab-documents .docs-accordion-label{
-      display:flex;
-      align-items:center;
-      gap:8px;
-    }
+#tab-documents .docs-section-title{
+  display:flex;
+  gap:10px;
+  font-weight:900;
+  margin-bottom:10px;
+}
 
-    #tab-documents .docs-dot{
-      width:8px;
-      height:8px;
-      border-radius:99px;
-      background:#e03a3a;
-      box-shadow:0 6px 14px rgba(224,58,58,.22);
-      flex:0 0 auto;
-    }
+#tab-documents .docs-badge-no{
+  background:#e6f2fa;
+  border-radius:999px;
+  padding:4px 10px;
+  font-size:12px;
+}
 
-    #tab-documents .docs-accordion-side{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex:0 0 auto;
-    }
+/* ===== テキスト ===== */
 
-    #tab-documents .docs-accordion-hint{
-      font-size:11px;
-      font-weight:950;
-      color:rgba(127,29,29,.78);
-      letter-spacing:.04em;
-    }
+#tab-documents .docs-lead{
+  font-weight:700;
+  margin-bottom:10px;
+}
 
-    #tab-documents .docs-accordion-hint::before{
-      content:"開く";
-    }
+#tab-documents .docs-doc-subnote{
+  font-size:13px;
+  color:#555;
+}
 
-    #tab-documents .docs-accordion[open] .docs-accordion-hint::before{
-      content:"閉じる";
-    }
+/* ===== アコーディオン ===== */
 
-    #tab-documents .docs-accordion-icon{
-      width:40px;
-      height:40px;
-      border-radius:999px;
-      display:grid;
-      place-items:center;
-      background:rgba(255,255,255,.72);
-      border:1px solid rgba(224,58,58,.18);
-      color:#7f1d1d;
-      font-size:18px;
-      line-height:1;
-      flex:0 0 auto;
-      transition:transform .2s ease, background .15s ease;
-    }
+#tab-documents .docs-accordion{
+  margin-top:12px;
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid rgba(224,58,58,.2);
+}
 
-    #tab-documents .docs-accordion summary:hover .docs-accordion-icon{
-      background:rgba(255,255,255,.92);
-    }
+#tab-documents .docs-accordion summary{
+  cursor:pointer;
+  padding:14px;
+  font-weight:900;
+  background:#fff5f5;
+}
 
-    #tab-documents .docs-accordion[open] .docs-accordion-icon{
-      transform:rotate(180deg);
-    }
+#tab-documents .docs-accordion-body{
+  padding:12px 16px;
+}
 
-    #tab-documents .docs-accordion-body{
-      padding:0 16px 14px;
-    }
+#tab-documents .docs-list{
+  padding-left:18px;
+}
 
-    #tab-documents .docs-list{
-      margin:0;
-      padding-left:18px;
-      font-weight:900;
-      color:rgba(15,17,21,.82);
-      font-size:13px;
-    }
+/* ===== ボタン ===== */
 
-    #tab-documents .docs-list li{
-      margin:6px 0;
-    }
+#tab-documents .docs-link-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:12px;
+  background:#fff;
+  border-radius:999px;
+  padding:10px 14px;
+  border:1px solid rgba(0,0,0,.1);
+  font-weight:900;
+}
 
-    #tab-documents .docs-link-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:14px;
-    }
+/* ===== フッター ===== */
 
-    #tab-documents .docs-link-btn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      height:42px;
-      padding:0 14px;
-      border-radius:999px;
-      background:#fff;
-      border:1px solid rgba(15,17,21,.12);
-      font-weight:950;
-      color:#0f172a;
-      box-shadow:0 10px 22px rgba(0,0,0,.06);
-      text-decoration:none;
-    }
+#tab-documents .docs-page-note{
+  text-align:center;
+  margin-top:20px;
+  font-size:12px;
+  color:#777;
+}
 
-    #tab-documents .docs-arrow{
-      width:22px;
-      height:22px;
-      border-radius:999px;
-      display:grid;
-      place-items:center;
-      background:rgba(31,134,209,.12);
-      border:1px solid rgba(31,134,209,.22);
-      color:#1f5f9a;
-      font-weight:950;
-    }
+/* ===== スマホ ===== */
 
-    #tab-documents .docs-page-note{
-      margin-top:18px;
-      text-align:center;
-      color:rgba(15,17,21,.62);
-      font-weight:900;
-      font-size:12px;
-    }
+@media(max-width:900px){
+  #tab-documents .docs-three-cards{
+    grid-template-columns:1fr;
+  }
+}
 
-    @media (min-width:768px){
-      #tab-documents .docs-blue-frame{padding:26px 28px 22px;}
-      #tab-documents .docs-frame-chip{margin:2px 0 12px;}
-      #tab-documents .docs-frame-chip span{
-        background:linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.62));
-        border:1px solid rgba(15,17,21,.10);
-        color:#0f172a;
-        border-radius:999px;
-        padding:10px 18px;
-        font-size:18px;
-        letter-spacing:.02em;
-        box-shadow:0 10px 22px rgba(0,0,0,.08);
-        position:relative;
-      }
-      #tab-documents .docs-frame-chip span::before{
-        content:"";
-        position:absolute;
-        left:16px;
-        right:16px;
-        bottom:-7px;
-        height:3px;
-        border-radius:999px;
-        background:linear-gradient(90deg, rgba(31,134,209,0), rgba(31,134,209,.55), rgba(31,134,209,0));
-        opacity:.9;
-      }
-      #tab-documents .docs-card{padding:26px 26px 22px; scroll-margin-top:96px;}
-      #tab-documents .docs-section-title{font-size:18px;}
-      #tab-documents .docs-lead{font-size:15px; line-height:1.9;}
-      #tab-documents .docs-list{font-size:14px;}
-      #tab-documents .docs-accordion summary{padding:16px 18px; font-size:13px;}
-      #tab-documents .docs-accordion-body{padding:0 18px 16px;}
-      #tab-documents .docs-doc-subnote{font-size:13px;}
-      #tab-documents .docs-accordion-hint{font-size:12px;}
-      #tab-documents .docs-page-note{font-size:13px;}
-    }
+@media(max-width:767px){
+  #tab-documents .dl-title{
+    font-size:24px;
+  }
 
-    @media (max-width:900px){
-      #tab-documents .docs-three-cards{
-        grid-template-columns:1fr;
-        gap:10px;
-      }
-    }
-
-    @media (max-width:767px){
-      #tab-documents .dl-title{
-        font-size:24px;
-        line-height:1.5;
-      }
-
-      #tab-documents .docs-notice-card{
-        margin-top:28px;
-      }
-    }
-
-    @media (max-width:560px){
-      #tab-documents{padding:6px 0 24px;}
-      #tab-documents .dl-sub{font-size:12px;}
-      #tab-documents .intro{
-        font-size:14px;
-        margin-top:20px;
-      }
-      #tab-documents .docs-mini-card{padding:14px 14px; border-radius:20px; min-height:78px;}
-      #tab-documents .docs-mini-no{width:40px; height:40px; border-radius:14px; font-size:16px;}
-      #tab-documents .docs-mini-title{font-size:14px;}
-      #tab-documents .docs-frame-chip span{font-size:14px; padding:10px 14px; letter-spacing:.02em;}
-      #tab-documents .docs-section-title{font-size:14px;}
-      #tab-documents .docs-badge-no{min-width:44px; height:26px; font-size:12px;}
-      #tab-documents .docs-lead{font-size:12px;}
-      #tab-documents .docs-list{font-size:12px;}
-      #tab-documents .docs-doc-subnote{font-size:12px;}
-      #tab-documents .docs-accordion-hint{display:none;}
-      #tab-documents .docs-page-note{font-size:11px;}
-    }
+  #tab-documents .intro{
+    font-size:14px;
+  }
+}
   </style>
 
   <!-- JS -->
