@@ -482,6 +482,7 @@ footer a{color:#ccc}
            タブ2：申請書類一覧
            HTML / CSS / JS
       ========================================== -->
+
 <section class="tab-panel" id="tab-documents" role="tabpanel">
 
   <!-- HTML -->
@@ -911,7 +912,7 @@ footer a{color:#ccc}
       box-shadow:0 10px 28px rgba(15,17,21,.05);
     }
 
-    /* ===== ここが見出しのメイン改善 ===== */
+    /* ===== 見出し ===== */
     #tab-documents .docs-card-head{
       position:relative;
       margin-bottom:18px;
@@ -921,7 +922,7 @@ footer a{color:#ccc}
 
     #tab-documents .docs-card-head-left{
       display:flex;
-      align-items:flex-start;
+      align-items:center;
       gap:16px;
     }
 
@@ -946,7 +947,6 @@ footer a{color:#ccc}
     #tab-documents .docs-title-texts{
       min-width:0;
       flex:1;
-      padding-top:2px;
     }
 
     #tab-documents .docs-title-kicker{
@@ -956,6 +956,7 @@ footer a{color:#ccc}
       letter-spacing:.16em;
       text-transform:uppercase;
       color:#1b8fb8;
+      line-height:1.2;
     }
 
     #tab-documents .docs-section-title{
@@ -1125,6 +1126,7 @@ footer a{color:#ccc}
 
       #tab-documents .docs-card-head-left{
         gap:12px;
+        align-items:center;
       }
 
       #tab-documents .docs-title-no{
@@ -1210,76 +1212,741 @@ footer a{color:#ccc}
     })();
   </script>
 </section>
+      
       <!-- =========================================
            タブ3：求められる場合のある書類
            HTML / CSS / JS
       ========================================== -->
-      <section class="tab-panel" id="tab-required-docs" role="tabpanel">
-        
-        <!-- HTML -->
-        <div class="tab-box">
-          <h2>求められる場合のある書類</h2>
-          <p>状況に応じて、追加で提出をお願いする場合がある書類です。</p>
-          <ul>
-            <li>雇用契約書</li>
-            <li>出勤簿・勤怠記録</li>
-            <li>賃金台帳</li>
-            <li>本人確認書類</li>
-            <li>その他補足資料</li>
-          </ul>
+
+<section class="tab-panel" id="tab-required-docs" role="tabpanel">
+
+  <!-- HTML -->
+  <div class="docs-panel" aria-label="求められる場合のある書類案内ページ">
+
+    <div class="hero">
+      <h1 class="dl-title">
+        求められる場合のある書類
+      </h1>
+
+      <div class="dl-sub">Additional Documents</div>
+
+      <div class="hr-mark"></div>
+
+      <div class="intro">
+        下記4点の書類をご確認ください。<br>
+        <span class="docs-important-red">※必要に応じて、担当者より提出をお願いする場合があります。</span>
+      </div>
+    </div>
+
+    <div class="docs-notice-card" aria-label="案内">
+      <div class="docs-three-cards" aria-label="必要書類4点（クリックで詳細へ）">
+        <button class="docs-doc-btn" type="button" data-target="#required-doc01" aria-label="書類1の詳細へ移動">
+          <div class="docs-mini-card">
+            <div class="docs-mini-no">01</div>
+            <p class="docs-mini-title">雇用保険適用事業所設置届（写し）</p>
+          </div>
+        </button>
+
+        <button class="docs-doc-btn" type="button" data-target="#required-doc02" aria-label="書類2の詳細へ移動">
+          <div class="docs-mini-card">
+            <div class="docs-mini-no">02</div>
+            <p class="docs-mini-title">雇用契約書／労働条件通知書（写し）</p>
+          </div>
+        </button>
+
+        <button class="docs-doc-btn" type="button" data-target="#required-doc03" aria-label="書類3の詳細へ移動">
+          <div class="docs-mini-card">
+            <div class="docs-mini-no">03</div>
+            <p class="docs-mini-title">登記簿謄本（履歴事項全部証明書）</p>
+          </div>
+        </button>
+
+        <button class="docs-doc-btn" type="button" data-target="#required-doc04" aria-label="書類4の詳細へ移動">
+          <div class="docs-mini-card">
+            <div class="docs-mini-no">04</div>
+            <p class="docs-mini-title">口座確認資料（通帳の写し等）</p>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <hr class="docs-sep" />
+
+    <div class="docs-blue-frame" aria-label="提出書類（詳細）">
+      <div class="docs-frame-chip"><span>提出書類の詳細</span></div>
+
+      <!-- 01 -->
+      <article class="docs-card" id="required-doc01" aria-label="1. 雇用保険適用事業所設置届">
+        <div class="docs-card-head">
+          <div class="docs-card-head-left">
+            <div class="docs-title-no-wrap">
+              <span class="docs-title-no">01</span>
+            </div>
+            <div class="docs-title-texts">
+              <p class="docs-title-kicker">Required Document</p>
+              <h2 class="docs-section-title">「雇用保険適用事業所設置届」（写し）</h2>
+            </div>
+          </div>
         </div>
 
-        <!-- CSS -->
-        <style>
-          /* タブ3専用CSSがあればここに追加 */
-          #tab-required-docs .tab-box{}
-        </style>
+        <p class="docs-lead">
+          スプレッドシートへご入力いただいた事業所住所と、設置届に記載の住所が一致していることをご確認ください。
+        </p>
 
-        <!-- JS -->
-        <script>
-          (function(){
-            function initTabRequiredDocs(){
-              // タブ3専用JSがあればここに追加
-            }
-            initTabRequiredDocs();
-          })();
-        </script>
-      </section>
-      <!-- =========================================
-           タブ4：FAQ
-           HTML / CSS / JS
-      ========================================== -->
-      <section class="tab-panel" id="tab-faq" role="tabpanel">
-        
-        <!-- HTML -->
-        <div class="tab-box">
-          <h2>FAQ</h2>
-          <p>よくあるご質問を掲載しています。</p>
-          <ul>
-            <li>受講は就業時間外でも可能ですか？</li>
-            <li>有給休暇中の受講は対象になりますか？</li>
-            <li>動画を途中で止めた場合はどうなりますか？</li>
-            <li>必要書類の提出期限はいつですか？</li>
-          </ul>
+        <p class="docs-doc-subnote">
+          設置届をご用意いただけない場合は、代替資料でのご提出が可能です。該当資料がある場合は、下記をご確認ください。
+        </p>
+
+        <details class="docs-accordion" aria-label="雇用保険適用事業所設置届の確認事項">
+          <summary>
+            <span class="docs-accordion-label">
+              <span class="docs-dot" aria-hidden="true"></span>
+              確認事項および代替提出資料
+            </span>
+            <span class="docs-accordion-side">
+              <span class="docs-accordion-icon" aria-hidden="true">⌄</span>
+            </span>
+          </summary>
+
+          <div class="docs-accordion-body">
+            <ul class="docs-list">
+              <li>スプレッドシートへご入力いただいた事業所住所と、設置届に記載の住所が一致していること</li>
+              <li>相違がある場合、手続き上の確認が必要となる可能性があります</li>
+              <li>設置届をご用意いただけない場合は、雇用保険被保険者証 資格取得確認通知書（事業主通知用）の写し（加入者いずれか1名分）をご提出ください</li>
+              <li>または、直近の労働保険 概算・確定保険料申告書の写しをご提出ください</li>
+              <li>または、労働保険料等納入通知書をご提出ください</li>
+            </ul>
+          </div>
+        </details>
+
+        <div class="docs-link-row" aria-label="見本リンク">
+          <a class="docs-link-btn" href="#" aria-label="見本（雇用保険関連）">
+            見本を確認する <span class="docs-arrow" aria-hidden="true">›</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- 02 -->
+      <article class="docs-card" id="required-doc02" aria-label="2. 雇用契約書／労働条件通知書">
+        <div class="docs-card-head">
+          <div class="docs-card-head-left">
+            <div class="docs-title-no-wrap">
+              <span class="docs-title-no">02</span>
+            </div>
+            <div class="docs-title-texts">
+              <p class="docs-title-kicker">Required Document</p>
+              <h2 class="docs-section-title">研修受講者全員分の「雇用契約書」または「労働条件通知書」（写し）</h2>
+            </div>
+          </div>
         </div>
 
-        <!-- CSS -->
-        <style>
-          /* タブ3専用CSSがあればここに追加 */
-          #tab-faq .tab-box{}
-        </style>
+        <p class="docs-lead">
+          本研修を受講される方全員分について、雇用契約書または労働条件通知書のいずれかをご提出ください。
+        </p>
 
-        <!-- JS -->
-        <script>
-          (function(){
-            function initTabFaq(){
-              // タブ3専用JSがあればここに追加
-            }
-            initTabFaq();
-          })();
-        </script>
-      </section>
+        <p class="docs-doc-subnote">
+          記載内容に不備や不足がある場合、確認や再提出をお願いすることがあります。必須記載事項およびご提出前の確認事項をご確認のうえ、ご提出ください。
+        </p>
 
+        <details class="docs-accordion" aria-label="必須記載事項およびご提出前の確認事項">
+          <summary>
+            <span class="docs-accordion-label">
+              <span class="docs-dot" aria-hidden="true"></span>
+              必須記載事項およびご提出前の確認事項
+            </span>
+            <span class="docs-accordion-side">
+              <span class="docs-accordion-icon" aria-hidden="true">⌄</span>
+            </span>
+          </summary>
+
+          <div class="docs-accordion-body">
+            <ol class="docs-list">
+              <li>労働契約の期間に関する事項</li>
+              <li>期間の定めのある労働契約を更新する場合の基準に関する事項</li>
+              <li>就業の場所および従事すべき業務に関する事項</li>
+              <li>始業・終業時刻、所定労働時間を超える労働の有無、休憩時間、休日・休暇、ならびに交替制勤務に関する事項</li>
+              <li>賃金（退職手当および臨時に支払われる賃金等を除く）の決定・計算・支払方法、賃金の締切りおよび支払時期に関する事項</li>
+              <li>退職に関する事項（解雇の事由を含む）</li>
+              <li>昇給に関する事項</li>
+              <li>契約期間が有効であること（期間満了・失効がないこと）</li>
+              <li>記載賃金が各都道府県の最低賃金を下回っていないこと</li>
+              <li>交付日（作成日）が記載されていること</li>
+            </ol>
+          </div>
+        </details>
+
+        <div class="docs-link-row" aria-label="見本リンク">
+          <a class="docs-link-btn" href="#" aria-label="見本（雇用契約書／労働条件通知書）">
+            見本を確認する <span class="docs-arrow" aria-hidden="true">›</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- 03 -->
+      <article class="docs-card" id="required-doc03" aria-label="3. 登記簿謄本">
+        <div class="docs-card-head">
+          <div class="docs-card-head-left">
+            <div class="docs-title-no-wrap">
+              <span class="docs-title-no">03</span>
+            </div>
+            <div class="docs-title-texts">
+              <p class="docs-title-kicker">Required Document</p>
+              <h2 class="docs-section-title">「登記簿謄本（履歴事項全部証明書）」</h2>
+            </div>
+          </div>
+        </div>
+
+        <p class="docs-lead">
+          法人の実在確認および基本情報確認のため、登記簿謄本をご提出ください。
+        </p>
+
+        <p class="docs-doc-subnote">
+          最新の法人情報が確認できるものをご提出ください。発行時期や記載内容が不鮮明な場合は、再提出をお願いすることがあります。
+        </p>
+
+        <details class="docs-accordion" aria-label="登記簿謄本の提出条件">
+          <summary>
+            <span class="docs-accordion-label">
+              <span class="docs-dot" aria-hidden="true"></span>
+              提出条件およびご提出前の確認事項
+            </span>
+            <span class="docs-accordion-side">
+              <span class="docs-accordion-icon" aria-hidden="true">⌄</span>
+            </span>
+          </summary>
+
+          <div class="docs-accordion-body">
+            <ul class="docs-list">
+              <li>発行から3ヶ月以内のもの</li>
+              <li>履歴事項全部証明書をご提出ください</li>
+              <li>PDFまたは画像で提出可能です</li>
+              <li>会社名・所在地が最新であることをご確認ください</li>
+              <li>代表者名が確認できることをご確認ください</li>
+              <li>文字が鮮明に判読できることをご確認ください</li>
+            </ul>
+          </div>
+        </details>
+      </article>
+
+      <!-- 04 -->
+      <article class="docs-card" id="required-doc04" aria-label="4. 口座確認資料">
+        <div class="docs-card-head">
+          <div class="docs-card-head-left">
+            <div class="docs-title-no-wrap">
+              <span class="docs-title-no">04</span>
+            </div>
+            <div class="docs-title-texts">
+              <p class="docs-title-kicker">Required Document</p>
+              <h2 class="docs-section-title">助成金の受取口座に関する「口座確認資料」（通帳の写し等）</h2>
+            </div>
+          </div>
+        </div>
+
+        <p class="docs-lead">
+          助成金の受取口座としてご指定予定の口座について、口座情報が確認できる資料をご提出ください。
+        </p>
+
+        <p class="docs-doc-subnote">
+          提出前に、必要なページや記載内容が鮮明に確認できるかをご確認ください。ネットバンキングをご利用の場合は、同等の情報が確認できる画面画像をご提出ください。
+        </p>
+
+        <details class="docs-accordion" aria-label="口座確認資料の提出条件">
+          <summary>
+            <span class="docs-accordion-label">
+              <span class="docs-dot" aria-hidden="true"></span>
+              提出条件およびご提出前の確認事項
+            </span>
+            <span class="docs-accordion-side">
+              <span class="docs-accordion-icon" aria-hidden="true">⌄</span>
+            </span>
+          </summary>
+
+          <div class="docs-accordion-body">
+            <ul class="docs-list">
+              <li>通帳をご提出の場合：表紙および見開き1・2ページが確認できる写し</li>
+              <li>写しは、四隅が欠けず、記載内容が判読できる鮮明なものをご用意ください</li>
+              <li>ネットバンキングをご利用の場合は、金融機関名、支店名、店番号、預金種別、口座番号、口座名義（カタカナ名義を含む）が確認できる画面画像をご提出ください</li>
+            </ul>
+          </div>
+        </details>
+
+        <div class="docs-link-row" aria-label="見本リンク">
+          <a class="docs-link-btn" href="#" aria-label="見本（口座確認資料）">
+            見本を確認する <span class="docs-arrow" aria-hidden="true">›</span>
+          </a>
+        </div>
+      </article>
+
+      <p class="docs-page-note">© DXアカデミー株式会社</p>
+    </div>
+  </div>
+
+  <!-- CSS -->
+  <style>
+    #tab-required-docs{
+      background:#ffffff;
+      padding:10px 0 30px;
+    }
+
+    #tab-required-docs *{
+      box-sizing:border-box;
+    }
+
+    #tab-required-docs .docs-panel{
+      width:min(1120px, calc(100% - 44px));
+      margin:auto;
+      color:#0f1115;
+      line-height:1.85;
+    }
+
+    /* ===== 上部 ===== */
+    #tab-required-docs .hero{
+      text-align:center;
+      padding-top:10px;
+    }
+
+    #tab-required-docs .dl-title{
+      font-size:32px;
+      font-weight:900;
+      letter-spacing:.04em;
+      margin:0;
+      line-height:1.6;
+    }
+
+    #tab-required-docs .dl-sub{
+      font-size:13px;
+      letter-spacing:.3em;
+      color:#777;
+      margin-top:22px;
+    }
+
+    #tab-required-docs .hr-mark{
+      width:36px;
+      height:4px;
+      margin:18px auto;
+      border-radius:999px;
+      background:linear-gradient(90deg,#e03a3a,#f3b1b1);
+    }
+
+    #tab-required-docs .intro{
+      font-size:18px;
+      font-weight:700;
+      color:#444;
+      margin-top:30px;
+      line-height:1.9;
+    }
+
+    #tab-required-docs .docs-important-red{
+      color:#e03a3a;
+      font-weight:900;
+    }
+
+    /* ===== 上部4カード ===== */
+    #tab-required-docs .docs-notice-card{
+      margin:34px auto 0;
+      width:min(980px, 100%);
+      background:#ffffff;
+      border:1px solid rgba(15,17,21,.08);
+      border-radius:22px;
+      box-shadow:0 18px 44px rgba(0,0,0,.06);
+      padding:18px;
+    }
+
+    #tab-required-docs .docs-three-cards{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:12px;
+    }
+
+    #tab-required-docs .docs-doc-btn{
+      border:none;
+      background:none;
+      padding:0;
+      cursor:pointer;
+    }
+
+    #tab-required-docs .docs-mini-card{
+      background:linear-gradient(180deg, #2aa7d7, #1b8fb8);
+      border:1px solid rgba(20,98,128,.22);
+      border-radius:22px;
+      box-shadow:0 12px 30px rgba(27,143,184,.18);
+      padding:16px;
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-height:86px;
+      transition:.18s ease;
+    }
+
+    #tab-required-docs .docs-doc-btn:hover .docs-mini-card{
+      transform:translateY(-2px);
+      box-shadow:0 16px 34px rgba(27,143,184,.24);
+    }
+
+    #tab-required-docs .docs-mini-no{
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      font-size:16px;
+      color:#ffffff;
+      background:rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.28);
+      backdrop-filter:blur(6px);
+      flex:0 0 46px;
+    }
+
+    #tab-required-docs .docs-mini-title{
+      margin:0;
+      font-weight:900;
+      color:#ffffff;
+      font-size:14px;
+      line-height:1.45;
+      text-align:left;
+    }
+
+    /* ===== 区切り ===== */
+    #tab-required-docs .docs-sep{
+      margin:28px 0;
+      height:1px;
+      border:0;
+      background:rgba(0,0,0,.08);
+    }
+
+    /* ===== 詳細エリア ===== */
+    #tab-required-docs .docs-blue-frame{
+      border-radius:24px;
+      background:linear-gradient(180deg, #f8fbff 0%, #f4f8fc 100%);
+      border:1px solid rgba(31,134,209,.14);
+      padding:24px;
+    }
+
+    #tab-required-docs .docs-frame-chip{
+      text-align:center;
+      margin-bottom:14px;
+    }
+
+    #tab-required-docs .docs-frame-chip span{
+      background:#ffffff;
+      border:1px solid rgba(0,0,0,.08);
+      padding:10px 18px;
+      border-radius:999px;
+      font-weight:900;
+      box-shadow:0 6px 16px rgba(0,0,0,.06);
+    }
+
+    /* ===== 各詳細カード ===== */
+    #tab-required-docs .docs-card{
+      margin-top:18px;
+      background:#ffffff;
+      border-radius:22px;
+      padding:22px;
+      border:1px solid rgba(0,0,0,.06);
+      box-shadow:0 10px 28px rgba(15,17,21,.05);
+    }
+
+    /* ===== 見出し ===== */
+    #tab-required-docs .docs-card-head{
+      position:relative;
+      margin-bottom:18px;
+      padding:0 0 18px;
+      border-bottom:1px solid rgba(15,17,21,.08);
+    }
+
+    #tab-required-docs .docs-card-head-left{
+      display:flex;
+      align-items:center;
+      gap:16px;
+    }
+
+    #tab-required-docs .docs-title-no-wrap{
+      flex:0 0 auto;
+    }
+
+    #tab-required-docs .docs-title-no{
+      width:58px;
+      height:58px;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(180deg, #0f172a, #1e293b);
+      color:#ffffff;
+      font-size:18px;
+      font-weight:900;
+      letter-spacing:.04em;
+      box-shadow:0 10px 24px rgba(15,23,42,.18);
+    }
+
+    #tab-required-docs .docs-title-texts{
+      min-width:0;
+      flex:1;
+    }
+
+    #tab-required-docs .docs-title-kicker{
+      margin:0 0 6px;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:#1b8fb8;
+      line-height:1.2;
+    }
+
+    #tab-required-docs .docs-section-title{
+      margin:0;
+      font-size:31px;
+      line-height:1.45;
+      font-weight:900;
+      letter-spacing:.01em;
+      color:#111827;
+    }
+
+    /* ===== テキスト ===== */
+    #tab-required-docs .docs-lead{
+      margin:0 0 10px;
+      font-size:15px;
+      font-weight:800;
+      color:#1f2937;
+    }
+
+    #tab-required-docs .docs-doc-subnote{
+      margin:0;
+      font-size:13px;
+      color:#5b6470;
+    }
+
+    /* ===== アコーディオン ===== */
+    #tab-required-docs .docs-accordion{
+      margin-top:16px;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(224,58,58,.16);
+      background:#fffafa;
+    }
+
+    #tab-required-docs .docs-accordion summary{
+      list-style:none;
+      cursor:pointer;
+      padding:16px 18px;
+      font-weight:900;
+      background:#fff5f5;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+
+    #tab-required-docs .docs-accordion summary::-webkit-details-marker{
+      display:none;
+    }
+
+    #tab-required-docs .docs-accordion-label{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:15px;
+    }
+
+    #tab-required-docs .docs-dot{
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      background:#e03a3a;
+      flex:0 0 10px;
+    }
+
+    #tab-required-docs .docs-accordion-side{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex:0 0 auto;
+    }
+
+    #tab-required-docs .docs-accordion-icon{
+      font-size:18px;
+      line-height:1;
+      color:#7a2020;
+      transition:transform .2s ease;
+    }
+
+    #tab-required-docs .docs-accordion[open] .docs-accordion-icon{
+      transform:rotate(180deg);
+    }
+
+    #tab-required-docs .docs-accordion-body{
+      padding:14px 18px 18px;
+      background:#ffffff;
+    }
+
+    #tab-required-docs .docs-list{
+      margin:0;
+      padding-left:1.2em;
+    }
+
+    #tab-required-docs .docs-list li + li{
+      margin-top:6px;
+    }
+
+    /* ===== ボタン ===== */
+    #tab-required-docs .docs-link-row{
+      margin-top:14px;
+    }
+
+    #tab-required-docs .docs-link-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#ffffff;
+      border-radius:999px;
+      padding:11px 16px;
+      border:1px solid rgba(0,0,0,.1);
+      font-weight:900;
+      box-shadow:0 6px 14px rgba(0,0,0,.04);
+      transition:.18s ease;
+    }
+
+    #tab-required-docs .docs-link-btn:hover{
+      transform:translateY(-1px);
+      box-shadow:0 10px 18px rgba(0,0,0,.06);
+    }
+
+    #tab-required-docs .docs-arrow{
+      font-size:18px;
+      line-height:1;
+    }
+
+    /* ===== フッター ===== */
+    #tab-required-docs .docs-page-note{
+      text-align:center;
+      margin-top:20px;
+      font-size:12px;
+      color:#777;
+    }
+
+    /* ===== レスポンシブ ===== */
+    @media (max-width:900px){
+      #tab-required-docs .docs-three-cards{
+        grid-template-columns:1fr;
+      }
+
+      #tab-required-docs .docs-section-title{
+        font-size:24px;
+      }
+    }
+
+    @media (max-width:767px){
+      #tab-required-docs .dl-title{
+        font-size:24px;
+      }
+
+      #tab-required-docs .intro{
+        font-size:14px;
+      }
+
+      #tab-required-docs .docs-blue-frame{
+        padding:16px;
+      }
+
+      #tab-required-docs .docs-card{
+        padding:16px;
+        border-radius:18px;
+      }
+
+      #tab-required-docs .docs-card-head{
+        margin-bottom:14px;
+        padding-bottom:14px;
+      }
+
+      #tab-required-docs .docs-card-head-left{
+        gap:12px;
+        align-items:center;
+      }
+
+      #tab-required-docs .docs-title-no{
+        width:46px;
+        height:46px;
+        border-radius:14px;
+        font-size:15px;
+      }
+
+      #tab-required-docs .docs-title-kicker{
+        font-size:10px;
+        margin-bottom:4px;
+      }
+
+      #tab-required-docs .docs-section-title{
+        font-size:18px;
+        line-height:1.55;
+      }
+
+      #tab-required-docs .docs-lead{
+        font-size:14px;
+      }
+
+      #tab-required-docs .docs-doc-subnote{
+        font-size:12px;
+        line-height:1.8;
+      }
+
+      #tab-required-docs .docs-accordion summary{
+        padding:14px;
+      }
+
+      #tab-required-docs .docs-accordion-label{
+        font-size:13px;
+        line-height:1.5;
+        align-items:flex-start;
+      }
+
+      #tab-required-docs .docs-mini-card{
+        min-height:auto;
+        padding:14px;
+      }
+
+      #tab-required-docs .docs-mini-title{
+        font-size:13px;
+      }
+    }
+  </style>
+
+  <!-- JS -->
+  <script>
+    (function(){
+      function initTabRequiredDocs(){
+        const tab = document.getElementById('tab-required-docs');
+        if(!tab) return;
+
+        const buttons = tab.querySelectorAll('.docs-doc-btn[data-target]');
+        const stickyHeader = document.querySelector('header');
+        const tabButtonsWrap = document.querySelector('.tab-buttons');
+
+        function getOffset(){
+          const headerH = stickyHeader ? stickyHeader.getBoundingClientRect().height : 0;
+          const tabH = tabButtonsWrap ? tabButtonsWrap.getBoundingClientRect().height : 0;
+          return headerH + tabH + 24;
+        }
+
+        buttons.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const sel = btn.getAttribute('data-target');
+            const target = sel ? tab.querySelector(sel) : null;
+            if(!target) return;
+
+            const y = window.scrollY + target.getBoundingClientRect().top - getOffset();
+            window.scrollTo({ top:y, behavior:'smooth' });
+
+            target.setAttribute('tabindex', '-1');
+            target.focus({ preventScroll:true });
+          });
+        });
+      }
+
+      initTabRequiredDocs();
+    })();
+  </script>
+</section>
       <!-- =========================================
            タブ5：対象外事例
            HTML / CSS / JS
