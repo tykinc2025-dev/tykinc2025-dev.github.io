@@ -125,7 +125,13 @@ header{
   gap:14px;
   max-width:980px;
   margin:0 auto 28px;
+  align-items:stretch;
 }
+  
+.tab-label-sp{
+  display:none;
+}
+  
 
 .tab-btn{
   appearance:none;
@@ -367,6 +373,64 @@ footer a{color:#ccc}
     font-size:19px;
   }
 
+  @media (max-width: 767px){
+  .dl-title{
+    font-size:24px;
+    line-height:1.5;
+  }
+
+  .tab-wrap{
+    margin-top:0;
+  }
+
+  .tab-scroll{
+    overflow-x:auto;
+    overflow-y:hidden;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    margin-inline:calc(50% - 50vw);
+  }
+
+  .tab-scroll::-webkit-scrollbar{
+    display:none;
+  }
+
+  .tab-buttons{
+    display:flex;
+    flex-wrap:nowrap;
+    gap:10px;
+    width:max-content;
+    max-width:none;
+    padding:0 22px 12px;
+    margin:0 0 20px;
+  }
+
+  .tab-btn{
+    flex:0 0 auto;
+    min-width:110px;
+    white-space:nowrap;
+    font-size:13px;
+    padding:13px 16px;
+    border-radius:10px;
+  }
+
+  .tab-label-pc{
+    display:none;
+  }
+
+  .tab-label-sp{
+    display:inline;
+  }
+
+  .tab-box{
+    padding:18px 16px;
+    border-radius:14px;
+  }
+
+  .tab-box h2{
+    font-size:19px;
+  }
+
   .case-summary{
     min-height:auto;
     padding:14px 54px 14px 18px;
@@ -386,7 +450,7 @@ footer a{color:#ccc}
     line-height:1.4;
   }
 }
-
+  
 @media(max-width:700px){
   .footer-inner{grid-template-columns:1fr}
   .footer-links a{padding:3px 0;}
@@ -424,25 +488,36 @@ footer a{color:#ccc}
 
     
     <!-- タブボタン：見た目は元コードのまま -->
-    <div class="tab-wrap">
-      <div class="tab-buttons" role="tablist" aria-label="ページ内メニュー">
-  <button class="tab-btn is-active" type="button" role="tab" aria-selected="true" data-tab="flow">
-    全体の流れ
-  </button>
-  <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="documents">
-    申請書類一覧
-  </button>
-  <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="required-docs">
-    求められる場合のある書類
-  </button>
-  <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="faq">
-    FAQ
-  </button>
-  <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="cases">
-    対象外事例
-  </button>
-</div>
+   <div class="tab-wrap">
+  <div class="tab-scroll">
+    <div class="tab-buttons" role="tablist" aria-label="ページ内メニュー">
+      <button class="tab-btn is-active" type="button" role="tab" aria-selected="true" data-tab="flow">
+        <span class="tab-label-pc">全体の流れ</span>
+        <span class="tab-label-sp">流れ</span>
+      </button>
 
+      <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="documents">
+        <span class="tab-label-pc">申請書類一覧</span>
+        <span class="tab-label-sp">必要書類</span>
+      </button>
+
+      <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="required-docs">
+        <span class="tab-label-pc">求められる場合のある書類</span>
+        <span class="tab-label-sp">追加書類</span>
+      </button>
+
+      <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="faq">
+        <span class="tab-label-pc">FAQ</span>
+        <span class="tab-label-sp">FAQ</span>
+      </button>
+
+      <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="cases">
+        <span class="tab-label-pc">対象外事例</span>
+        <span class="tab-label-sp">対象外事例</span>
+      </button>
+    </div>
+  </div>
+</div>
       <!-- =========================================
            タブ1：全体の流れ
            HTML / CSS / JS
@@ -1902,31 +1977,41 @@ footer a{color:#ccc}
 const tabButtons = document.querySelectorAll('.tab-btn');
 const tabPanels = document.querySelectorAll('.tab-panel');
 
-tabButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const target = button.dataset.tab;
+function activateTab(button){
+  const target = button.dataset.tab;
 
-    tabButtons.forEach(btn => {
-      btn.classList.remove('is-active');
-      btn.setAttribute('aria-selected', 'false');
-    });
-
-    tabPanels.forEach(panel => {
-      panel.classList.remove('is-active');
-    });
-
-    button.classList.add('is-active');
-    button.setAttribute('aria-selected', 'true');
-
-    const targetPanel = document.getElementById(`tab-${target}`);
-    if (targetPanel) {
-      targetPanel.classList.add('is-active');
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }
+  tabButtons.forEach(btn => {
+    btn.classList.remove('is-active');
+    btn.setAttribute('aria-selected', 'false');
   });
+
+  tabPanels.forEach(panel => {
+    panel.classList.remove('is-active');
+  });
+
+  button.classList.add('is-active');
+  button.setAttribute('aria-selected', 'true');
+
+  const targetPanel = document.getElementById(`tab-${target}`);
+  if (targetPanel) {
+    targetPanel.classList.add('is-active');
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
+  if (window.innerWidth <= 767) {
+    button.scrollIntoView({
+      behavior: 'smooth',
+      inline: 'center',
+      block: 'nearest'
+    });
+  }
+}
+
+tabButtons.forEach(button => {
+  button.addEventListener('click', () => activateTab(button));
 });
 </script>
 
