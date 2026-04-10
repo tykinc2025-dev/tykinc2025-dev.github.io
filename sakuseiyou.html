@@ -72,6 +72,47 @@ header{
   padding:50px 0 60px;
 }
 
+/* PAGE HEADING */
+.page-heading{
+  max-width:980px;
+  margin:0 auto 32px;
+  text-align:center;
+}
+
+.page-heading-title{
+  margin:0;
+  font-size:34px;
+  line-height:1.5;
+  font-weight:900;
+  letter-spacing:.02em;
+  color:var(--text);
+}
+
+.page-heading-desc{
+  margin:16px auto 0;
+  font-size:15px;
+  line-height:2;
+  color:#555;
+  max-width:860px;
+}
+
+@media (max-width: 767px){
+  .page-heading{
+    margin:0 auto 24px;
+  }
+
+  .page-heading-title{
+    font-size:24px;
+    line-height:1.5;
+  }
+
+  .page-heading-desc{
+    font-size:13px;
+    line-height:1.9;
+    margin-top:12px;
+  }
+}
+  
 /* TAB MENU */
 /* ここは元コードの見た目をそのまま維持 */
 .tab-wrap{
@@ -369,6 +410,19 @@ footer a{color:#ccc}
 <main class="main">
   <div class="container">
 
+ <!-- タイトル -->
+    <div class="page-heading">
+      <h1 class="page-heading-title">
+  社労士を活用する場合の<br>
+  人材開発支援助成金の手続きの流れと留意事項
+</h1>
+      <p class="page-heading-desc">
+        社労士の助言をもとに、人材開発支援助成金を申請する際の手続きの流れと留意事項をまとめています。<br>
+        申請にあたって事前に確認しておくべきポイントや注意点のご確認にご活用ください。
+      </p>
+    </div>
+
+    
     <!-- タブボタン：見た目は元コードのまま -->
     <div class="tab-wrap">
       <div class="tab-buttons" role="tablist" aria-label="ページ内メニュー">
