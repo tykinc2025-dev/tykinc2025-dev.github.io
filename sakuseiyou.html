@@ -190,6 +190,10 @@ header{
   padding-left:1.2em;
 }
 
+  .tab-guide{
+  display:none;
+}
+  
 /* HERO */
 .hero{
   text-align:center;
@@ -373,6 +377,15 @@ footer a{color:#ccc}
     font-size:19px;
   }
 
+  .tab-guide{
+  display:block;
+  margin:0 22px 8px;
+  font-size:12px;
+  font-weight:700;
+  line-height:1.6;
+  color:#1b8fb8;
+}
+  
   @media (max-width: 767px){
   .dl-title{
     font-size:24px;
@@ -396,23 +409,23 @@ footer a{color:#ccc}
   }
 
   .tab-buttons{
-    display:flex;
-    flex-wrap:nowrap;
-    gap:10px;
-    width:max-content;
-    max-width:none;
-    padding:0 22px 12px;
-    margin:0 0 20px;
-  }
+  display:flex;
+  flex-wrap:nowrap;
+  gap:8px;
+  width:max-content;
+  max-width:none;
+  padding:0 16px 12px;
+  margin:0 0 20px;
+}
 
-  .tab-btn{
-    flex:0 0 auto;
-    min-width:110px;
-    white-space:nowrap;
-    font-size:13px;
-    padding:13px 16px;
-    border-radius:10px;
-  }
+.tab-btn{
+  flex:0 0 auto;
+  min-width:92px;
+  white-space:nowrap;
+  font-size:12px;
+  padding:11px 12px;
+  border-radius:10px;
+}
 
   .tab-label-pc{
     display:none;
@@ -489,6 +502,7 @@ footer a{color:#ccc}
     
     <!-- タブボタン：見た目は元コードのまま -->
    <div class="tab-wrap">
+     <p class="tab-guide">※横にスライドしてタブを選択できます</p>
   <div class="tab-scroll">
     <div class="tab-buttons" role="tablist" aria-label="ページ内メニュー">
       <button class="tab-btn is-active" type="button" role="tab" aria-selected="true" data-tab="flow">
