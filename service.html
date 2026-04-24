@@ -11,6 +11,8 @@
   --blue:#2aa7d7;
   --blue2:#1b8fb8;
   --blue3:#1f86d1;
+  --deepBlue:#1f78b8;
+  --lightBlue:#eef7fc;
 
   --beige:#f3efe6;
   --line:#e2e2e2;
@@ -20,16 +22,12 @@
   --shadow:0 14px 36px rgba(0,0,0,.08);
   --radius:6px;
 
-  /* Flow section */
-  --flowCard:#f6f3ee;
-  --flowStroke:#e9e3da;
-  --flowAccent:#d24c3f;
-
-  /* Benefit box */
   --benefitBg:#eaf6fb;
   --benefitBd:#d7eef7;
 }
+
 *{box-sizing:border-box}
+
 body{
   margin:0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
@@ -37,38 +35,42 @@ body{
   background:#fff;
   line-height:1.8;
 }
+
 img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
+
 .container{
   width:min(var(--container), calc(100% - 48px));
   margin:auto;
 }
 
-/* =========================
-  HEADER
-========================= */
+/* HEADER */
 header{background:var(--black);color:#fff}
+
 .header-inner{
   height:64px;
   display:flex;
   align-items:center;
   justify-content:space-between;
 }
+
 .brand{display:flex;align-items:center;gap:10px}
 .brand img{height:34px;width:auto}
+
 .header-right{display:flex;align-items:center;gap:14px}
+
 .contact-btn{
   background:var(--blue);
   color:#fff;
   padding:10px 18px;
   font-weight:800;
 }
+
 .contact-btn:hover{background:var(--blue2)}
 
-/* =========================
-  MAIN
-========================= */
+/* MAIN */
 .main{padding:64px 0 72px;background:var(--beige)}
+
 .panel{
   background:#fff;
   border:1px solid var(--line);
@@ -77,7 +79,6 @@ header{background:var(--black);color:#fff}
   padding:44px 46px 40px;
 }
 
-/* title area */
 .dl-title{
   text-align:center;
   margin:0 0 6px;
@@ -85,6 +86,7 @@ header{background:var(--black);color:#fff}
   font-weight:900;
   letter-spacing:.04em;
 }
+
 .hr-mark{
   width:18px;
   height:2px;
@@ -92,7 +94,6 @@ header{background:var(--black);color:#fff}
   margin:0 auto 26px;
 }
 
-/* intro */
 .intro{
   text-align:center;
   max-width:860px;
@@ -101,7 +102,9 @@ header{background:var(--black);color:#fff}
   font-weight:700;
   font-size:13px;
 }
+
 .intro .intro-lines{max-width:860px;margin:0 auto}
+
 .intro .intro-lines p{
   margin:0;
   text-align:center;
@@ -109,20 +112,21 @@ header{background:var(--black);color:#fff}
   font-weight:700;
   font-size:13px;
 }
-/* 1行目→2行目は狭く */
+
 .intro .intro-lines p + p{margin-top:6px;}
-/* 2行目→次の見出しは広く（スマホ=2倍 / タブレット以上=3倍） */
-@media(max-width:960px){ .intro{margin-bottom:48px;} }
+
+@media(max-width:960px){
+  .intro{margin-bottom:48px;}
+}
+
 @media(min-width:961px){
   .intro{font-size:15px; margin-bottom:72px;}
   .intro .intro-lines p{font-size:15px;}
 }
 
-/* upper layout */
 .dl-grid{display:block}
 .info{max-width:980px;margin:0 auto}
 
-/* ===== Centered prominent headings ===== */
 .section-title{
   margin:0 0 14px;
   text-align:center;
@@ -130,13 +134,12 @@ header{background:var(--black);color:#fff}
   letter-spacing:.02em;
   font-size:20px;
 }
+
 @media(min-width:961px){
   .section-title{font-size:24px}
 }
 
-/* =========================
-  Benefit box
-========================= */
+/* Benefit box */
 .benefit-box{
   background:var(--benefitBg);
   border:1px solid var(--benefitBd);
@@ -145,12 +148,14 @@ header{background:var(--black);color:#fff}
   width:clamp(520px, 78%, 900px);
   margin:0 auto;
 }
+
 .benefit-box ul{
   width:fit-content;
   max-width:100%;
   margin:0 auto;
   padding-left:1.2em;
 }
+
 .benefit-box li{
   margin:8px 0;
   color:#1c2b33;
@@ -159,9 +164,9 @@ header{background:var(--black);color:#fff}
   line-height:1.9;
   text-align:left;
 }
+
 .benefit-box li::marker{color:#d44}
 
-/* disclaimer under blue box */
 .benefit-disclaimer{
   margin:12px auto 0;
   text-align:center;
@@ -171,16 +176,16 @@ header{background:var(--black);color:#fff}
   max-width:860px;
 }
 
-/* divider */
 .sep{margin:30px 0 22px;border:0;border-top:1px solid #efefef}
 
-/* app selection cards */
+/* App cards */
 .app-grid{
   display:grid;
   grid-template-columns: 1fr 1fr;
   gap:16px;
   margin-top:10px;
 }
+
 .app-card{
   border:1px solid var(--line);
   border-radius:6px;
@@ -189,6 +194,7 @@ header{background:var(--black);color:#fff}
   background:#fff;
   overflow:hidden;
 }
+
 .app-media{
   width:100%;
   aspect-ratio: 16 / 9;
@@ -198,12 +204,19 @@ header{background:var(--black);color:#fff}
   background:#f7f7f7;
   margin:0 0 12px;
 }
-.app-media img{width:100%;height:100%;object-fit:cover}
+
+.app-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
 .app-card h3{
   margin:10px 0 8px;
   font-size:16px;
   font-weight:900;
 }
+
 .app-card p{
   margin:0 auto;
   max-width:42em;
@@ -215,12 +228,14 @@ header{background:var(--black);color:#fff}
 
 /* CTA */
 .form-area{text-align:center;margin-top:20px}
+
 .btn-row{
   display:flex;
   justify-content:center;
   gap:14px;
   flex-wrap:wrap;
 }
+
 .primary-btn{
   display:inline-flex;
   align-items:center;
@@ -237,8 +252,15 @@ header{background:var(--black);color:#fff}
   padding:0 14px;
   white-space:nowrap;
 }
+
 .primary-btn:hover{filter:brightness(.97)}
-.primary-btn .chev{margin-left:8px;font-size:18px;opacity:.95}
+
+.primary-btn .chev{
+  margin-left:8px;
+  font-size:18px;
+  opacity:.95;
+}
+
 .primary-btn.secondary{background:#1476b8}
 
 .small{
@@ -249,12 +271,215 @@ header{background:var(--black);color:#fff}
   max-width:820px;
 }
 
+/* Professional Flow Section */
+.flow{
+  margin-top:42px;
+  text-align:left;
+}
+
+.flow-sheet{
+  background:#fff;
+  border:1px solid #dfe6eb;
+  border-radius:18px;
+  padding:42px 46px;
+  box-shadow:0 18px 44px rgba(20,55,80,.08);
+}
+
+.flow-main-title{
+  text-align:center;
+  font-size:24px;
+  font-weight:900;
+  margin:0;
+  letter-spacing:.04em;
+  color:#111;
+}
+
+.flow-lead{
+  text-align:center;
+  font-size:15px;
+  font-weight:800;
+  margin:8px 0 18px;
+  color:#333;
+}
+
+.flow-notes-top{
+  background:#f7fafc;
+  border:1px solid #e4edf3;
+  border-radius:12px;
+  padding:14px 18px;
+  font-size:12px;
+  line-height:1.8;
+  color:#56616a;
+  font-weight:700;
+  max-width:760px;
+  margin:0 auto 30px;
+}
+
+.flow-box{
+  border:1px solid #e1e8ee;
+  border-radius:16px;
+  padding:0;
+  margin-bottom:34px;
+  background:#fff;
+  overflow:hidden;
+}
+
+.flow-box-title{
+  margin:0;
+  padding:18px 24px;
+  background:linear-gradient(90deg, #eef7fc, #fff);
+  border-bottom:1px solid #e1e8ee;
+  color:var(--deepBlue);
+  font-weight:900;
+  font-size:18px;
+  letter-spacing:.02em;
+}
+
+.flow-steps{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:0;
+}
+
+.flow-step-item{
+  display:grid;
+  grid-template-columns:72px 1fr;
+  gap:18px;
+  padding:24px;
+  border-bottom:1px solid #edf1f4;
+}
+
+.flow-step-item:last-child{
+  border-bottom:0;
+}
+
+.step-num{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:var(--deepBlue);
+  color:#fff;
+  font-size:18px;
+  font-weight:900;
+  box-shadow:0 8px 18px rgba(31,120,184,.18);
+}
+
+.flow-step-content h3{
+  margin:0 0 6px;
+  color:#1b6fa8;
+  font-size:18px;
+  font-weight:900;
+  line-height:1.5;
+}
+
+.flow-step-content p{
+  margin:0;
+  font-size:14px;
+  font-weight:700;
+  line-height:1.9;
+  color:#333;
+}
+
+.example-title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#1b6fa8;
+  font-weight:900;
+  font-size:20px;
+  margin:0 0 18px;
+  letter-spacing:.02em;
+}
+
+.example-title::before{
+  content:"";
+  width:6px;
+  height:24px;
+  border-radius:999px;
+  background:var(--deepBlue);
+  display:inline-block;
+}
+
+.example-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.example-card{
+  display:grid;
+  grid-template-rows:auto 1fr;
+  border:1px solid #dfe8ef;
+  border-radius:16px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 10px 26px rgba(20,55,80,.06);
+}
+
+.example-left{
+  background:#eef7fc;
+  padding:18px 20px;
+  border-bottom:1px solid #dfe8ef;
+}
+
+.example-left h3{
+  margin:0 0 8px;
+  color:#1b6fa8;
+  font-size:17px;
+  font-weight:900;
+}
+
+.example-left p{
+  margin:0;
+  font-size:13px;
+  line-height:1.75;
+  font-weight:700;
+  color:#34404a;
+}
+
+.example-right{
+  padding:18px 20px 20px;
+  font-size:13px;
+  line-height:1.8;
+  color:#333;
+  font-weight:700;
+}
+
+.qa{
+  display:grid;
+  grid-template-columns:34px 1fr;
+  gap:10px;
+  margin-bottom:12px;
+}
+
+.qa:last-child{margin-bottom:0}
+
+.qa b{
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  background:#1b6fa8;
+  font-size:13px;
+  font-weight:900;
+  line-height:1;
+}
+
+.qa span{
+  padding-top:1px;
+}
+
 /* Help button */
 .help-btn-wrap{
   margin-top:26px;
   display:flex;
   justify-content:center;
 }
+
 .help-btn{
   display:inline-flex;
   align-items:center;
@@ -269,84 +494,34 @@ header{background:var(--black);color:#fff}
   border:1px solid rgba(0,0,0,.06);
   letter-spacing:.02em;
 }
+
 .help-btn:hover{filter:brightness(.98)}
+
 .help-btn:focus-visible{
   outline:3px solid rgba(31,134,209,.35);
   outline-offset:4px;
 }
 
-/* Flow */
-.flow{margin-top:34px;text-align:left}
-.flow-head{display:flex;align-items:flex-end;gap:14px;margin:6px 0 18px}
-.flow-dot{width:12px;height:12px;border-radius:3px;background:var(--flowAccent)}
-.flow-title{margin:0;font-size:26px;font-weight:900;letter-spacing:.02em;line-height:1.1}
-.flow-sub{margin:0 0 2px;color:#b7b1a8;font-weight:800;font-size:12px;letter-spacing:.08em}
-.flow-stack{display:flex;flex-direction:column;gap:16px;margin-top:14px}
-.flow-card{
-  background:var(--flowCard);
-  border:1px solid var(--flowStroke);
-  border-radius:22px;
-  padding:22px 22px;
-  display:grid;
-  grid-template-columns: 230px 1fr;
-  gap:24px;
-  align-items:center;
-}
-.flow-illust{
-  width:100%;
-  aspect-ratio: 4 / 3;
-  display:grid;
-  place-items:center;
-  border-radius:14px;
-  background:rgba(255,255,255,.55);
-  border:1px dashed rgba(0,0,0,.10);
-  color:#7c746b;
-  font-weight:900;
-  text-align:center;
-  padding:10px;
-}
-.flow-right{min-width:0}
-.flow-step{display:flex;align-items:center;gap:10px;color:#777;font-weight:800;letter-spacing:.06em}
-.flow-step b{color:#333;font-size:22px;letter-spacing:.02em}
-.flow-rule{margin:8px 0 10px;border:0;border-top:1px dashed rgba(0,0,0,.18)}
-.flow-h3{margin:0 0 12px;font-size:16px;font-weight:900;letter-spacing:.02em;color:#222}
-.flow-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.flow-inq-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  height:42px;
-  padding:0 18px;
-  background:var(--flowAccent);
-  color:#fff;
-  font-weight:900;
-  border-radius:999px;
-  border:0;
-  box-shadow:0 8px 16px rgba(210,76,63,.22);
-}
-.flow-inq-btn:hover{filter:brightness(.98)}
-.flow-phone{display:inline-flex;align-items:center;gap:10px;color:#333;font-weight:900}
-.flow-phone .picon{
-  width:34px;height:34px;border-radius:999px;
-  background:#fff;border:1px solid rgba(0,0,0,.10);
-  display:grid;place-items:center;color:var(--flowAccent);font-weight:900;
-}
-.flow-arrow{display:flex;justify-content:center;color:#b8b1a8;font-weight:900;margin:-6px 0 -6px;font-size:18px}
-
 /* FOOTER */
-footer{background:var(--black);color:#fff;padding:50px 0}
+footer{
+  background:var(--black);
+  color:#fff;
+  padding:50px 0;
+}
+
 .footer-inner{
   display:grid;
   gap:30px;
-  /* ✅ 3列→2列へ詰める（プライバシーポリシー削除分） */
   grid-template-columns: 1.2fr 1fr;
   align-items:start;
 }
+
 .footer-col-right{
   display:flex;
   justify-content:flex-end;
-  gap:60px;           /* 2つのリンク列の間隔 */
+  gap:60px;
 }
+
 .footer-links a{color:#ccc}
 .footer-links a:hover{color:#fff}
 
@@ -355,12 +530,9 @@ footer{background:var(--black);color:#fff;padding:50px 0}
   .footer-col-right{justify-content:flex-start;gap:36px}
 }
 
-/* Responsive */
 @media(max-width:960px){
   .panel{padding:34px 22px 30px}
   .app-grid{grid-template-columns:1fr}
-  .flow-card{grid-template-columns:1fr;border-radius:18px}
-  .flow-illust{aspect-ratio:16/9}
 
   .benefit-box{width:100%}
   .benefit-box ul{width:auto;margin:0;padding-left:1.2em}
@@ -368,6 +540,9 @@ footer{background:var(--black);color:#fff;padding:50px 0}
 
   .section-title{font-size:18px}
   .help-btn{min-width: min(320px, 100%); padding:14px 18px;}
+
+  .flow-sheet{padding:32px 24px}
+  .example-grid{grid-template-columns:1fr}
 }
 
 @media(min-width:961px){
@@ -375,25 +550,57 @@ footer{background:var(--black);color:#fff;padding:50px 0}
     width:clamp(520px, 66%, 820px);
     padding:18px 22px;
   }
+
   .benefit-box li{
     font-size:15px;
     line-height:2.05;
     margin:10px 0;
   }
+
   .benefit-disclaimer{font-size:12px}
   .help-btn{font-size:16px;}
 }
 
 @media(max-width:700px){
+  .container{width:min(var(--container), calc(100% - 28px))}
   .main{padding:46px 0 54px}
   .dl-title{font-size:20px}
+
+  .flow-sheet{
+    padding:26px 18px;
+    border-radius:14px;
+  }
+
+  .flow-main-title{font-size:20px}
+  .flow-lead{font-size:13px}
+
+  .flow-box-title{
+    font-size:16px;
+    padding:16px 18px;
+  }
+
+  .flow-step-item{
+    grid-template-columns:1fr;
+    gap:10px;
+    padding:20px 18px;
+  }
+
+  .step-num{
+    width:42px;
+    height:42px;
+    font-size:15px;
+  }
+
+  .flow-step-content h3{font-size:16px}
+  .flow-step-content p{font-size:13px}
+
+  .example-title{font-size:17px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="container header-inner">
     <a class="brand" href="https://www.dx-academy.com/" aria-label="DXアカデミー株式会社">
@@ -410,7 +617,6 @@ footer{background:var(--black);color:#fff;padding:50px 0}
   </div>
 </header>
 
-<!-- MAIN -->
 <main class="main">
   <div class="container">
     <section class="panel" aria-label="GPTアプリ提供ページ">
@@ -482,7 +688,6 @@ footer{background:var(--black);color:#fff;padding:50px 0}
 
       <hr class="sep">
 
-      <!-- CTA -->
       <div class="form-area">
 
         <div class="btn-row">
@@ -507,74 +712,119 @@ footer{background:var(--black);color:#fff;padding:50px 0}
           ※サービス提供開始から一定期間が経過すると、予告なくご利用いただけなくなる場合があります。
         </div>
 
-        <section class="flow" aria-label="ご利用の流れ">
-          <div class="flow-head">
-            <span class="flow-dot" aria-hidden="true"></span>
-            <div>
-              <p class="flow-sub">Flow of Use</p>
-              <h2 class="flow-title">ご利用の流れ</h2>
+        <section class="flow" aria-label="アプリの使い方">
+          <div class="flow-sheet">
+            <h2 class="flow-main-title">ーアプリの使い方ー</h2>
+            <p class="flow-lead">講座内容を、いつでも復習・質問できる学習サポートアプリです</p>
+
+            <div class="flow-notes-top">
+              ※本アプリは、講座内容の範囲に基づいて回答いたします。<br>
+              ※内容によってはお答えできない場合がございます。<br>
+              ※有料版のChatGPTをご利用でない場合、一部の機能が正常に機能しないことがあります。
             </div>
-          </div>
 
-          <div class="flow-stack">
-            <div class="flow-card">
-              <div class="flow-illust">
-                （step01 イラスト画像）<br>
-                <small>※ここに画像を差し替え</small>
-              </div>
-              <div class="flow-right">
-                <div class="flow-step">step <b>01</b></div>
-                <hr class="flow-rule">
-                <div class="flow-h3">お問い合わせ（電話／フォーム）</div>
+            <div class="flow-box">
+              <p class="flow-box-title">GPTアプリの使い方</p>
 
-                <div class="flow-actions">
-                  <a class="flow-inq-btn" href="https://www.dx-academy.com/" target="_blank" rel="noopener">
-                    お問い合わせ
-                  </a>
-                  <div class="flow-phone">
-                    <span class="picon">↗</span>
-                    <a href="https://www.dx-academy.com/" target="_blank" rel="noopener" style="font-weight:900;">
-                      公式HPへ
-                    </a>
+              <div class="flow-steps">
+                <div class="flow-step-item">
+                  <div class="step-num">01</div>
+                  <div class="flow-step-content">
+                    <h3>GPTアプリを開く</h3>
+                    <p>上の「GPTを開く」ボタンを押下いただくと、お客様のChatGPT画面へ遷移いたします。</p>
+                  </div>
+                </div>
+
+                <div class="flow-step-item">
+                  <div class="step-num">02</div>
+                  <div class="flow-step-content">
+                    <h3>質問する</h3>
+                    <p>講座で学んだ内容について、自由にご質問いただけます。ご不明な点や気になったことを、そのままご入力ください。</p>
+                  </div>
+                </div>
+
+                <div class="flow-step-item">
+                  <div class="step-num">03</div>
+                  <div class="flow-step-content">
+                    <h3>復習・整理する</h3>
+                    <p>学習内容の要点整理や理解の確認を、会話形式でサポートいたします。受講期間終了後の復習にもご活用いただけます。</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="flow-arrow" aria-hidden="true">˅</div>
+            <h3 class="example-title">できることと質問・回答例</h3>
 
-            <div class="flow-card">
-              <div class="flow-illust">
-                （step02 イラスト画像）<br>
-                <small>※ここに画像を差し替え</small>
-              </div>
-              <div class="flow-right">
-                <div class="flow-step">step <b>02</b></div>
-                <hr class="flow-rule">
-                <div class="flow-h3">受講状況・ご利用目的をヒアリング</div>
-                <div style="color:#555;font-weight:800;font-size:12px;line-height:1.9;">
-                  担当者よりメール／お電話にて、ご受講中の講座（生成AI／SNSマーケ）や、
-                  ご利用目的（復習・要点確認など）を確認します。
+            <div class="example-grid">
+
+              <div class="example-card">
+                <div class="example-left">
+                  <h3>活用方法を知る</h3>
+                  <p>学んだ内容を、実際の業務やお仕事にどのように活かせるかご相談いただけます。</p>
+                </div>
+                <div class="example-right">
+                  <div class="qa">
+                    <b>Q</b>
+                    <span>〇〇職での具体的な活用例と、活用手順を順序立てて教えてください。</span>
+                  </div>
+                  <div class="qa">
+                    <b>A</b>
+                    <span>〇〇職での活用は「〜〜」ことが重要です。以下に、実務イメージ → 手順の順で説明します。</span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="flow-arrow" aria-hidden="true">˅</div>
-
-            <div class="flow-card">
-              <div class="flow-illust">
-                （step03 イラスト画像）<br>
-                <small>※ここに画像を差し替え</small>
-              </div>
-              <div class="flow-right">
-                <div class="flow-step">step <b>03</b></div>
-                <hr class="flow-rule">
-                <div class="flow-h3">GPTアプリをご案内（利用開始）</div>
-                <div style="color:#555;font-weight:800;font-size:12px;line-height:1.9;">
-                  お客様の受講講座にあわせて、該当するGPTアプリ（生成AI／SNSマーケ）をご案内します。<br>
-                  本ページのボタンから、各GPTアプリを開いてご利用ください。
+              <div class="example-card">
+                <div class="example-left">
+                  <h3>用語理解</h3>
+                  <p>専門用語や難しい概念について、わかりやすくご説明いたします。</p>
+                </div>
+                <div class="example-right">
+                  <div class="qa">
+                    <b>Q</b>
+                    <span>△△とは何ですか？</span>
+                  </div>
+                  <div class="qa">
+                    <b>A</b>
+                    <span>△△とは、〜〜を指します。具体的には、〜〜という意味があります。</span>
+                  </div>
                 </div>
               </div>
+
+              <div class="example-card">
+                <div class="example-left">
+                  <h3>初心者向け解説</h3>
+                  <p>初心者の方にもわかりやすいよう、かみ砕いてご説明いたします。</p>
+                </div>
+                <div class="example-right">
+                  <div class="qa">
+                    <b>Q</b>
+                    <span>初心者向けにわかりやすく説明して</span>
+                  </div>
+                  <div class="qa">
+                    <b>A</b>
+                    <span>まずは基本として、〜〜を理解してみましょう。そのうえで、〜〜の流れで考えるとわかりやすいです。</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="example-card">
+                <div class="example-left">
+                  <h3>多言語で利用</h3>
+                  <p>日本語だけでなく、英語などの外国語でもご質問いただけます。</p>
+                </div>
+                <div class="example-right">
+                  <div class="qa">
+                    <b>Q</b>
+                    <span>Can you give me examples of how it’s used in office work? Answer in English.</span>
+                  </div>
+                  <div class="qa">
+                    <b>A</b>
+                    <span>In administrative work, it can be used in the following ways: ・〜〜 ・〜〜</span>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </section>
@@ -591,7 +841,6 @@ footer{background:var(--black);color:#fff;padding:50px 0}
   </div>
 </main>
 
-<!-- FOOTER -->
 <footer>
   <div class="container footer-inner">
     <div>
